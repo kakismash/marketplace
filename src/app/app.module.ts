@@ -9,12 +9,14 @@ import { IntegrationComponent } from './components/integration/integration.compo
 import { TruncatePipe } from './util/truncate.pipe';
 
 import { MatCardModule } from '@angular/material/card';
+import { VerticalMenuComponent } from './components/vertical-menu/vertical-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntegrationComponent,
-    TruncatePipe
+    TruncatePipe,
+    VerticalMenuComponent
   ],
   imports: [
     BrowserModule,
