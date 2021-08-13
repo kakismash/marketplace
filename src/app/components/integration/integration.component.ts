@@ -28,4 +28,8 @@ export class IntegrationComponent implements OnInit {
       });
   }
 
+  openIntegrationDialog(): void {
+
+  }
+
 }

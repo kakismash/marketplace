@@ -1,1 +1,11 @@
-<p>integration works!</p>
+<mat-card *ngFor="let integration of integrations" class="outlined-card" (click)="openIntegrationDialog()">
+  <mat-card-content>
+    <div fxLayout="row wrap">
+      <div class="box-text" fxFlex.lg="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex="70%">
+        <p class="title animation-title">{{ integration.name }}</p>
+        <div class="underbar"></div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
