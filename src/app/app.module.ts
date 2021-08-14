@@ -9,20 +9,26 @@ import { IntegrationComponent } from './components/integration/integration.compo
 import { TruncatePipe } from './util/truncate.pipe';
 
 import { MatCardModule } from '@angular/material/card';
-import { VerticalMenuComponent } from './components/vertical-menu/vertical-menu.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
+import { NavbarMenuComponent } from './components/navbar-menu/navbar-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntegrationComponent,
     TruncatePipe,
-    VerticalMenuComponent
+    NavbarMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
     HttpClientModule
   ],
   providers: [],

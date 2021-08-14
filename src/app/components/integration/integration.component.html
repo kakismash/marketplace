@@ -1,11 +1,33 @@
-<mat-card *ngFor="let integration of integrations" class="outlined-card" (click)="openIntegrationDialog()">
-  <mat-card-content>
-    <div fxLayout="row wrap">
-      <div class="box-text" fxFlex.lg="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex="70%">
-        <p class="title animation-title">{{ integration.name }}</p>
-        <div class="underbar"></div>
-      </div>
+<div class="d-flex justify-space-between">
+  <mat-card mat-ripple *ngFor="let integration of integrations; let index=index"
+    (mouseover)="elevateCard[index]=true" (mouseout)="elevateCard[index]=false"
+    class="outlined-card pa-5 ma-5 mb-0 pb-0" [@elevateCard]="elevateCard[index]">
+    <div> <!-- Fix margin botton for mat-ripple -->
+      <mat-card-header class="card-header">
+        <div class="box">
+          <img [src]="integration.logo" [alt]="integration.name" />
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-card-title>{{ integration.name }}</mat-card-title>
+        <mat-card-subtitle>{{ integration.excerpt }}</mat-card-subtitle>
+        <p>
+          {{ integration.description | truncate : 50  }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="mt-20">
+        <div class="d-flex justify-space-between align-center">
+          <p class="text-footer pa-0 ma-0">{{ integration.website }}</p>
+          <div class="d-flex align-center">
+            <mat-icon class="star-size" color="accent">
+              star
+            </mat-icon>
+            <p class="text-footer pa-0 ma-0"><strong>4.5</strong>(8)</p>
+          </div>
+        </div>
+      </mat-card-actions>
     </div>
-  </mat-card-content>
 </mat-card>
+</div>
+
 

@@ -1,0 +1,59 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+.outlined-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 25px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #dfe5eb;
+  top: 0;
+  position: relative;
+  cursor:pointer;
+  transition: transform .2s cubic-bezier(.25,.46,.45,.94);
+  @include mat-elevation-transition;
+  @include mat-elevation(0, #acacac, 0);
+
+  &:hover {
+    @include mat-elevation(6, #acacac, 0.9);
+  }
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-footer {
+  font-size: 14px;
+  padding: 2%;
+  align-items: center;
+}
+
+.star-size {
+  font-size: 20px;
+  color: rgb(255, 211, 13);
+}
+
+.box {
+  width: 70px;
+  height: 70px;
+  background: none;
+  overflow: hidden;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+}
+@supports(object-fit: cover){
+    .box img {
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+}
