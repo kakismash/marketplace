@@ -1,0 +1,140 @@
+[
+    {
+        "integrationId": 1,
+        "name": "ADP Export",
+        "excerpt": "Payroll processing",
+        "description": "Export of time & attendance data which can be directly imported to ADP for payroll processing",
+        "logo": "http://localhost:4200/assets/images/logos/ADP.jpeg",
+        "company": "ADP",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/adp.jpg",
+        "website": "www.adp.com",
+        "support": "support@adp.com",
+        "tags": [
+            "labor"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 2,
+        "name": "MagPie",
+        "excerpt": "Property Management System",
+        "description": "Magpie Property Management Software - A cost effective, internet-based property management software for the hospitality industry, customized for hotels, motels, condo-hotels, timeshares, inns and vacation home rentals. Our software is your one solution to property management, reservations and accounting. \n\nOur property management software features include: \nAccounting - Magpie PMS is the only online property management software that is fully and seamlessly integrated with QuickBooks Online, a full-featured industry standard accounting system with payroll.\n \nWebsite Booking Engine - Magpie PMS ties directly into your website, eliminating the possibility of double-bookings.\n \nHousekeeping, Maintenance and Security - Run your entire business with Magpie Property Management Software.",
+        "logo": "http://localhost:4200/assets/images/logos/MAGPIE.jpeg",
+        "company": "MagPie",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+        "website": "magpiesystems.net",
+        "support": "support@magpiesystems.net",
+        "tags": [
+            "hotel"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 3,
+        "name": "Avero",
+        "excerpt": "Enterprise reporting",
+        "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
+        "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
+        "company": "Avero",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
+        "website": "www.averoinc.com",
+        "support": "support@averoinc.com",
+        "tags": [
+            "report",
+            "enterprise"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 4,
+        "name": "ADP Export",
+        "excerpt": "Payroll processing",
+        "description": "Export of time & attendance data which can be directly imported to ADP for payroll processing",
+        "logo": "http://localhost:4200/assets/images/logos/ADP.jpeg",
+        "company": "ADP",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/adp.jpg",
+        "website": "www.adp.com",
+        "support": "support@adp.com",
+        "tags": [
+            "labor"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 5,
+        "name": "MagPie",
+        "excerpt": "Property Management System",
+        "description": "Magpie Property Management Software - A cost effective, internet-based property management software for the hospitality industry, customized for hotels, motels, condo-hotels, timeshares, inns and vacation home rentals. Our software is your one solution to property management, reservations and accounting. \n\nOur property management software features include: \nAccounting - Magpie PMS is the only online property management software that is fully and seamlessly integrated with QuickBooks Online, a full-featured industry standard accounting system with payroll.\n \nWebsite Booking Engine - Magpie PMS ties directly into your website, eliminating the possibility of double-bookings.\n \nHousekeeping, Maintenance and Security - Run your entire business with Magpie Property Management Software.",
+        "logo": "http://localhost:4200/assets/images/logos/MAGPIE.jpeg",
+        "company": "MagPie",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+        "website": "magpiesystems.net",
+        "support": "support@magpiesystems.net",
+        "tags": [
+            "hotel"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 6,
+        "name": "Avero",
+        "excerpt": "Enterprise reporting",
+        "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
+        "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
+        "company": "Avero",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
+        "website": "www.averoinc.com",
+        "support": "support@averoinc.com",
+        "tags": [
+            "report",
+            "enterprise"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 7,
+        "name": "ADP Export",
+        "excerpt": "Payroll processing",
+        "description": "Export of time & attendance data which can be directly imported to ADP for payroll processing",
+        "logo": "http://localhost:4200/assets/images/logos/ADP.jpeg",
+        "company": "ADP",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/adp.jpg",
+        "website": "www.adp.com",
+        "support": "support@adp.com",
+        "tags": [
+            "labor"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 8,
+        "name": "MagPie",
+        "excerpt": "Property Management System",
+        "description": "Magpie Property Management Software - A cost effective, internet-based property management software for the hospitality industry, customized for hotels, motels, condo-hotels, timeshares, inns and vacation home rentals. Our software is your one solution to property management, reservations and accounting. \n\nOur property management software features include: \nAccounting - Magpie PMS is the only online property management software that is fully and seamlessly integrated with QuickBooks Online, a full-featured industry standard accounting system with payroll.\n \nWebsite Booking Engine - Magpie PMS ties directly into your website, eliminating the possibility of double-bookings.\n \nHousekeeping, Maintenance and Security - Run your entire business with Magpie Property Management Software.",
+        "logo": "http://localhost:4200/assets/images/logos/MAGPIE.jpeg",
+        "company": "MagPie",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+        "website": "magpiesystems.net",
+        "support": "support@magpiesystems.net",
+        "tags": [
+            "hotel"
+        ],
+        "slides": null
+    },
+    {
+        "integrationId": 9,
+        "name": "Avero",
+        "excerpt": "Enterprise reporting",
+        "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
+        "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
+        "company": "Avero",
+        "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
+        "website": "www.averoinc.com",
+        "support": "support@averoinc.com",
+        "tags": [
+            "report",
+            "enterprise"
+        ],
+        "slides": null
+    }
+]

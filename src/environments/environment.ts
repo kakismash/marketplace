@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  bOUrl: 'https://webhook.site/'
+  bOUrl: 'http://localhost:4200/assets/'
 };
 
 /*

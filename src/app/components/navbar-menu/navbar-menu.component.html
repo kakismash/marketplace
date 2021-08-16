@@ -1,1 +1,8 @@
-<p>vertical-menu works!</p>
+<mat-toolbar [ngClass]="scroll ? 'mdc-top-app-bar--fixed-scrolled' : 'mdc-top-app-bar--fixed'"
+             (scroll)="onScroll($event)"
+             class="d-flex flex-row justify-end align-center nav-height sticky"
+>
+
+  <search-input></search-input>
+
+</mat-toolbar>

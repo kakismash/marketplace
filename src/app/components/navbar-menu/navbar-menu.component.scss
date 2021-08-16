@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+nav-height {
+  height: 8vh;
+  align-items: center;
+  background: none;
+}
+
+.sticky {
+  background-color: white !important;
+  position: fixed !important;
+  position: -webkit-sticky !important; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+// stylelint-disable-next-line plugin/selector-bem-pattern
+.mdc-top-app-bar--fixed {
+  transition: box-shadow 200ms linear;
+}
+
+.mdc-top-app-bar--fixed-scrolled {
+  @include mat-elevation-transition;
+  @include mat-elevation(6, #acacac, 0.7);
+
+  transition: box-shadow 200ms linear;
+}

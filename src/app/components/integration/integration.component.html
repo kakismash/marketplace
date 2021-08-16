@@ -1,7 +1,11 @@
-<div class="d-flex justify-space-between">
-  <mat-card mat-ripple *ngFor="let integration of integrations; let index=index"
-    (mouseover)="elevateCard[index]=true" (mouseout)="elevateCard[index]=false"
-    class="outlined-card pa-5 ma-5 mb-0 pb-0" [@elevateCard]="elevateCard[index]">
+<div fxLayout="row wrap" fxLayoutGap="10px grap" fxLayoutAlign="center stretch">
+  <mat-card fxFlexAlign="space-between"
+            fxFlex.lg="30%" fxFlex.sm="33.3%" fxFlex.md="30%" fxFlex.xl="30%" mat-ripple
+            [matRippleColor]="'#f0f0f06b'" *ngFor="let integration of integrations; let index=index"
+            (mouseover)="elevateCard[index]=true" (mouseout)="elevateCard[index]=false"
+            class="outlined-card pa-5 ma-5 mb-2 pb-0"
+            [@elevateCard]="elevateCard[index]"
+    >
     <div> <!-- Fix margin botton for mat-ripple -->
       <mat-card-header class="card-header">
         <div class="box">
@@ -27,7 +31,7 @@
         </div>
       </mat-card-actions>
     </div>
-</mat-card>
+  </mat-card>
 </div>
 
 

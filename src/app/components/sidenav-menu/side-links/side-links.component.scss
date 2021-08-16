@@ -1,0 +1,33 @@
+.margin-links {
+  padding-left: 7% !important;
+  padding-top: 14% !important;
+}
+
+.icon-font {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px !important;
+}
+
+.primary-link {
+  font-family: 'Work Sans', sans-serif !important;
+  font-weight: 600;
+  color: rgb(74, 74, 74);
+  font-size: 14px;
+  height: 70% !important;
+}
+
+:host ::ng-deep .mat-list-text {
+  padding-left: 0 !important;
+}
+
+.secondary-link {
+  font-family: 'Work Sans', sans-serif !important;
+  font-weight: 400;
+  color: rgb(60, 60, 60);
+  height: 0% !important;
+  font-size: 12px;
+  padding-left: 40px !important;
+}
