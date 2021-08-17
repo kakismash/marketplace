@@ -22,12 +22,19 @@ function generateAll(integrations: Array<Integration>): Menu {
 }
 
 function generateMenus(menus: Array<Menu>): void {
+  menus.push(generateSales());
+}
+
+function generateSales(): Menu {
+
   const saleMenu: Menu  = new Menu();
   saleMenu.name         = 'sales';
   saleMenu.display      = 'Sales';
   saleMenu.integrations = new Array<Integration>();
   saleMenu.subMenus     = subMenuSales();
-  saleMenu.
+  saleMenu.integrations = new Array<Integration>();
+
+  return saleMenu;
 }
 
 function subMenuSales(): Array<SubMenu> {
