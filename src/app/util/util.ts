@@ -31,10 +31,19 @@ function generateMenus(menus: Array<Menu>): void {
 
 function subMenuSales(): Array<SubMenu> {
   const sm: Array<SubMenu>     = new Array<SubMenu>();
+
+   // Online Order
   const smOnlineOrder: SubMenu = new SubMenu();
   smOnlineOrder.name           = 'online_order';
   smOnlineOrder.display        = 'Online Order';
   smOnlineOrder.integrations   = new Array<Integration>();
   sm.push(smOnlineOrder);
+  // Delivery
+  const smDelivery: SubMenu = new SubMenu();
+  smDelivery.name           = 'delivery';
+  smDelivery.display        = 'Delivery';
+  smDelivery.integrations   = new Array<Integration>();
+  sm.push(smDelivery);
+
   return sm;
 }
