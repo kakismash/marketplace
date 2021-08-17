@@ -1,3 +1,4 @@
+import { Integration } from './../../model/integration';
 import { Component, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from "@angular/material/sidenav";
@@ -11,7 +12,8 @@ export class SidenavMenuComponent implements OnInit {
 
   @Input() toggle!:               boolean;
   @ViewChild('drawer') drawer!:   MatSidenav;
-  mode:                           boolean     = true;
+  mode:                           boolean             = true;
+  @Input() integrations!:         Array<Integration>;
 
   constructor(private media: MediaObserver) {
 
