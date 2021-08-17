@@ -1,9 +1,14 @@
 <div class="form-size">
   <mat-form-field appearance="legacy">
-    <input matInput placeholder="Search">
+    <input matInput placeholder="Search" [formControl]="searchControl" [matAutocomplete]="auto">
     <button mat-icon-button matSuffix>
         <mat-icon class="pointer">search</mat-icon>
     </button>
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
 </div>
 

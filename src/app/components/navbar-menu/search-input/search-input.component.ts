@@ -1,4 +1,8 @@
+import { IntegrationService } from './../../../service/integration.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'search-input',
@@ -7,9 +11,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchInputComponent implements OnInit {
 
-  constructor() { }
+  searchControl: FormControl = new FormControl();
+  options: Array<string> = new Array<string>();
+  filteredOptions: Observable<string[]> = new Observable<string[]>();
+
+  constructor(private integrationService: IntegrationService) { }
 
   ngOnInit(): void {
+    this.fillOptions();
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  private fillOptions(): void {
+    this.integrationService
+        .load()
+        .subscribe(rIntegrations => {
+          rIntegrations.forEach(i => {
+            this.options.push(i.name);
+          });
+          this.filteredOptions = this.searchControl.valueChanges.pipe(
+            startWith(''),
+            map(value => this._filter(value))
+          );
+        }, err => {
+          console.log(err);
+      });
   }
 
 }
