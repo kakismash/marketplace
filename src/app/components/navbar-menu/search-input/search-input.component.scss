@@ -1,70 +1,11 @@
-:host ::ng-deep input.mat-input-element {
-    margin-top: -0.3em !important;
+.form-size {
+  font-size: 12px !important;
+  font-weight: 500;
+  line-height: 1.125;
+  font-family: 'Work Sans', sans-serif;
+  color: rgb(47, 47, 47);
 }
 
-:host ::ng-deep .mat-form-field-flex {
-  max-height: 7vh;
-}
-
-:host ::ng-deep .mat-form-field-outline {
-  background-color: rgba(36, 36, 36, 0.041) !important;
-  border-radius: 3em;
-}
-
-:host ::ng-deep .mat-form-field-wrapper {
-  padding: 0;
-  margin: 0;
-  border-radius: 2em;
-}
-
-:host ::ng-deep .mat-input-wrapper {
-  background: gray;
-}
-
-:host ::ng-deep .mat-toolbar .mat-input-element {
-  margin-bottom: 10px;
-}
-
-:host ::ng-deep div .mat-form-field-suffix {
-  top: 6px !important;
-  font-size: 16px;
-  color: grey;
-}
-
-:host ::ng-deep .mat-form-field-outline-start {
-  border-radius: 3em 0 0 3em !important;
-  min-width: 3em !important;
-}
-
-:host ::ng-deep .mat-form-field-outline-end {
-  border-radius: 0 3em 3em 0 !important;
-}
-
-:host ::ng-deep .mat-input-element::placeholder{
-  color: rgba(46, 46, 46, 0.70) !important;
-  font-weight: 400;
-  padding-bottom: -8px !important;
-}
-@media all and (max-width:1440px){
-  :host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { margin: -20px 0px 0px 0px !important; }
-
-  @media all and (max-width:1280px){
-    :host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { margin: -27px 0px 0px 0px !important; }
-  }
-
-  @media all and (max-width:1024px){
-    :host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { margin: -27px 0px 0px 0px !important; }
-  }
-
-  @media all and (max-width:960px){
-    :host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { margin: -27px 0px 0px 0px !important; }
-  }
-}
-
-:host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { margin: -23px 0px 0px 0px; }
-:host ::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
-
-:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-    transform: translateY(-3em) scale(.75);
-    width: 133.33333%;
+.pointer {
+  font-size: 16px !important;
 }

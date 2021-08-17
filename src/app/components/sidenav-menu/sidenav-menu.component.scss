@@ -22,3 +22,7 @@
   background: white;
   overflow: hidden !important;
 }
+
+:host ::ng-deep .mat-drawer:not(.mat-drawer-side) {
+    box-shadow: none !important;
+}

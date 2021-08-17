@@ -1,4 +1,4 @@
 <ng-container>
-  <navbar></navbar>
-  <sidenav-menu></sidenav-menu>
+  <navbar (toggleEvent)="toggle = $event"></navbar>
+  <sidenav-menu [toggle]="toggle"></sidenav-menu>
 </ng-container>
