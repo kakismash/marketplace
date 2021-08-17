@@ -3,7 +3,7 @@ import { Menu } from './../model/menu';
 
 export function mapMenu(integrations: Array<Integration>): void {
   const menus: Array<Menu> = Array<Menu>();
-  generateAll(integrations);
+  menus.push(generateAll(integrations));
   integrations.forEach(i => {
     menus.push
   });
