@@ -26,7 +26,8 @@ function generateMenus(menus: Array<Menu>): void {
   saleMenu.name         = 'sales';
   saleMenu.display      = 'Sales';
   saleMenu.integrations = new Array<Integration>();
-  saleMenu.subMenus
+  saleMenu.subMenus     = subMenuSales();
+  saleMenu.
 }
 
 function subMenuSales(): Array<SubMenu> {
@@ -44,6 +45,25 @@ function subMenuSales(): Array<SubMenu> {
   smDelivery.display        = 'Delivery';
   smDelivery.integrations   = new Array<Integration>();
   sm.push(smDelivery);
+
+  return sm;
+}
+
+function subMenuMarketing(): Array<SubMenu> {
+  const sm: Array<SubMenu>     = new Array<SubMenu>();
+
+   // Payroll
+  const smPayroll: SubMenu = new SubMenu();
+  smPayroll.name           = 'payroll';
+  smPayroll.display        = 'Payroll';
+  smPayroll.integrations   = new Array<Integration>();
+  sm.push(smPayroll);
+  // Attendance
+  const smAttendance: SubMenu = new SubMenu();
+  smAttendance.name           = 'attendance';
+  smAttendance.display        = 'Attendance';
+  smAttendance.integrations   = new Array<Integration>();
+  sm.push(smAttendance);
 
   return sm;
 }
