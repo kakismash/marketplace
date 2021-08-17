@@ -1,3 +1,4 @@
+import { SubMenu } from '../model/sub-menu';
 import { Integration } from './../model/integration';
 import { Menu } from './../model/menu';
 
@@ -18,4 +19,22 @@ function generateAll(integrations: Array<Integration>): Menu {
     allMenu.integrations.push(i);
   });
   return allMenu;
+}
+
+function generateMenus(menus: Array<Menu>): void {
+  const saleMenu: Menu  = new Menu();
+  saleMenu.name         = 'sales';
+  saleMenu.display      = 'Sales';
+  saleMenu.integrations = new Array<Integration>();
+  saleMenu.subMenus
+}
+
+function subMenuSales(): Array<SubMenu> {
+  const sm: Array<SubMenu>     = new Array<SubMenu>();
+  const smOnlineOrder: SubMenu = new SubMenu();
+  smOnlineOrder.name           = 'online_order';
+  smOnlineOrder.display        = 'Online Order';
+  smOnlineOrder.integrations   = new Array<Integration>();
+  sm.push(smOnlineOrder);
+  return sm;
 }
