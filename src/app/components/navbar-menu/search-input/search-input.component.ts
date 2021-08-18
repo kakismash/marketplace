@@ -11,9 +11,9 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class SearchInputComponent implements OnInit {
 
-  searchControl: FormControl = new FormControl();
-  options: Array<string> = new Array<string>();
-  filteredOptions: Observable<string[]> = new Observable<string[]>();
+  searchControl:    FormControl              = new FormControl();
+  options:         Array<string>             = new Array<string>();
+  filteredOptions: Observable<Array<string>> = new Observable<Array<string>>();
 
   constructor(private integrationService: IntegrationService) { }
 

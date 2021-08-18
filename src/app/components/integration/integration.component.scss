@@ -1,6 +1,10 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
+a {
+  color: #222222 !important;
+}
+
 .container {
   margin: 20px;
 }
@@ -15,7 +19,7 @@
   cursor: pointer;
   border-radius: 8px;
   border: 1px solid #dfe5eb;
-  cursor:pointer;
+  cursor: pointer;
   @include mat-elevation-transition;
   @include mat-elevation(0, #acacac, 0);
 

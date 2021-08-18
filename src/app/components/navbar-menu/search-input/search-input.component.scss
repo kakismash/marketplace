@@ -1,6 +1,7 @@
 .form-size {
-  font-size: 12px !important;
-  font-weight: 500;
+  margin-top: 20px;
+  font-size: 14px !important;
+  font-weight: 500 !important;
   line-height: 1.125;
   font-family: 'Work Sans', sans-serif;
   color: rgb(47, 47, 47);
@@ -8,4 +9,22 @@
 
 .pointer {
   font-size: 16px !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  color: rgb(41, 41, 41, 0.7) !important;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  color: rgba(41, 41, 41, 0.7) !important;
+}
+
+::ng-deep .mat-option {
+  height: 30% !important;
+}
+
+::ng-deep .mat-autocomplete-panel.mat-autocomplete-visible {
+  border-radius: 0 0 0.5em 0.5em !important;
 }
