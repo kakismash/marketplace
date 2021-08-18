@@ -1,6 +1,7 @@
+import { Integration } from './../../../model/integration';
 import { IntegrationService } from './../../../service/integration.service';
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 
@@ -14,6 +15,7 @@ export class SearchInputComponent implements OnInit {
   searchControl:    FormControl              = new FormControl();
   options:         Array<string>             = new Array<string>();
   filteredOptions: Observable<Array<string>> = new Observable<Array<string>>();
+  @Input() integrations!: Array<Integration>;
 
   constructor(private integrationService: IntegrationService) { }
 
@@ -27,19 +29,15 @@ export class SearchInputComponent implements OnInit {
   }
 
   private fillOptions(): void {
-    this.integrationService
-        .load()
-        .subscribe(rIntegrations => {
-          rIntegrations.forEach(i => {
+
+          this.integrations.forEach(i => {
             this.options.push(i.name);
           });
           this.filteredOptions = this.searchControl.valueChanges.pipe(
             startWith(''),
             map(value => this._filter(value))
           );
-        }, err => {
-          console.log(err);
-      });
+
   }
 
 }
