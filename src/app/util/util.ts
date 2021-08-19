@@ -5,11 +5,27 @@ import { Menu } from './../model/menu';
 export function mapMenu(integrations: Array<Integration>): void {
   const menus: Array<Menu> = Array<Menu>();
   menus.push(generateAll(integrations));
-  integrations.forEach(i => {
-    menus.push
-  });
+  generateMenus(menus);
+  integrations.forEach(i => addIntegration(menus, i));
 }
 
+function addIntegration(menus: Array<Menu>, integration: Integration): void {
+  integration.tags.forEach(t => {
+    for (let a = 0; a < menus.length; a++) {
+      if (menus[a].name === t.name) {
+        menus[a].integrations.push(integration);
+        break;
+      } else if (menus[a].subMenus.length > 0) {
+        for (let b = 0; b < menus[a].subMenus.length; b++) {
+          if (menus[a].subMenus[b].name === t.name) {
+            menus[a].subMenus[b].integrations.push(integration);
+            break;
+          }
+        }
+      }
+    }
+  });
+}
 function generateAll(integrations: Array<Integration>): Menu {
   const allMenu: Menu  = new Menu();
   allMenu.name         = 'all';
