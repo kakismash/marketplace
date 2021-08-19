@@ -17,7 +17,7 @@ export class SearchInputComponent implements OnInit {
   filteredOptions: Observable<Array<string>> = new Observable<Array<string>>();
   @Input() integrations!: Array<Integration>;
 
-  constructor(private integrationService: IntegrationService) { }
+  constructor() {}
 
   ngOnInit(): void {
     this.fillOptions();

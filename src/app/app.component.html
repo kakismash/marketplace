@@ -1,4 +1,4 @@
 <ng-container>
-  <navbar [integrations]="integrations" (toggleEvent)="toggle = $event"></navbar>
-  <sidenav-menu [toggle]="toggle" [integrations]="integrations"></sidenav-menu>
+    <navbar *ngIf="integrations && integrations.length > 0" [integrations]="integrations" (toggleEvent)="toggle = $event"></navbar>
+    <sidenav-menu [toggle]="toggle" [integrations]="integrations"></sidenav-menu>
 </ng-container>
