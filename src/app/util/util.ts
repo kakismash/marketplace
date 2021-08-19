@@ -2,11 +2,12 @@ import { SubMenu } from '../model/sub-menu';
 import { Integration } from './../model/integration';
 import { Menu } from './../model/menu';
 
-export function mapMenu(integrations: Array<Integration>): void {
+export function mapMenu(integrations: Array<Integration>): Array<Menu> {
   const menus: Array<Menu> = Array<Menu>();
   menus.push(generateAll(integrations));
   generateMenus(menus);
   integrations.forEach(i => addIntegration(menus, i));
+  return menus;
 }
 
 function addIntegration(menus: Array<Menu>, integration: Integration): void {
