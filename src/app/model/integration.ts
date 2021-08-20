@@ -1,5 +1,3 @@
-import { Tag } from './tag';
-
 export class Integration {
 
   integrationId!: number;
@@ -11,6 +9,6 @@ export class Integration {
   companyLogo!:   string;
   website!:       string;
   support!:       string;
-  tags!:          Array<Tag>;
+  tags!:          Array<string>;
   slides!:        string;
 }

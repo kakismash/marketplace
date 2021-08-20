@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadIntegrations();
-    console.log(this.menus)
   }
 
   private loadIntegrations(): void {
