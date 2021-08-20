@@ -27,6 +27,7 @@ function addIntegration(menus: Array<Menu>, integration: Integration): void {
     }
   });
 }
+
 function generateAll(integrations: Array<Integration>): Menu {
   const allMenu: Menu  = new Menu();
   allMenu.name         = 'all';
@@ -52,7 +53,6 @@ function generateMenus(menus: Array<Menu>): void {
 
 // SALES
 function generateSales(): Menu {
-
   const saleMenu: Menu  = new Menu();
   saleMenu.name         = 'sales';
   saleMenu.display      = 'Sales';
@@ -65,7 +65,6 @@ function generateSales(): Menu {
 
 function subMenuSales(): Array<SubMenu> {
   const sm: Array<SubMenu>     = new Array<SubMenu>();
-
    // Online Order
   const smOnlineOrder: SubMenu = new SubMenu();
   smOnlineOrder.name           = 'online_order';
@@ -73,10 +72,10 @@ function subMenuSales(): Array<SubMenu> {
   smOnlineOrder.integrations   = new Array<Integration>();
   sm.push(smOnlineOrder);
   // Delivery
-  const smDelivery: SubMenu = new SubMenu();
-  smDelivery.name           = 'delivery';
-  smDelivery.display        = 'Delivery';
-  smDelivery.integrations   = new Array<Integration>();
+  const smDelivery: SubMenu    = new SubMenu();
+  smDelivery.name              = 'delivery';
+  smDelivery.display           = 'Delivery';
+  smDelivery.integrations      = new Array<Integration>();
   sm.push(smDelivery);
 
   return sm;
@@ -84,7 +83,6 @@ function subMenuSales(): Array<SubMenu> {
 
 // MARKETING
 function generateMarketing(): Menu {
-
   const marketingMenu: Menu  = new Menu();
   marketingMenu.name         = 'marketing';
   marketingMenu.display      = 'Marketing';
@@ -96,13 +94,12 @@ function generateMarketing(): Menu {
 }
 
 function subMenuMarketing(): Array<SubMenu> {
-  const sm: Array<SubMenu>     = new Array<SubMenu>();
-
+  const sm: Array<SubMenu>    = new Array<SubMenu>();
    // Payroll
-  const smPayroll: SubMenu = new SubMenu();
-  smPayroll.name           = 'payroll';
-  smPayroll.display        = 'Payroll';
-  smPayroll.integrations   = new Array<Integration>();
+  const smPayroll: SubMenu    = new SubMenu();
+  smPayroll.name              = 'payroll';
+  smPayroll.display           = 'Payroll';
+  smPayroll.integrations      = new Array<Integration>();
   sm.push(smPayroll);
   // Attendance
   const smAttendance: SubMenu = new SubMenu();
@@ -116,7 +113,6 @@ function subMenuMarketing(): Array<SubMenu> {
 
 // PAYMENTS
 function generatePayments(): Menu {
-
   const paymentsMenu: Menu  = new Menu();
   paymentsMenu.name         = 'payments';
   paymentsMenu.display      = 'Payments';
@@ -128,19 +124,18 @@ function generatePayments(): Menu {
 }
 
 function subMenuPayments(): Array<SubMenu> {
-  const sm: Array<SubMenu>     = new Array<SubMenu>();
-
+  const sm: Array<SubMenu> = new Array<SubMenu>();
    // Gift
-  const smGift: SubMenu = new SubMenu();
-  smGift.name           = 'gift';
-  smGift.display        = 'Gift';
-  smGift.integrations   = new Array<Integration>();
+  const smGift: SubMenu    = new SubMenu();
+  smGift.name              = 'gift';
+  smGift.display           = 'Gift';
+  smGift.integrations      = new Array<Integration>();
   sm.push(smGift);
   // EMV
-  const smEMV: SubMenu = new SubMenu();
-  smEMV.name           = 'emv';
-  smEMV.display        = 'EMV';
-  smEMV.integrations   = new Array<Integration>();
+  const smEMV: SubMenu     = new SubMenu();
+  smEMV.name               = 'emv';
+  smEMV.display            = 'EMV';
+  smEMV.integrations       = new Array<Integration>();
   sm.push(smEMV);
   // Swipe CC
   const smSwipeCC: SubMenu = new SubMenu();
@@ -154,7 +149,6 @@ function subMenuPayments(): Array<SubMenu> {
 
 // SECURITY
 function generateSecurity(): Menu {
-
   const securityMenu: Menu  = new Menu();
   securityMenu.name         = 'security';
   securityMenu.display      = 'Security';
@@ -167,7 +161,6 @@ function generateSecurity(): Menu {
 
 function subMenuSecurity(): Array<SubMenu> {
   const sm: Array<SubMenu>     = new Array<SubMenu>();
-
    // Camera
   const smCamera: SubMenu = new SubMenu();
   smCamera.name           = 'camera';
@@ -199,7 +192,6 @@ function generateCommunications(): Menu {
 
 function subMenuCommunications(): Array<SubMenu> {
   const sm: Array<SubMenu>     = new Array<SubMenu>();
-
    // Caller ID
   const smCallerID: SubMenu = new SubMenu();
   smCallerID.name           = 'caller_id';
@@ -212,7 +204,6 @@ function subMenuCommunications(): Array<SubMenu> {
 
 // PRODUCTIVITY
 function generateProductivity(): Menu {
-
   const productivityMenu: Menu  = new Menu();
   productivityMenu.name         = 'productivity';
   productivityMenu.display      = 'Productivity';
@@ -225,7 +216,6 @@ function generateProductivity(): Menu {
 
 // HOTEL
 function generateHotel(): Menu {
-
   const hotelMenu: Menu  = new Menu();
   hotelMenu.name         = 'hotel';
   hotelMenu.display      = 'Hotel';
@@ -238,7 +228,6 @@ function generateHotel(): Menu {
 
 // ENTERPRISE
 function generateEnterprise(): Menu {
-
   const enterpriseMenu: Menu  = new Menu();
   enterpriseMenu.name         = 'enterprise';
   enterpriseMenu.display      = 'Enterprise';
@@ -251,7 +240,6 @@ function generateEnterprise(): Menu {
 
 // ACCOUNTING
 function generateAccounting(): Menu {
-
   const accountingMenu: Menu  = new Menu();
   accountingMenu.name         = 'accounting';
   accountingMenu.display      = 'Accounting';
