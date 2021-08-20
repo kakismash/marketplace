@@ -15,7 +15,7 @@ export class SearchInputComponent implements OnInit {
   searchControl:    FormControl              = new FormControl();
   options:         Array<string>             = new Array<string>();
   filteredOptions: Observable<Array<string>> = new Observable<Array<string>>();
-  @Input() integrations!: Array<Integration>;
+  integrations:    Array<Integration>        = new Array<Integration>();
 
   constructor() {}
 
