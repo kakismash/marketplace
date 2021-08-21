@@ -1,18 +1,13 @@
 <mat-nav-list class="margin-links">
   <div *ngFor="let menu of menus">
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      {{ menu.icon }}
-    </mat-icon>
-    <div mat-line>{{ menu.display }}</div>
-  </mat-list-item>
-  <div *ngIf="menu.subMenus.length > 0">
+    <mat-list-item class="primary-link">
+      <mat-icon mat-list-icon class="icon-font">
+        {{ menu.icon }}
+      </mat-icon>
+      <div mat-line>{{ menu.display }}</div>
+    </mat-list-item>
     <mat-list-item *ngFor="let subMenu of menu.subMenus" class="secondary-link">
       {{ subMenu.display }}
     </mat-list-item>
   </div>
-</div>
-
-
-
 </mat-nav-list>
