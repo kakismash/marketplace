@@ -1,3 +1,4 @@
+import { Menu } from './../../model/menu';
 import { IntegrationService } from './../../service/integration.service';
 import { Integration } from './../../model/integration';
 import { Component, OnInit, Input } from '@angular/core';
@@ -22,8 +23,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class IntegrationComponent implements OnInit {
 
-  @Input() integrations!: Array<Integration>;
-  elevateCard:            Array<boolean>      = new Array<boolean>();
+  @Input() menus!: Array<Menu>;
+  elevateCard:     Array<boolean> = new Array<boolean>();
+  integrations: Array<Integration> = new Array<Integration>();
 
   constructor() { }
 

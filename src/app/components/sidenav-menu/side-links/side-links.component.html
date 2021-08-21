@@ -1,103 +1,18 @@
 <mat-nav-list class="margin-links">
-
+  <div *ngFor="let menu of menus">
   <mat-list-item class="primary-link">
     <mat-icon mat-list-icon class="icon-font">
-      apps
+      {{ menu.icon }}
     </mat-icon>
-    <div mat-line>All</div>
+    <div mat-line>{{ menu.display }}</div>
   </mat-list-item>
+  <div *ngIf="menu.subMenus.length > 0">
+    <mat-list-item *ngFor="let subMenu of menu.subMenus" class="secondary-link">
+      {{ subMenu.display }}
+    </mat-list-item>
+  </div>
+</div>
 
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      store
-    </mat-icon>
-    <div mat-line>Sales</div>
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Online Order
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Delivery
-  </mat-list-item>
 
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      shopping_bag
-    </mat-icon>
-    <div mat-line>Marketing</div>
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Payroll
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Attendance
-  </mat-list-item>
-
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      credit_score
-    </mat-icon>
-    <div mat-line>Payments</div>
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Gift
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    EMV
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Swipe CC
-  </mat-list-item>
-
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      shield
-    </mat-icon>
-    <div mat-line>Security</div>
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Camera
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Cash Management
-  </mat-list-item>
-
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      sensors
-    </mat-icon>
-    <div mat-line>Communications</div>
-  </mat-list-item>
-  <mat-list-item class="secondary-link">
-    Caller ID
-  </mat-list-item>
-
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      bar_chart
-    </mat-icon>
-    <div mat-line>Productivity</div>
-  </mat-list-item>
-
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      hotel_class
-    </mat-icon>
-    <div mat-line>Hotel</div>
-  </mat-list-item>
-
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      business
-    </mat-icon>
-    <div mat-line>Enterprise</div>
-  </mat-list-item>
-
-  <mat-list-item class="primary-link">
-    <mat-icon mat-list-icon class="icon-font">
-      account_circle
-    </mat-icon>
-    <div mat-line>Accounting</div>
-  </mat-list-item>
 
 </mat-nav-list>

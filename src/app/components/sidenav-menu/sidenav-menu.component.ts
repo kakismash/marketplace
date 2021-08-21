@@ -17,14 +17,12 @@ export class SidenavMenuComponent implements OnInit {
   @Input() menus!:              Array<Menu>;
 
   constructor(private media: MediaObserver) {
-
     if(this.media.isActive('xs')) {
       this.mode = false;
     }
   }
 
   ngOnInit(): void {
-
   }
 
   @HostListener('window:resize', ['$event'])
@@ -32,11 +30,11 @@ export class SidenavMenuComponent implements OnInit {
     if (event.target.innerWidth < 599) {
       this.drawer.close();
       this.toggle = false;
-      this.mode = false;
+      this.mode   = false;
     } else {
       this.drawer.open();
       this.toggle = true;
-      this.mode = true;
+      this.mode   = true;
     }
   }
 

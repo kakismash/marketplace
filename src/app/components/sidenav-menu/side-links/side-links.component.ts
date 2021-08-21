@@ -1,3 +1,4 @@
+import { Menu } from './../../../model/menu';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./side-links.component.scss']
 })
 export class SideLinksComponent implements OnInit {
+
+  @Input() menus!: Array<Menu>;
 
   constructor() { }
 

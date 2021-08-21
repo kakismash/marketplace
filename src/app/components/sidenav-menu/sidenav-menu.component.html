@@ -1,11 +1,11 @@
 <mat-drawer-container class="container" [hasBackdrop]="!mode">
   <mat-drawer #drawer [mode]="mode ? 'side' : 'over'" [opened]="toggle" class="sidenav">
-    <side-links></side-links>
+    <side-links [menus]="menus"></side-links>
   </mat-drawer>
   <mat-drawer-content>
     <div class="mt-3 mb-3">
       <!--<router-outlet></router-outlet>-->
-      <integration-card></integration-card>
+      <integration-card [menus]="menus"></integration-card>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

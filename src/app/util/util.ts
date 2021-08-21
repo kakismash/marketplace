@@ -32,6 +32,7 @@ function generateAll(integrations: Array<Integration>): Menu {
   const allMenu: Menu  = new Menu();
   allMenu.name         = 'all';
   allMenu.display      = 'All'
+  allMenu.icon         = 'apps';
   allMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
     allMenu.integrations.push(i);
@@ -43,6 +44,7 @@ function generateMenus(integrations: Array<Integration>): Array<Menu> {
   const menus: Array<Menu> = new Array<Menu>();
   menus.push(generateSales(integrations));
   menus.push(generateMarketing(integrations));
+  menus.push(generateLabor(integrations));
   menus.push(generatePayments(integrations));
   menus.push(generateSecurity(integrations));
   menus.push(generateCommunications(integrations));
@@ -58,6 +60,7 @@ function generateSales(integrations: Array<Integration>): Menu {
   const saleMenu: Menu  = new Menu();
   saleMenu.name         = 'sales';
   saleMenu.display      = 'Sales';
+  saleMenu.icon         = 'store';
   saleMenu.subMenus     = subMenuSales(integrations);
   saleMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -107,6 +110,7 @@ function generateMarketing(integrations: Array<Integration>): Menu {
   const marketingMenu: Menu  = new Menu();
   marketingMenu.name         = 'marketing';
   marketingMenu.display      = 'Marketing';
+  marketingMenu.icon         = 'shopping_bag';
   marketingMenu.subMenus     = subMenuMarketing(integrations);
   marketingMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -121,6 +125,57 @@ function generateMarketing(integrations: Array<Integration>): Menu {
 }
 
 function subMenuMarketing(integrations: Array<Integration>): Array<SubMenu> {
+  const sm: Array<SubMenu>    = new Array<SubMenu>();
+   // Email
+  const smEmail: SubMenu    = new SubMenu();
+  smEmail.name              = 'email';
+  smEmail.display           = 'Email (i.e. MailChimp)';
+  smEmail.integrations      = new Array<Integration>();
+  integrations.forEach(i => {
+    i.tags.forEach(t => {
+      if (smEmail.name === t) {
+        smEmail.integrations.push(i);
+      }
+    });
+  });
+  sm.push(smEmail);
+  // Loyalty
+  const smLoyalty: SubMenu = new SubMenu();
+  smLoyalty.name           = 'loyalty';
+  smLoyalty.display        = 'Loyalty';
+  smLoyalty.integrations   = new Array<Integration>();
+  integrations.forEach(i => {
+    i.tags.forEach(t => {
+      if (smLoyalty.name === t) {
+        smLoyalty.integrations.push(i);
+      }
+    });
+  });
+  sm.push(smLoyalty);
+
+  return sm;
+}
+
+// LABOR
+function generateLabor(integrations: Array<Integration>): Menu {
+  const laborMenu: Menu  = new Menu();
+  laborMenu.name         = 'marketing';
+  laborMenu.display      = 'Marketing';
+  laborMenu.icon         = 'folder_open';
+  laborMenu.subMenus     = subMenuLabor(integrations);
+  laborMenu.integrations = new Array<Integration>();
+  integrations.forEach(i => {
+    i.tags.forEach(t => {
+      if (laborMenu.name === t) {
+        laborMenu.integrations.push(i);
+      }
+    });
+  });
+
+  return laborMenu;
+}
+
+function subMenuLabor(integrations: Array<Integration>): Array<SubMenu> {
   const sm: Array<SubMenu>    = new Array<SubMenu>();
    // Payroll
   const smPayroll: SubMenu    = new SubMenu();
@@ -157,6 +212,7 @@ function generatePayments(integrations: Array<Integration>): Menu {
   const paymentsMenu: Menu  = new Menu();
   paymentsMenu.name         = 'payments';
   paymentsMenu.display      = 'Payments';
+  paymentsMenu.icon         = 'credit_score';
   paymentsMenu.subMenus     = subMenuPayments(integrations);
   paymentsMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -219,6 +275,7 @@ function generateSecurity(integrations: Array<Integration>): Menu {
   const securityMenu: Menu  = new Menu();
   securityMenu.name         = 'security';
   securityMenu.display      = 'Security';
+  securityMenu.icon         = 'shield';
   securityMenu.subMenus     = subMenuSecurity(integrations);
   securityMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -265,10 +322,10 @@ function subMenuSecurity(integrations: Array<Integration>): Array<SubMenu> {
 
 // COMMUNICATIONS
 function generateCommunications(integrations: Array<Integration>): Menu {
-
   const communicationsMenu: Menu  = new Menu();
   communicationsMenu.name         = 'communications';
   communicationsMenu.display      = 'Communications';
+  communicationsMenu.icon         = 'sensors';
   communicationsMenu.subMenus     = subMenuCommunications(integrations);
   communicationsMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -306,6 +363,7 @@ function generateProductivity(integrations: Array<Integration>): Menu {
   const productivityMenu: Menu  = new Menu();
   productivityMenu.name         = 'productivity';
   productivityMenu.display      = 'Productivity';
+  productivityMenu.icon         = 'bar_chart';
   productivityMenu.subMenus     = [];
   productivityMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -324,6 +382,7 @@ function generateHotel(integrations: Array<Integration>): Menu {
   const hotelMenu: Menu  = new Menu();
   hotelMenu.name         = 'hotel';
   hotelMenu.display      = 'Hotel';
+  hotelMenu.icon         = 'hotel_class';
   hotelMenu.subMenus     = [];
   hotelMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -342,6 +401,7 @@ function generateEnterprise(integrations: Array<Integration>): Menu {
   const enterpriseMenu: Menu  = new Menu();
   enterpriseMenu.name         = 'enterprise';
   enterpriseMenu.display      = 'Enterprise';
+  enterpriseMenu.icon         = 'business';
   enterpriseMenu.subMenus     = [];
   enterpriseMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {
@@ -359,7 +419,8 @@ function generateEnterprise(integrations: Array<Integration>): Menu {
 function generateAccounting(integrations: Array<Integration>): Menu {
   const accountingMenu: Menu  = new Menu();
   accountingMenu.name         = 'accounting';
-  accountingMenu.display      = 'Accounting';
+  accountingMenu.display      = 'Accounting (i.e. QuickBooks)';
+  accountingMenu.icon         = 'account_circle';
   accountingMenu.subMenus     = [];
   accountingMenu.integrations = new Array<Integration>();
   integrations.forEach(i => {

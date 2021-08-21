@@ -7,4 +7,5 @@ export class Menu {
   display!:      string;
   integrations!: Array<Integration>;
   subMenus!:     Array<SubMenu>;
+  icon!:         string;
 }
