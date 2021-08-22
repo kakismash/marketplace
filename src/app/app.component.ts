@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
 
   onMenuNameChange(event: string): void {
     this.selectedMenu = event;
-    console.log(this.selectedMenu)
   }
 
 }
