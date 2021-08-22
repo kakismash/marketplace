@@ -1,7 +1,6 @@
 import { Menu } from './../../model/menu';
-import { IntegrationService } from './../../service/integration.service';
 import { Integration } from './../../model/integration';
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -34,11 +33,9 @@ export class IntegrationComponent implements OnInit, OnChanges {
     this.doIntegrationsCard();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes.selectedMenu.currentValue);
+  ngOnChanges(): void {
     this.integrations = new Array<Integration>();
     this.doIntegrationsCard();
-    console.log(this.integrations)
   }
 
   elevate(id: number): void {
