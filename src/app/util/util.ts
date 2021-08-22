@@ -9,25 +9,6 @@ export function mapMenu(integrations: Array<Integration>): Array<Menu> {
   return menus;
 }
 
-/*function addIntegration(menus: Array<Menu>, integration: Integration): void {
-  console.log(integration.tags)
-  integration.tags.forEach(t => {
-    for (let a = 0; a < menus.length; a++) {
-      if (menus[a].name === t) {
-        menus[a].integrations.push(integration);
-        break;
-      } else if (menus[a].subMenus.length > 0) {
-        for (let b = 0; b < menus[a].subMenus.length; b++) {
-          if (menus[a].subMenus[b].name === t) {
-            menus[a].subMenus[b].integrations.push(integration);
-            break;
-          }
-        }
-      }
-    }
-  });
-}*/
-
 function generateAll(integrations: Array<Integration>): Menu {
   const allMenu: Menu = new Menu();
   allMenu.name = 'all';
