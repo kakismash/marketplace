@@ -1,5 +1,5 @@
 .container {
-  position: absolute;
+  position: sticky;
   top: 60px;
   bottom: 0;
   left: 0;
@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 210px;
   background: rgba(224, 224, 224, 0.1);
 }
 
@@ -26,4 +26,8 @@
 
 :host ::ng-deep .mat-drawer:not(.mat-drawer-side) {
   box-shadow: none !important;
+}
+
+:host ::ng-deep .mat-drawer-container {
+  margin-top: 3.5rem !important;
 }

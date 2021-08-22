@@ -1,13 +1,13 @@
-<mat-nav-list class="margin-links">
+<mat-selection-list class="margin-links" [multiple]="false" #menuName (selectionChange)="onSelection($event)">
   <div *ngFor="let menu of menus">
-    <mat-list-item class="primary-link">
+    <mat-list-option class="primary-link" [value]="menu.name">
       <mat-icon mat-list-icon class="icon-font">
         {{ menu.icon }}
       </mat-icon>
-      <div mat-line>{{ menu.display }}</div>
-    </mat-list-item>
-    <mat-list-item *ngFor="let subMenu of menu.subMenus" class="secondary-link">
+      <div>{{ menu.display }}</div>
+    </mat-list-option>
+    <mat-list-option *ngFor="let subMenu of menu.subMenus" class="secondary-link" [value]="subMenu.name">
       {{ subMenu.display }}
-    </mat-list-item>
+    </mat-list-option>
   </div>
-</mat-nav-list>
+</mat-selection-list>

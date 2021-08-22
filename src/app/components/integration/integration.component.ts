@@ -23,18 +23,24 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class IntegrationComponent implements OnInit {
 
-  @Input() menus!: Array<Menu>;
-  elevateCard:     Array<boolean> = new Array<boolean>();
-  integrations: Array<Integration> = new Array<Integration>();
+  elevateCard:            Array<boolean>     = new Array<boolean>();
+  integrations:           Array<Integration> = new Array<Integration>();
+  @Input() menus!:        Array<Menu>;
+  @Input() selectedMenu!: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.doIntegrationsCard();
   }
 
   elevate(id: number): void {
     this.elevateCard[id] = !this.elevateCard[id];
   }
 
+  doIntegrationsCard(): void {
+    const sm: Menu = this.menus.find(m => m.name === this.selectedMenu) || new Menu();
+    this.integrations.push(...sm.integrations);
+  }
 
 }

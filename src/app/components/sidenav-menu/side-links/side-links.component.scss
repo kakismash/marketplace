@@ -1,5 +1,5 @@
 .margin-links {
-  padding-left: 7% !important;
+  padding-left: 0% !important;
   padding-top: 14% !important;
 }
 
@@ -30,4 +30,11 @@
   height: 0% !important;
   font-size: 12px;
   padding-left: 40px !important;
+}
+
+:host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content-reverse,
+.mat-list-base .mat-list-option .mat-list-item-content-reverse {
+  display: flex;
+  align-items: center;
+  align-content: center;
 }

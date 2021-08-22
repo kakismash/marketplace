@@ -1,11 +1,11 @@
 <mat-toolbar [ngClass]="scroll ? 'mdc-top-app-bar--fixed-scrolled' : 'mdc-top-app-bar--fixed'"
-             (scroll)="onScroll($event)"
-             class="d-flex flex-row justify-end align-center nav-height sticky"
->
+  (scroll)="onScroll($event)" class="d-flex flex-row justify-end align-center nav-height sticky">
   <mat-toolbar-row fxLayout fxLayoutAlign="space-between center">
-    <button fxFlex.sm="30%" fxFlex.md="30%" fxLayoutAlign="start center" mat-flat-button (click)="toggleMenu()" *ngIf="buttonMenu">
+    <button fxFlex.sm="30%" fxFlex.md="30%" fxLayoutAlign="center center" mat-flat-button (click)="toggleMenu()"
+      *ngIf="buttonMenu">
       <mat-icon>menu</mat-icon>
     </button>
-    <search-input fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xl="70%"  fxFlex.xs="100%" fxLayoutAlign="end center"></search-input>
+    <search-input fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xl="70%" fxFlex.xs="100%"
+      fxLayoutAlign="end center"></search-input>
   </mat-toolbar-row>
 </mat-toolbar>

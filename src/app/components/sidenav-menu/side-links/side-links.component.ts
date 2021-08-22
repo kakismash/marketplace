@@ -1,5 +1,5 @@
 import { Menu } from './../../../model/menu';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'side-links',
@@ -8,11 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SideLinksComponent implements OnInit {
 
-  @Input() menus!: Array<Menu>;
+  menuName:                string               = 'all';
+  @Input() menus!:         Array<Menu>;
+  @Output() menuNameEvent: EventEmitter<string> = new EventEmitter<string>();
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelection(event: any){
+    this.menuName = event.option.value;
+    this.menuNameEvent.emit(this.menuName);
   }
 
 }

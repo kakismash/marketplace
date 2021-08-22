@@ -1,6 +1,6 @@
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
-import { Component, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from "@angular/material/sidenav";
 
@@ -11,10 +11,12 @@ import { MatSidenav } from "@angular/material/sidenav";
 })
 export class SidenavMenuComponent implements OnInit {
 
-  @Input() toggle!:             boolean;
+  mode:                         boolean                 = true;
   @ViewChild('drawer') drawer!: MatSidenav;
-  mode:                         boolean      = true;
+  @Input() toggle!:             boolean;
   @Input() menus!:              Array<Menu>;
+  @Input() selectedMenu!:       string;
+  @Output() menuNameEvent:      EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private media: MediaObserver) {
     if(this.media.isActive('xs')) {
@@ -36,6 +38,10 @@ export class SidenavMenuComponent implements OnInit {
       this.toggle = true;
       this.mode   = true;
     }
+  }
+
+  onMenuNameChange(event: string): void {
+    this.menuNameEvent.emit(event);
   }
 
 }

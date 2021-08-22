@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   toggle!:      boolean;
   integrations: Array<Integration> = new Array<Integration>();
   menus:        Array<Menu>        = new Array<Menu>();
+  selectedMenu: string             = 'all';
 
   constructor(private integrationService: IntegrationService) { }
 
@@ -31,6 +32,11 @@ export class AppComponent implements OnInit {
         }, err => {
           console.log(err);
       });
+  }
+
+  onMenuNameChange(event: string): void {
+    this.selectedMenu = event;
+    console.log(this.selectedMenu)
   }
 
 }
