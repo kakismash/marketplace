@@ -1,6 +1,6 @@
 <ng-container>
-    <navbar (toggleEvent)="toggle = $event"></navbar>
-    <sidenav-menu [toggle]="toggle" *ngIf="menus.length > 0" [menus]="menus"
+    <navbar (toggleEvent)="toggle = $event"  *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"></navbar>
+    <sidenav-menu [toggle]="toggle" *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
       [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)">
     </sidenav-menu>
 </ng-container>

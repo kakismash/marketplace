@@ -56,7 +56,7 @@
       "website": "www.adp.com",
       "support": "support@adp.com",
       "tags": [
-          "labor"
+          "sales"
       ],
       "slides": null
   },
@@ -71,7 +71,7 @@
       "website": "magpiesystems.net",
       "support": "support@magpiesystems.net",
       "tags": [
-          "hotel"
+          "online_order"
       ],
       "slides": null
   },
@@ -86,9 +86,65 @@
       "website": "www.averoinc.com",
       "support": "support@averoinc.com",
       "tags": [
-          "report",
-          "enterprise"
+          "delivery",
+          "marketing"
       ],
       "slides": null
+  },
+  {
+    "integrationId": 7,
+    "name": "Avero",
+    "excerpt": "Enterprise reporting",
+    "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
+    "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
+    "company": "Avero",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
+    "website": "www.averoinc.com",
+    "support": "support@averoinc.com",
+    "tags": [
+        "email",
+        "loyalty"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 8,
+    "name": "Avero",
+    "excerpt": "Enterprise reporting",
+    "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
+    "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
+    "company": "Avero",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
+    "website": "www.averoinc.com",
+    "support": "support@averoinc.com",
+    "tags": [
+        "payroll",
+        "attendance"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 9,
+    "name": "Avero",
+    "excerpt": "Enterprise reporting",
+    "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
+    "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
+    "company": "Avero",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
+    "website": "www.averoinc.com",
+    "support": "support@averoinc.com",
+    "tags": [
+        "payments",
+        "gift",
+        "emvc",
+        "swipe_cc",
+        "security",
+        "camera",
+        "cash_management",
+        "communications",
+        "caller_id",
+        "productivity"
+    ],
+    "slides": null
   }
 ]
