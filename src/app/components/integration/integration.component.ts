@@ -1,7 +1,7 @@
 import { Menu } from './../../model/menu';
 import { IntegrationService } from './../../service/integration.service';
 import { Integration } from './../../model/integration';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -21,7 +21,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class IntegrationComponent implements OnInit {
+export class IntegrationComponent implements OnInit, OnChanges {
 
   elevateCard:            Array<boolean>     = new Array<boolean>();
   integrations:           Array<Integration> = new Array<Integration>();
@@ -32,6 +32,10 @@ export class IntegrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.doIntegrationsCard();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+
   }
 
   elevate(id: number): void {
