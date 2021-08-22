@@ -36,7 +36,9 @@ export class IntegrationComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes.selectedMenu.currentValue);
+    this.integrations = new Array<Integration>();
     this.doIntegrationsCard();
+    console.log(this.integrations)
   }
 
   elevate(id: number): void {
