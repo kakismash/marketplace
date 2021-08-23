@@ -25,6 +25,7 @@ import { NavbarMenuComponent } from './components/navbar-menu/navbar-menu.compon
 import { SearchInputComponent } from './components/navbar-menu/search-input/search-input.component';
 import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.component';
 import { SideLinksComponent } from './components/sidenav-menu/side-links/side-links.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SideLinksComponent } from './components/sidenav-menu/side-links/side-li
     NavbarMenuComponent,
     SearchInputComponent,
     SidenavMenuComponent,
-    SideLinksComponent
+    SideLinksComponent,
+    BreadcrumbComponent
   ],
   imports: [
     FlexLayoutModule,

@@ -1,6 +1,7 @@
 <div class="form-size">
   <mat-form-field appearance="legacy">
-    <input matInput placeholder="Search" [formControl]="searchControl" [matAutocomplete]="auto">
+    <input matInput placeholder="Search" [formControl]="searchControl" [matAutocomplete]="auto"
+      (keydown.enter)="searchIntegrations(searchControl.value)">
     <button mat-icon-button matSuffix>
       <mat-icon class="pointer">search</mat-icon>
     </button>

@@ -2,7 +2,7 @@ import { Menu } from './../../../model/menu';
 import { Integration } from './../../../model/integration';
 import { IntegrationService } from './../../../service/integration.service';
 import { Observable } from 'rxjs';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 
@@ -13,10 +13,12 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class SearchInputComponent implements OnInit {
 
-  searchControl:   FormControl               = new FormControl();
-  options:         Array<string>             = new Array<string>();
-  filteredOptions: Observable<Array<string>> = new Observable<Array<string>>();
-  @Input() menus!: Array<Menu>;
+  searchControl:               FormControl                      = new FormControl();
+  options:                     Array<string>                    = new Array<string>();
+  filteredOptions:             Observable<Array<string>>        = new Observable<Array<string>>();
+  integrations:                Array<Integration>               = new Array<Integration>();
+  @Input() menus!:             Array<Menu>;
+  @Output() integrationsEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
 
   constructor() {}
 
@@ -30,6 +32,7 @@ export class SearchInputComponent implements OnInit {
   }
 
   private fillOptions(): void {
+    this.options.push('all');
     this.menus.forEach(m => {
       m.integrations.forEach(i => {
         this.options.push(...i.tags);
@@ -48,6 +51,23 @@ export class SearchInputComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
+  }
+
+  searchIntegrations(value: string): void {
+    this.integrations = new Array<Integration>();
+    this.menus.forEach(m => {
+      if (m.name === value || m.display === value) {
+        this.integrations.push(...m.integrations);
+      }
+      if (m.subMenus !== undefined && m.subMenus.length > 0) {
+        m.subMenus.forEach(sm => {
+          if (sm.name === value || sm.display === value) {
+            this.integrations.push(...sm.integrations);
+          }
+        });
+      }
+    });
+    this.integrationsEvent.emit(this.integrations);
   }
 
 }

@@ -16,6 +16,7 @@ export class SidenavMenuComponent implements OnInit {
   @Input() toggle!:             boolean;
   @Input() menus!:              Array<Menu>;
   @Input() selectedMenu!:       string;
+  @Input() integrations!:       Array<Integration>;
   @Output() menuNameEvent:      EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private media: MediaObserver) {

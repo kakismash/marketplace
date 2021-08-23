@@ -38,4 +38,8 @@ export class AppComponent implements OnInit {
     this.selectedMenu = event;
   }
 
+  onIntegrationsChange(event: Array<Integration>): void {
+    this.integrations = event;
+  }
+
 }

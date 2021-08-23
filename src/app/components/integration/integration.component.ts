@@ -23,10 +23,11 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class IntegrationComponent implements OnInit, OnChanges {
 
-  elevateCard:            Array<boolean>     = new Array<boolean>();
-  integrations:           Array<Integration> = new Array<Integration>();
-  @Input() menus!:        Array<Menu>;
-  @Input() selectedMenu!: string;
+  elevateCard:             Array<boolean>     = new Array<boolean>();
+  integrations:            Array<Integration> = new Array<Integration>();
+  @Input() menus!:         Array<Menu>;
+  @Input() selectedMenu!:  string;
+  @Input() sIntegrations!: Array<Integration>;
 
   constructor() { }
 
@@ -44,18 +45,22 @@ export class IntegrationComponent implements OnInit, OnChanges {
   }
 
   doIntegrationsCard(): void {
-    this.menus.forEach(m => {
-      if (m.name === this.selectedMenu) {
-        this.integrations.push(...m.integrations);
-      }
-      if (m.subMenus !== undefined && m.subMenus.length > 0) {
-        m.subMenus.forEach(sm => {
-          if (sm.name === this.selectedMenu) {
-            this.integrations.push(...sm.integrations);
-          }
-        });
-      }
-    });
+    if (this.sIntegrations.length === undefined || this.sIntegrations.length === 0) {
+      this.menus.forEach(m => {
+        if (m.name === this.selectedMenu) {
+          this.integrations.push(...m.integrations);
+        }
+        if (m.subMenus !== undefined && m.subMenus.length > 0) {
+          m.subMenus.forEach(sm => {
+            if (sm.name === this.selectedMenu) {
+              this.integrations.push(...sm.integrations);
+            }
+          });
+        }
+      });
+    } else {
+      this.integrations = this.sIntegrations;
+    }
   }
 
 }

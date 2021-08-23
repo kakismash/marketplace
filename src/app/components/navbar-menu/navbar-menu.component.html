@@ -6,6 +6,6 @@
       <mat-icon>menu</mat-icon>
     </button>
     <search-input fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xl="70%" fxFlex.xs="100%"
-      fxLayoutAlign="end center" [menus]="menus"></search-input>
+      fxLayoutAlign="end center" [menus]="menus" (integrationsEvent)="onIntegrationsChange($event)"></search-input>
   </mat-toolbar-row>
 </mat-toolbar>

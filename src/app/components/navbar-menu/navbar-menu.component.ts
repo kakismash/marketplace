@@ -1,3 +1,4 @@
+import { Integration } from './../../model/integration';
 import { Menu } from './../../model/menu';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
@@ -11,14 +12,15 @@ import { MediaObserver } from '@angular/flex-layout';
 })
 export class NavbarMenuComponent implements OnInit {
 
-  scroll:                boolean                     = false;
-  toggle:                boolean                     = false;
-  buttonMenu!:           boolean;
-  @Input() menus!:       Array<Menu>;
-  @Output() toggleEvent: EventEmitter<boolean>       = new EventEmitter<boolean>();
-  isExtraSmall:          Observable<BreakpointState> = this.breakpointObserver.observe(
-                                                          Breakpoints.XSmall
-                                                        );
+  scroll:                      boolean                          = false;
+  toggle:                      boolean                          = false;
+  buttonMenu!:                 boolean;
+  @Input() menus!:             Array<Menu>;
+  @Output() toggleEvent:       EventEmitter<boolean>            = new EventEmitter<boolean>();
+  @Output() integrationsEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
+  isExtraSmall:                Observable<BreakpointState>      = this.breakpointObserver.observe(
+                                                                    Breakpoints.XSmall
+                                                                  );
 
   constructor(private readonly breakpointObserver: BreakpointObserver,
               private media:                       MediaObserver) {
@@ -69,6 +71,10 @@ export class NavbarMenuComponent implements OnInit {
         this.toggleEvent.emit(true)
       }
     });
+  }
+
+  onIntegrationsChange(event: Array<Integration>): void {
+    this.integrationsEvent.emit(event);
   }
 
 }
