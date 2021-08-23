@@ -61,7 +61,7 @@ export class SearchInputComponent implements OnInit {
       }
       if (m.subMenus !== undefined && m.subMenus.length > 0) {
         m.subMenus.forEach(sm => {
-          if (sm.name === value || sm.display === value) {
+          if (sm.name.includes(value) || sm.display.includes(value)) {
             this.integrations.push(...sm.integrations);
           }
         });
