@@ -56,7 +56,7 @@ export class SearchInputComponent implements OnInit {
   searchIntegrations(value: string): void {
     this.integrations = new Array<Integration>();
     this.menus.forEach(m => {
-      if (m.name === value || m.display === value) {
+      if (m.name.includes(value) || m.display.includes(value)) {
         this.integrations.push(...m.integrations);
       }
       if (m.subMenus !== undefined && m.subMenus.length > 0) {
