@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
@@ -28,7 +29,7 @@ export class IntegrationComponent implements OnInit, OnChanges {
   @Input() selectedMenu!:  string;
   @Input() sIntegrations!: Array<Integration>;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.doIntegrationsCard();
@@ -45,22 +46,23 @@ export class IntegrationComponent implements OnInit, OnChanges {
 
   doIntegrationsCard(): void {
     this.integrations = new Array<Integration>();
-    if (this.sIntegrations === undefined || this.sIntegrations.length === 0) {
+    let menuName: string;
+    this.activatedRoute.params.subscribe(params => {
+      menuName = params['menuName'];
       this.menus.forEach(m => {
-        if (m.name === this.selectedMenu) {
+        if (m.name === menuName) {
           this.integrations.push(...m.integrations);
         }
         if (m.subMenus !== undefined && m.subMenus.length > 0) {
           m.subMenus.forEach(sm => {
-            if (sm.name === this.selectedMenu) {
+            if (sm.name === menuName) {
               this.integrations.push(...sm.integrations);
             }
           });
         }
       });
-    } else {
-      this.integrations = this.sIntegrations;
-    }
+    });
+
   }
 
 }
