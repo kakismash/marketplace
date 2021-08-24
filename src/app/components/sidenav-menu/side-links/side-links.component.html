@@ -1,14 +1,16 @@
 <mat-selection-list class="margin-links" [multiple]="false" #menuName (selectionChange)="onSelection($event)">
   <div *ngFor="let menu of menus">
     <mat-list-option *ngIf="menu.integrations !== undefined && menu.integrations.length > 0"
-      class="primary-link" [value]="menu.name" [selected]="menu.name === 'all' ? true : false">
+      class="primary-link" [value]="menu.name" [selected]="menu.name === 'all' ? true : false"
+      routerLink="/">
       <mat-icon mat-list-icon class="icon-font">
         {{ menu.icon }}
       </mat-icon>
       <div>{{ menu.display }}</div>
     </mat-list-option>
     <div *ngFor="let subMenu of menu.subMenus">
-      <mat-list-option class="secondary-link" *ngIf="subMenu.integrations !== undefined && subMenu.integrations.length > 0" [value]="subMenu.name">
+      <mat-list-option class="secondary-link" *ngIf="subMenu.integrations !== undefined && subMenu.integrations.length > 0"
+        [value]="subMenu.name" routerLink="/">
         {{ subMenu.display }}
       </mat-list-option>
     </div>

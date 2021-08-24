@@ -13,10 +13,7 @@ export class FullIntegrationComponent implements OnInit {
   integration: Integration = new Integration();
 
   constructor(private integrationService: IntegrationService,
-              private activatedRoute:     ActivatedRoute) {
-
-
-  }
+              private activatedRoute:     ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loadIntegration();
@@ -32,7 +29,6 @@ export class FullIntegrationComponent implements OnInit {
           });
           this.integration = new Integration();
           this.integration = rIntegrations.find(i => i.integrationId === id) || new Integration();
-
         }, err => {
           console.log(err);
       });

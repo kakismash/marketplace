@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Menu } from './../../../model/menu';
 import { Integration } from './../../../model/integration';
 import { Observable } from 'rxjs';
@@ -19,7 +20,7 @@ export class SearchInputComponent implements OnInit {
   @Input() menus!:             Array<Menu>;
   @Output() integrationsEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.fillOptions();
@@ -76,6 +77,7 @@ export class SearchInputComponent implements OnInit {
       }
     });
     this.integrationsEvent.emit(this.integrations);
+    this.router.navigate(['/']);
   }
 
 }
