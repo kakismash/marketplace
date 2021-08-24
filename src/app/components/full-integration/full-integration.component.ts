@@ -31,7 +31,6 @@ export class FullIntegrationComponent implements OnInit {
             id = +params['integrationId'];
           });
           this.integration = new Integration();
-          debugger;
           this.integration = rIntegrations.find(i => i.integrationId === id) || new Integration();
 
         }, err => {

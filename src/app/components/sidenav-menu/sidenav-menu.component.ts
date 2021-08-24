@@ -3,6 +3,7 @@ import { Integration } from './../../model/integration';
 import { Component, HostListener, Input, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from "@angular/material/sidenav";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sidenav-menu',
@@ -19,7 +20,8 @@ export class SidenavMenuComponent implements OnInit {
   @Input() sIntegrations!:      Array<Integration>;
   @Output() menuNameEvent:      EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private media: MediaObserver) {
+  constructor(private media: MediaObserver,
+              private router: Router) {
     if(this.media.isActive('xs')) {
       this.mode = false;
     }
@@ -47,6 +49,11 @@ export class SidenavMenuComponent implements OnInit {
 
   onIntegrationsSearchChange(event: Array<Integration>): void {
     this.sIntegrations = event;
+  }
+
+  isFullIntegration(): boolean {
+    console.log(this.router.url);
+    return this.router.url.includes('integration/');
   }
 
 }
