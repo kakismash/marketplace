@@ -26,6 +26,7 @@ import { SearchInputComponent } from './components/navbar-menu/search-input/sear
 import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.component';
 import { SideLinksComponent } from './components/sidenav-menu/side-links/side-links.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { FullIntegrationComponent } from './components/full-integration/full-integration.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     SearchInputComponent,
     SidenavMenuComponent,
     SideLinksComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    FullIntegrationComponent
   ],
   imports: [
     FlexLayoutModule,

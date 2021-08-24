@@ -1,6 +1,5 @@
 import { Menu } from './../../../model/menu';
 import { Integration } from './../../../model/integration';
-import { IntegrationService } from './../../../service/integration.service';
 import { Observable } from 'rxjs';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -60,6 +59,13 @@ export class SearchInputComponent implements OnInit {
     this.menus.forEach(m => {
       if (m.name.includes(value) || m.display.includes(value)) {
         this.integrations.push(...m.integrations);
+      }
+      if (m.name === 'all') {
+        m.integrations.forEach(i => {
+          if (i.name.includes(value)) {
+            this.integrations.push(i);
+          }
+        });
       }
       if (m.subMenus !== undefined && m.subMenus.length > 0) {
         m.subMenus.forEach(sm => {

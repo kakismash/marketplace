@@ -16,4 +16,5 @@ export class IntegrationService {
   load(): Observable<Array<Integration>> {
     return this.http.get<Array<Integration>>(this.path);
   }
+
 }

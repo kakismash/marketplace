@@ -2,7 +2,8 @@
   <mat-card fxFlexAlign="space-between" fxFlex.lg="30%" fxFlex.sm="45%" fxFlex.md="30%" fxFlex.xl="30%" mat-ripple
     [matRippleColor]="'#f0f0f06b'" *ngFor="let integration of integrations; let index=index"
     (mouseover)="elevateCard[index]=true" (mouseout)="elevateCard[index]=false"
-    class="outlined-card pa-5 ma-5 mb-3 pb-0" [@elevateCard]="elevateCard[index]">
+    class="outlined-card pa-5 ma-5 mb-3 pb-0" [@elevateCard]="elevateCard[index]"
+    routerLink="/integration/{{ integration.integrationId }}">
     <div>
       <!-- Fix margin botton for mat-ripple -->
       <mat-card-header class="card-header">
