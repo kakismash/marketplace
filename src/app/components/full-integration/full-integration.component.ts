@@ -28,9 +28,10 @@ export class FullIntegrationComponent implements OnInit {
         .load()
         .subscribe(rIntegrations => {
           this.activatedRoute.params.subscribe(params => {
-            id = params['integrationId'];
+            id = +params['integrationId'];
           });
           this.integration = new Integration();
+          debugger;
           this.integration = rIntegrations.find(i => i.integrationId === id) || new Integration();
 
         }, err => {
