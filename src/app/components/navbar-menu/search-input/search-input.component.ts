@@ -32,20 +32,22 @@ export class SearchInputComponent implements OnInit {
   }
 
   private fillOptions(): void {
-    this.options.push('all');
     this.menus.forEach(m => {
-      m.integrations.forEach(i => {
-        this.options.push(...i.tags);
-        this.options.push(i.name);
-        if (m.subMenus !== undefined && m.subMenus.length > 0) {
-          m.subMenus.forEach(sm => {
-            sm.integrations.forEach(i => {
-              this.options.push(...i.tags);
-              this.options.push(i.name);
-            });
+      if (m.integrations.length > 0) {
+        this.options.push(m.name);
+        if (m.name === 'all') {
+          m.integrations.forEach(i => {
+            this.options.push(i.name);
           });
         }
-      });
+      }
+      if (m.subMenus !== undefined && m.subMenus.length > 0) {
+        m.subMenus.forEach(sm => {
+          if (sm.integrations.length > 0) {
+            this.options.push(sm.name);
+          }
+        });
+      }
     });
     this.filteredOptions = this.searchControl.valueChanges.pipe(
       startWith(''),

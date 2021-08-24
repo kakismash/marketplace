@@ -12,9 +12,10 @@ import { mapMenu } from './util/util';
 export class AppComponent implements OnInit {
 
   toggle!:      boolean;
-  integrations: Array<Integration> = new Array<Integration>();
-  menus:        Array<Menu>        = new Array<Menu>();
-  selectedMenu: string             = 'all';
+  integrations: Array<Integration>  = new Array<Integration>();
+  sIntegrations: Array<Integration> = new Array<Integration>();
+  menus:        Array<Menu>         = new Array<Menu>();
+  selectedMenu: string              = 'all';
 
   constructor(private integrationService: IntegrationService) { }
 
@@ -27,8 +28,8 @@ export class AppComponent implements OnInit {
         .load()
         .subscribe(rIntegrations => {
           this.integrations = new Array<Integration>();
-          Object.assign(this.integrations, rIntegrations);
-          this.menus = mapMenu(this.integrations);
+          this.integrations = rIntegrations;
+          this.menus        = mapMenu(this.integrations);
         }, err => {
           console.log(err);
       });
@@ -39,7 +40,7 @@ export class AppComponent implements OnInit {
   }
 
   onIntegrationsChange(event: Array<Integration>): void {
-    this.integrations = event;
+    this.sIntegrations = event;
   }
 
 }

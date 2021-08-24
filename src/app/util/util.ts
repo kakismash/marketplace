@@ -15,9 +15,7 @@ function generateAll(integrations: Array<Integration>): Menu {
   allMenu.display      = 'All'
   allMenu.icon         = 'apps';
   allMenu.integrations = new Array<Integration>();
-  integrations.forEach(i => {
-    allMenu.integrations.push(i);
-  });
+  allMenu.integrations.push(...integrations);
   return allMenu;
 }
 

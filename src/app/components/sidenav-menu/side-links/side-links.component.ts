@@ -1,3 +1,4 @@
+import { Integration } from './../../../model/integration';
 import { Menu } from './../../../model/menu';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
@@ -8,10 +9,10 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SideLinksComponent implements OnInit {
 
-  menuName:                string               = 'all';
-  @Input() menus!:         Array<Menu>;
-  @Output() menuNameEvent: EventEmitter<string> = new EventEmitter<string>();
-
+  menuName:                          string                           = 'all';
+  @Input() menus!:                   Array<Menu>;
+  @Output() menuNameEvent:           EventEmitter<string>             = new EventEmitter<string>();
+  @Output() integrationsSearchEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
 
   constructor() { }
 
@@ -21,6 +22,7 @@ export class SideLinksComponent implements OnInit {
   onSelection(event: any){
     this.menuName = event.option.value;
     this.menuNameEvent.emit(this.menuName);
+    this.integrationsSearchEvent.emit([]);
   }
 
 }

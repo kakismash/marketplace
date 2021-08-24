@@ -1,4 +1,3 @@
-import { SubMenu } from './../../model/sub-menu';
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
@@ -45,7 +44,8 @@ export class IntegrationComponent implements OnInit, OnChanges {
   }
 
   doIntegrationsCard(): void {
-    if (this.sIntegrations.length === undefined || this.sIntegrations.length === 0) {
+    this.integrations = new Array<Integration>();
+    if (this.sIntegrations === undefined || this.sIntegrations.length === 0) {
       this.menus.forEach(m => {
         if (m.name === this.selectedMenu) {
           this.integrations.push(...m.integrations);

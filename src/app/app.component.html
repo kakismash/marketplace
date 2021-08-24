@@ -3,6 +3,6 @@
       (integrationsEvent)="onIntegrationsChange($event)">
     </navbar>
     <sidenav-menu [toggle]="toggle" *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
-      [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)" [integrations]="integrations">
+      [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)" [sIntegrations]="sIntegrations">
     </sidenav-menu>
 </ng-container>

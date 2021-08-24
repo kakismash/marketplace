@@ -1,6 +1,7 @@
 <mat-selection-list class="margin-links" [multiple]="false" #menuName (selectionChange)="onSelection($event)">
   <div *ngFor="let menu of menus">
-    <mat-list-option *ngIf="menu.integrations !== undefined && menu.integrations.length > 0" class="primary-link" [value]="menu.name">
+    <mat-list-option *ngIf="menu.integrations !== undefined && menu.integrations.length > 0"
+      class="primary-link" [value]="menu.name" [selected]="menu.name === 'all' ? true : false">
       <mat-icon mat-list-icon class="icon-font">
         {{ menu.icon }}
       </mat-icon>
