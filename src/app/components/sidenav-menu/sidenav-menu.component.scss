@@ -32,3 +32,9 @@
   margin-top: 3.5rem !important;
   height: 100% !important;
 }
+
+:host ::ng-deep .mat-drawer-content {
+  height: 100vh !important;
+  max-height: 100% !important;
+  background-color: white;
+}

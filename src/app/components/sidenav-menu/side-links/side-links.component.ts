@@ -13,6 +13,7 @@ export class SideLinksComponent implements OnInit {
   @Input() menus!:                   Array<Menu>;
   @Output() menuNameEvent:           EventEmitter<string>             = new EventEmitter<string>();
   @Output() integrationsSearchEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
+  @Output() integrationEmptyEvent:   EventEmitter<Integration>        = new EventEmitter<Integration>();
 
   constructor() { }
 
@@ -23,6 +24,7 @@ export class SideLinksComponent implements OnInit {
     this.menuName = event.option.value;
     this.menuNameEvent.emit(this.menuName);
     this.integrationsSearchEvent.emit([]);
+    this.integrationEmptyEvent.emit(new Integration());
   }
 
 }

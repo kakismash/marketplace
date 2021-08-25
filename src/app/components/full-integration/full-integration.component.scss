@@ -1,0 +1,120 @@
+.sticky {
+  background-color: white !important;
+  position: fixed !important;
+  position: -webkit-sticky !important;
+  /* For macOS/iOS Safari */
+  top: 64px;
+  /* Sets the sticky toolbar to be on top */
+  z-index: 999;
+  /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+@media all and (max-width: 500px) {
+  .sticky {
+    top: 56px
+  }
+}
+
+.box {
+  margin: 5px;
+  width: 50px;
+  height: auto;
+  background: none;
+  overflow: hidden;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+}
+
+.box-content {
+  margin: 5px;
+  width: 70px;
+  height: auto;
+  background: none;
+  overflow: hidden;
+}
+
+.box-content img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-size: 28px;
+  font-family: 'Work Sans', sans-serif !important;
+  font-weight: 600;
+  color: rgb(49, 49, 49);
+}
+
+.link {
+  color: rgb(0, 132, 255);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.description {
+  padding-left: 82px;
+}
+
+.get-button {
+  background: var(--wsr-color-20, #4eb7f5);
+  padding: 1px 30px;
+  border-radius: 3em;
+  font-size: 16px;
+  color: #333333;
+  border-color: var(--wsr-color-20, #4eb7f5);
+  color: var(--wsr-text-color-primary-light, #fff);
+  font-weight: 300;
+  transition: all .2s ease-in;
+
+  &:hover {
+    background: var(--wsr-color-20, #3e96c9);
+    border-color: var(--wsr-color-20, #3e96c9);
+    cursor: pointer;
+  }
+}
+
+.get-button-big {
+  background: var(--wsr-color-20, #4eb7f5);
+  padding: 7px 40px;
+  border-radius: 3em;
+  font-size: 16px;
+  color: #333333;
+  border-color: var(--wsr-color-20, #4eb7f5);
+  color: var(--wsr-text-color-primary-light, #fff);
+  font-weight: 300;
+  transition: all .2s ease-in;
+
+  &:hover {
+    background: var(--wsr-color-20, #3e96c9);
+    border-color: var(--wsr-color-20, #3e96c9);
+    cursor: pointer;
+  }
+}
+
+.video-placeholder {
+  height: calc(100vh/3);
+  background: azure;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-description {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+section.content {
+  background-color: white;
+  margin-top: -30px;
+}

@@ -3,7 +3,7 @@
     [matRippleColor]="'#f0f0f06b'" *ngFor="let integration of integrations; let index=index"
     (mouseover)="elevateCard[index]=true" (mouseout)="elevateCard[index]=false"
     class="outlined-card pa-5 ma-5 mb-3 pb-0" [@elevateCard]="elevateCard[index]"
-    routerLink="/integration/{{ integration.integrationId }}">
+    (click)="fullIntegration(integration)">
     <div>
       <!-- Fix margin botton for mat-ripple -->
       <mat-card-header class="card-header">

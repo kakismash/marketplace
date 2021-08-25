@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Menu } from './../../../model/menu';
 import { Integration } from './../../../model/integration';
 import { Observable } from 'rxjs';
@@ -13,14 +12,15 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class SearchInputComponent implements OnInit {
 
-  searchControl:               FormControl                      = new FormControl();
-  options:                     Array<string>                    = new Array<string>();
-  filteredOptions:             Observable<Array<string>>        = new Observable<Array<string>>();
-  integrations:                Array<Integration>               = new Array<Integration>();
-  @Input() menus!:             Array<Menu>;
-  @Output() integrationsEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
+  searchControl:                   FormControl                      = new FormControl();
+  options:                         Array<string>                    = new Array<string>();
+  filteredOptions:                 Observable<Array<string>>        = new Observable<Array<string>>();
+  integrations:                    Array<Integration>               = new Array<Integration>();
+  @Input() menus!:                 Array<Menu>;
+  @Output() integrationsEvent:     EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
+  @Output() integrationEmptyEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.fillOptions();
@@ -76,8 +76,8 @@ export class SearchInputComponent implements OnInit {
         });
       }
     });
+    this.integrationEmptyEvent.emit(new Integration());
     this.integrationsEvent.emit(this.integrations);
-    this.router.navigate(['/']);
   }
 
 }

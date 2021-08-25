@@ -12,16 +12,17 @@ import { Router } from '@angular/router';
 })
 export class SidenavMenuComponent implements OnInit {
 
-  mode:                         boolean                 = true;
+  mode:                         boolean              = true;
+  integration:                  Integration          = new Integration();
   @ViewChild('drawer') drawer!: MatSidenav;
   @Input() toggle!:             boolean;
   @Input() menus!:              Array<Menu>;
   @Input() selectedMenu!:       string;
   @Input() sIntegrations!:      Array<Integration>;
+  @Input() eIntegration!:       Integration;
   @Output() menuNameEvent:      EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private media: MediaObserver,
-              private router: Router) {
+  constructor(private media: MediaObserver) {
     if(this.media.isActive('xs')) {
       this.mode = false;
     }
@@ -51,8 +52,17 @@ export class SidenavMenuComponent implements OnInit {
     this.sIntegrations = event;
   }
 
-  isFullIntegration(): boolean {
-    return this.router.url.includes('integration/');
+  fullIntegration(event: Integration): void {
+    this.integration = new Integration();
+    this.integration = event;
+  }
+
+  isIntegrationEmpty(integration: Integration): boolean {
+    return Object.keys(integration).length === 0;
+  }
+
+  onIntegrationEmpty(event: Integration): void {
+    this.integration = event;
   }
 
 }

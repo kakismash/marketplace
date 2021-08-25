@@ -1,1 +1,62 @@
-<p>{{integration.integrationId}}</p>
+<mat-toolbar (scroll)="onScroll($event)" class="sticky" *ngIf="scroll">
+  <mat-toolbar-row fxLayout fxLayoutAlign="space-between center">
+    <div fxFlex.sm="50%" fxFlex="100%" fxLayoutAlign="start center">
+      <div class="box">
+        <img [src]="integration.logo" [alt]="integration.name" />
+      </div>
+      <span>{{integration.name}}</span>
+    </div>
+    <div fxFlex.sm="50%" fxFlex="100%" fxLayoutAlign="center center">
+      <div class="get-button" mat-ripple [matRippleColor]="'#f0f0f06b'">Get</div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<section class="content pa-5">
+  <div fxLayout="row wrap" fxLayoutAlign="center start">
+    <div fxFlex="100%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.xl="50%" class="mt-5">
+      <div fxLayoutAlign="start end">
+        <div class="box-content pa-2">
+          <img [src]=" integration.logo" [alt]="integration.name" />
+        </div>
+        <div>
+          <p class="pa-0 ma-0 title">{{ integration.name }}</p>
+          <p class="pa-0 ma-0">by: <a [href]="integration.website" class="link">
+              {{ integration.company }}</a>
+          </p>
+        </div>
+      </div>
+
+      <div fxLayout="column">
+        <div fxFlex.sm="100%" fxFlex="100%" fxLayoutAlign="start end" class="description pa-5">
+          <p>
+            {{ integration.excerpt  }}
+          </p>
+        </div>
+        <div fxFlex.sm="100%" fxFlex="100%" fxLayoutAlign="center center">
+          <div class="get-button-big" mat-ripple [matRippleColor]="'#f0f0f06b'">Get</div>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="100%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.xl="50%" class="mt-5 video-placeholder">
+      <div>
+        <p> VIDEO </p>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="column" class="mt-10">
+    <div fxFlex="100%">
+      <p class="full-description">Description</p>
+      <p class="justify-text">
+        {{ integration.description  }}
+      </p>
+    </div>
+    <div class="d-flex">
+      <p class="pr-1 ma-0">
+        Support:
+      </p>
+      <p class="pa-0 ma-0">
+        <a>{{ integration.support  }}</a>
+      </p>
+    </div>
+  </div>
+</section>

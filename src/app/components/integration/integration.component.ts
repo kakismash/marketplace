@@ -1,7 +1,6 @@
-import { ActivatedRoute } from '@angular/router';
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -23,13 +22,15 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class IntegrationComponent implements OnInit, OnChanges {
 
-  elevateCard:             Array<boolean>     = new Array<boolean>();
-  integrations:            Array<Integration> = new Array<Integration>();
-  @Input() menus!:         Array<Menu>;
-  @Input() selectedMenu!:  string;
-  @Input() sIntegrations!: Array<Integration>;
+  elevateCard:                        Array<boolean>            = new Array<boolean>();
+  integrations:                       Array<Integration>        = new Array<Integration>();
+  @Input() menus!:                    Array<Menu>;
+  @Input() selectedMenu!:             string;
+  @Input() sIntegrations!:            Array<Integration>;
+  @Input() eIntegration!:             Integration;
+  @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.doIntegrationsCard();
@@ -46,23 +47,26 @@ export class IntegrationComponent implements OnInit, OnChanges {
 
   doIntegrationsCard(): void {
     this.integrations = new Array<Integration>();
-    let menuName: string;
-    this.activatedRoute.params.subscribe(params => {
-      menuName = params['menuName'];
+    if (this.sIntegrations === undefined || this.sIntegrations.length === 0) {
       this.menus.forEach(m => {
-        if (m.name === menuName) {
+        if (m.name === this.selectedMenu) {
           this.integrations.push(...m.integrations);
         }
         if (m.subMenus !== undefined && m.subMenus.length > 0) {
           m.subMenus.forEach(sm => {
-            if (sm.name === menuName) {
+            if (sm.name === this.selectedMenu) {
               this.integrations.push(...sm.integrations);
             }
           });
         }
       });
-    });
+    } else {
+      this.integrations = this.sIntegrations;
+    }
+  }
 
+  fullIntegration(integration: Integration): void {
+    this.integrationSelectedEvent.emit(integration);
   }
 
 }

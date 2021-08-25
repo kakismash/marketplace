@@ -1,37 +1,30 @@
 import { Integration } from './../../model/integration';
-import { IntegrationService } from './../../service/integration.service';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-full-integration',
+  selector: 'full-integration',
   templateUrl: './full-integration.component.html',
   styleUrls: ['./full-integration.component.scss']
 })
 export class FullIntegrationComponent implements OnInit {
 
-  integration: Integration = new Integration();
+  scroll:                 boolean     = false;
+  @Input() integration!:  Integration;
+  @Input() eIntegration!: Integration;
 
-  constructor(private integrationService: IntegrationService,
-              private activatedRoute:     ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.loadIntegration();
   }
 
-  private loadIntegration(): void {
-    let id: number;
-    this.integrationService
-        .load()
-        .subscribe(rIntegrations => {
-          this.activatedRoute.params.subscribe(params => {
-            id = +params['integrationId'];
-          });
-          this.integration = new Integration();
-          this.integration = rIntegrations.find(i => i.integrationId === id) || new Integration();
-        }, err => {
-          console.log(err);
-      });
+  @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll(event: any): void {
+    const value = event.target.scrollingElement.scrollTop;
+    if (value >= 100) {
+      this.scroll = true;
+    } else {
+      this.scroll = false;
+    }
   }
 
 }

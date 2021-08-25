@@ -12,15 +12,16 @@ import { MediaObserver } from '@angular/flex-layout';
 })
 export class NavbarMenuComponent implements OnInit {
 
-  scroll:                      boolean                          = false;
-  toggle:                      boolean                          = false;
-  buttonMenu!:                 boolean;
-  @Input() menus!:             Array<Menu>;
-  @Output() toggleEvent:       EventEmitter<boolean>            = new EventEmitter<boolean>();
-  @Output() integrationsEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
-  isExtraSmall:                Observable<BreakpointState>      = this.breakpointObserver.observe(
-                                                                    Breakpoints.XSmall
-                                                                  );
+  scroll:                          boolean                          = false;
+  toggle:                          boolean                          = false;
+  buttonMenu!:                     boolean;
+  @Input() menus!:                 Array<Menu>;
+  @Output() toggleEvent:           EventEmitter<boolean>            = new EventEmitter<boolean>();
+  @Output() integrationsEvent:     EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
+  @Output() integrationEmptyEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
+  isExtraSmall:                    Observable<BreakpointState>      = this.breakpointObserver.observe(
+                                                                        Breakpoints.XSmall
+                                                                      );
 
   constructor(private readonly breakpointObserver: BreakpointObserver,
               private media:                       MediaObserver) {
@@ -75,6 +76,10 @@ export class NavbarMenuComponent implements OnInit {
 
   onIntegrationsChange(event: Array<Integration>): void {
     this.integrationsEvent.emit(event);
+  }
+
+  onIntegrationEmpty(event: Integration): void {
+    this.integrationEmptyEvent.emit(event);
   }
 
 }

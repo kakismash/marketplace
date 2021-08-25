@@ -1,8 +1,11 @@
-<ng-container>
-    <navbar (toggleEvent)="toggle = $event"  *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
-      (integrationsEvent)="onIntegrationsChange($event)">
+<ng-container fluid>
+  <div fxLayout="column">
+    <navbar (toggleEvent)="toggle = $event" *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
+      (integrationsEvent)="onIntegrationsChange($event)" (integrationEmptyEvent)="onIntegrationEmpty($event)">
     </navbar>
     <sidenav-menu [toggle]="toggle" *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
-      [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)" [sIntegrations]="sIntegrations">
+      [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)" [sIntegrations]="sIntegrations"
+      [eIntegration]="eIntegration">
     </sidenav-menu>
+  </div>
 </ng-container>
