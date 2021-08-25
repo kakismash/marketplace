@@ -6,9 +6,11 @@
       <mat-icon class="pointer">search</mat-icon>
     </button>
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        <p class="ma-0 pa-0">{{ option }}</p>
-      </mat-option>
+      <div *ngIf="searchControl.value !== null">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          <p class="ma-0 pa-0">{{ option }}</p>
+        </mat-option>
+      </div>
     </mat-autocomplete>
   </mat-form-field>
 </div>

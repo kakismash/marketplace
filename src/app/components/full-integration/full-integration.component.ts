@@ -10,7 +10,6 @@ export class FullIntegrationComponent implements OnInit {
 
   scroll:                 boolean     = false;
   @Input() integration!:  Integration;
-  @Input() eIntegration!: Integration;
 
   constructor() { }
 
