@@ -1,6 +1,6 @@
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
-import { Component, HostListener, Input, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, Input, OnInit, ViewChild, Output, EventEmitter, OnChanges } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from "@angular/material/sidenav";
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './sidenav-menu.component.html',
   styleUrls: ['./sidenav-menu.component.scss']
 })
-export class SidenavMenuComponent implements OnInit {
+export class SidenavMenuComponent implements OnInit, OnChanges {
 
   mode:                         boolean              = true;
   integration:                  Integration          = new Integration();
@@ -29,6 +29,12 @@ export class SidenavMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(): void {
+    if (this.eIntegration !== undefined && Object.keys(this.eIntegration).length === 0) {
+      this.integration = this.eIntegration;
+    }
   }
 
   @HostListener('window:resize', ['$event'])

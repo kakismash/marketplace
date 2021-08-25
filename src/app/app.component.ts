@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   sIntegrations: Array<Integration> = new Array<Integration>();
   menus:         Array<Menu>        = new Array<Menu>();
   selectedMenu:  string             = 'all';
-  eIntegration:  Integration        = new Integration();
+  eIntegration!: Integration;
 
   constructor(private integrationService: IntegrationService) { }
 
