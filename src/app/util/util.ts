@@ -31,6 +31,7 @@ function generateMenus(integrations: Array<Integration>): Array<Menu> {
   menus.push(generateHotel(integrations));
   menus.push(generateEnterprise(integrations));
   menus.push(generateAccounting(integrations));
+  menus.push(generateReport(integrations));
   return menus;
 }
 
@@ -426,4 +427,23 @@ function generateAccounting(integrations: Array<Integration>): Menu {
   });
 
   return accountingMenu;
+}
+
+// REPORT
+function generateReport(integrations: Array<Integration>): Menu {
+  const reportMenu: Menu  = new Menu();
+  reportMenu.name         = 'report';
+  reportMenu.display      = 'Report';
+  reportMenu.icon         = 'manage_search';
+  reportMenu.subMenus     = [];
+  reportMenu.integrations = new Array<Integration>();
+  integrations.forEach(i => {
+    i.tags.forEach(t => {
+      if (reportMenu.name === t) {
+        reportMenu.integrations.push(i);
+      }
+    });
+  });
+
+  return reportMenu;
 }

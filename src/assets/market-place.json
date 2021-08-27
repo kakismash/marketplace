@@ -10,7 +10,7 @@
         "website": "www.adp.com",
         "support": "support@adp.com",
         "tags": [
-            "labor"
+            "payroll"
         ],
         "slides": null
     },
@@ -47,14 +47,14 @@
     },
     {
       "integrationId": 4,
-      "name": "Export P",
-      "excerpt": "Payroll processing",
-      "description": "Export of time & attendance data which can be directly imported to ADP for payroll processing",
-      "logo": "http://localhost:4200/assets/images/logos/ADP.jpeg",
-      "company": "ADP",
+      "name": "Arrive Logistics",
+      "excerpt": "Sales enterprise",
+      "description": "Arrive Logistics is a leading freight brokerage delivering unparalleled service, seamless tech capabilities and custom strategic solutions. After seven years of investing in what others overlook, our partners have made Arrive one of the fastest-growing freight brokerages of all time.",
+      "logo": "http://localhost:4200/assets/images/logos/arrive_logistic.png",
+      "company": "Arrive Logistics",
       "companyLogo": "https://secure.ordyx.com/i/integrationLogos/adp.jpg",
-      "website": "www.adp.com",
-      "support": "support@adp.com",
+      "website": "www.arrivelogistics.com",
+      "support": "support@arrivelogistics.com",
       "tags": [
           "sales"
       ],
@@ -62,172 +62,293 @@
   },
   {
       "integrationId": 5,
-      "name": "Sold MagPie",
-      "excerpt": "Property Management System",
-      "description": "Magpie Property Management Software - A cost effective, internet-based property management software for the hospitality industry, customized for hotels, motels, condo-hotels, timeshares, inns and vacation home rentals. Our software is your one solution to property management, reservations and accounting. \n\nOur property management software features include: \nAccounting - Magpie PMS is the only online property management software that is fully and seamlessly integrated with QuickBooks Online, a full-featured industry standard accounting system with payroll.\n \nWebsite Booking Engine - Magpie PMS ties directly into your website, eliminating the possibility of double-bookings.\n \nHousekeeping, Maintenance and Security - Run your entire business with Magpie Property Management Software.",
-      "logo": "http://localhost:4200/assets/images/logos/MAGPIE.jpeg",
-      "company": "MagPie",
+      "name": "TARGET",
+      "excerpt": "Online order",
+      "description": "Get groceries, essentials & more delivered to your door.",
+      "logo": "http://localhost:4200/assets/images/logos/target.jpg",
+      "company": "TARGET",
       "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
-      "website": "magpiesystems.net",
-      "support": "support@magpiesystems.net",
+      "website": "www.target.com",
+      "support": "support@target.com",
       "tags": [
-          "online_order",
-          "accounting"
+          "online_order"
       ],
       "slides": null
   },
   {
       "integrationId": 6,
-      "name": "Blue Avero",
-      "excerpt": "Enterprise reporting",
-      "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
-      "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
-      "company": "Avero",
+      "name": "USPS",
+      "excerpt": "Shipping",
+      "description": "Explore Our Shipping and Mailing Services From Boxes to Stamps! Learn More. Save Time by Accessing the Many Services of the United States Postal Service at USPS.com.",
+      "logo": "http://localhost:4200/assets/images/logos/usps.svg",
+      "company": "USPS",
       "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
-      "website": "www.averoinc.com",
-      "support": "support@averoinc.com",
+      "website": "www.usps.com",
+      "support": "support@usps.com",
       "tags": [
-          "delivery",
-          "marketing"
+          "delivery"
       ],
       "slides": null
   },
   {
     "integrationId": 7,
-    "name": "Sold Avero",
-    "excerpt": "Enterprise reporting",
-    "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
-    "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
-    "company": "Avero",
+    "name": "Hibu",
+    "excerpt": "Internet Services Company",
+    "description": "Hibu, formerly Yell Group plc, is a multinational directories and internet services company headquartered in Reading, Berkshire, UK. It has operations in the United Kingdom, the United States, and Spain. It has its origins in the yellow pages division of the privatised British telecommunications operator BT Group.",
+    "logo": "http://localhost:4200/assets/images/logos/hibu.jpg",
+    "company": "Hibu",
     "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
-    "website": "www.averoinc.com",
-    "support": "support@averoinc.com",
+    "website": "www.hibu.com",
+    "support": "support@hibu.com",
     "tags": [
-        "email",
-        "loyalty"
+        "marketing"
     ],
     "slides": null
   },
   {
     "integrationId": 8,
-    "name": " Rent Avero",
-    "excerpt": "Enterprise reporting",
-    "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
-    "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
-    "company": "Avero",
+    "name": "Data Axle",
+    "excerpt": "Email Marketing Lists",
+    "description": "Data Axle USA’s Business and Consumer Databases Have Been America’s Trusted Data Source Since 1972",
+    "logo": "http://localhost:4200/assets/images/logos/data-axle.png",
+    "company": "Data Axle",
     "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
-    "website": "www.averoinc.com",
-    "support": "support@averoinc.com",
+    "website": "www.dataaxleusa.com",
+    "support": "support@dataaxleusa.com",
     "tags": [
-        "payroll",
-        "attendance"
+        "email"
     ],
     "slides": null
   },
   {
     "integrationId": 9,
-    "name": "Suscribe Avero",
+    "name": "ACB COOP",
     "excerpt": "Enterprise reporting",
-    "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
-    "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
-    "company": "Avero",
-    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
-    "website": "www.averoinc.com",
-    "support": "support@averoinc.com",
+    "description": "ACB Develops & Administers Manufacturer Rebate Programs. Contact Us for More Information. Let ACB Demonstrate How Branded Rewards Maintain Ongoing Relationships & Increase Loyalty.",
+    "logo": "http://localhost:4200/assets/images/logos/acbcoop.jpg",
+    "company": "ACB COOP",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/acbcoop.png",
+    "website": "www.acbcoop.com",
+    "support": "support@acbcoop.com",
     "tags": [
-        "payments",
-        "gift",
-        "emvc",
-        "swipe_cc",
-        "security",
-        "camera",
-        "cash_management",
-        "communications",
-        "caller_id",
-        "productivity"
+        "loyalty"
     ],
     "slides": null
   },
   {
     "integrationId": 10,
-    "name": "Shortcut ADP Export",
-    "excerpt": "Payroll processing",
-    "description": "Export of time & attendance data which can be directly imported to ADP for payroll processing",
-    "logo": "http://localhost:4200/assets/images/logos/ADP.jpeg",
-    "company": "ADP",
+    "name": "Robert Half Talent Solutions",
+    "excerpt": "Labor Solution",
+    "description": "The talent pool is heating up. Hire candidates with AI-matched precision at Robert Half. This summer, add to your teams and not your to-do list. Find your next new hires fast.",
+    "logo": "http://localhost:4200/assets/images/logos/Robert_Half_Talent_Solutions.png",
+    "company": "Robert Half Talent Solutions",
     "companyLogo": "https://secure.ordyx.com/i/integrationLogos/adp.jpg",
-    "website": "www.adp.com",
-    "support": "support@adp.com",
+    "website": "www.roberthalf.com",
+    "support": "support@roberthalf.com",
     "tags": [
         "labor"
     ],
     "slides": null,
     "shortcut": true
-},
-{
-    "integrationId": 11,
-    "name": "Shortcut MagPie",
-    "excerpt": "Property Management System",
-    "description": "Magpie Property Management Software - A cost effective, internet-based property management software for the hospitality industry, customized for hotels, motels, condo-hotels, timeshares, inns and vacation home rentals. Our software is your one solution to property management, reservations and accounting. \n\nOur property management software features include: \nAccounting - Magpie PMS is the only online property management software that is fully and seamlessly integrated with QuickBooks Online, a full-featured industry standard accounting system with payroll.\n \nWebsite Booking Engine - Magpie PMS ties directly into your website, eliminating the possibility of double-bookings.\n \nHousekeeping, Maintenance and Security - Run your entire business with Magpie Property Management Software.",
-    "logo": "http://localhost:4200/assets/images/logos/MAGPIE.jpeg",
-    "company": "MagPie",
+  },
+  {
+      "integrationId": 11,
+      "name": "REPLICON",
+      "excerpt": "Configurable Timesheet Software",
+      "description": "Business leaders and managers get real-time access to time data, project progress and other metrics with instant sync of timesheets from employees using our mobile app",
+      "logo": "http://localhost:4200/assets/images/logos/replicon.svg",
+      "company": "REPLICON",
+      "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+      "website": "www.replicon.com",
+      "support": "support@replicon.com",
+      "tags": [
+          "attendance"
+      ],
+      "slides": null,
+      "shortcut": true
+  },
+  {
+      "integrationId": 12,
+      "name": "CLOVER",
+      "excerpt": "POS System and Credit Card",
+      "description": "Customized Point of Sale Systems Designed to Make Running Your Business Easier. Accept All Major Payment Types - Faster, Simpler, and Safer with Clover® POS System. Backed by the Safety and Security of First Data, the World's Largest Merchant Acquirer.",
+      "logo": "http://localhost:4200/assets/images/logos/clover.svg",
+      "company": "CLOVER",
+      "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
+      "website": "www.clover.com",
+      "support": "support@clover.com",
+      "tags": [
+          "payments"
+      ],
+      "slides": null,
+      "shortcut": true
+  },
+  {
+    "integrationId": 13,
+    "name": "Garrett Popcorn",
+    "excerpt": "Delivery Gift Popcorn",
+    "description": "Get delicious gourmet treats for your pantry and your next indoor picnic! Preservative free. Gluten free. Sealed for freshness, longer. Limited time only!",
+    "logo": "http://localhost:4200/assets/images/logos/garrett.png",
+    "company": "Garrett Popcorn",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/adp.jpg",
+    "website": "www.garrettpopcorn.com",
+    "support": "support@garrettpopcorn.com",
+    "tags": [
+        "gift"
+    ],
+    "slides": null,
+    "shortcut": true
+  },
+  {
+    "integrationId": 14,
+    "name": "Helcim",
+    "excerpt": "Everything You Need to Know",
+    "description": "Gain Full Access to All of Our Tools, Without the Worry of Monthly Fees. Faster Bank Deposits, Lower Rates, No Contracts. Sign up With Helcim for Better Payments",
+    "logo": "http://localhost:4200/assets/images/logos/helcim.jpg",
+    "company": "Helcim",
     "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
-    "website": "magpiesystems.net",
-    "support": "support@magpiesystems.net",
+    "website": "helcim.com",
+    "support": "support@helcim.com",
     "tags": [
-        "hotel"
+        "emv"
     ],
     "slides": null,
     "shortcut": true
-},
-{
-    "integrationId": 12,
-    "name": "Shortcut Avero",
-    "excerpt": "Enterprise reporting",
-    "description": "Avero's data analytic solutions helps restaurants review their sales report to quickly deliver long-term comparative data so that you can confidently forecast sales and costs. Sales reports which can include help better manage and ultimately improve your restaurant by measuring key performance indicators which include: \nManage costs & eliminate waste by accurately forecasting purchasing.\nMonitor cashier-controlled items to determine if they're ringing in every check item.",
-    "logo": "http://localhost:4200/assets/images/logos/AVERO.jpeg",
-    "company": "Avero",
-    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/avero.jpg",
-    "website": "www.averoinc.com",
-    "support": "support@averoinc.com",
+  },
+  {
+    "integrationId": 15,
+    "name": "LMS",
+    "excerpt": "Payment Processing Done Right",
+    "description": "Leaders Merchant Services is a contracted Reseller of the First Data (and/or Clover) Solutions. This web page or website is not an official page of First Data Corporation, Clover, its subsidiaries, or affiliated businesses. ",
+    "logo": "http://localhost:4200/assets/images/logos/lms.png",
+    "company": "LMS",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "leadersmerchantservices.com",
+    "support": "support@leadersmerchantservices.com",
     "tags": [
-        "report",
-        "enterprise"
+        "swipe_cc"
     ],
     "slides": null,
-    "shortcut": true
-},
-{
-  "integrationId": 13,
-  "name": "Shortcut Export P",
-  "excerpt": "Payroll processing",
-  "description": "Export of time & attendance data which can be directly imported to ADP for payroll processing",
-  "logo": "http://localhost:4200/assets/images/logos/ADP.jpeg",
-  "company": "ADP",
-  "companyLogo": "https://secure.ordyx.com/i/integrationLogos/adp.jpg",
-  "website": "www.adp.com",
-  "support": "support@adp.com",
-  "tags": [
-      "sales"
-  ],
-  "slides": null,
-  "shortcut": true
-},
-{
-  "integrationId": 14,
-  "name": "Shortcut Sold MagPie",
-  "excerpt": "Property Management System",
-  "description": "Magpie Property Management Software - A cost effective, internet-based property management software for the hospitality industry, customized for hotels, motels, condo-hotels, timeshares, inns and vacation home rentals. Our software is your one solution to property management, reservations and accounting. \n\nOur property management software features include: \nAccounting - Magpie PMS is the only online property management software that is fully and seamlessly integrated with QuickBooks Online, a full-featured industry standard accounting system with payroll.\n \nWebsite Booking Engine - Magpie PMS ties directly into your website, eliminating the possibility of double-bookings.\n \nHousekeeping, Maintenance and Security - Run your entire business with Magpie Property Management Software.",
-  "logo": "http://localhost:4200/assets/images/logos/MAGPIE.jpeg",
-  "company": "MagPie",
-  "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
-  "website": "magpiesystems.net",
-  "support": "support@magpiesystems.net",
-  "tags": [
-      "online_order",
-      "accounting"
-  ],
-  "slides": null,
-  "shortcut": true
-}
+    "shortcut": false
+  },
+  {
+    "integrationId": 16,
+    "name": "Vivint",
+    "excerpt": "The best in home security systems",
+    "description": "A Vivint Smart Home makes life simpler. New customers get a free quote.",
+    "logo": "http://localhost:4200/assets/images/logos/vivint.jpg",
+    "company": "Vivint",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "www.vivint.com",
+    "support": "support@vivint.com",
+    "tags": [
+        "security"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 17,
+    "name": "Backstreet Surveillance",
+    "excerpt": "Dome Security Camera - White 90 Ft Night Vision - 4k",
+    "description": "This camera is the best of the best. Crystal clear 4k resolution, live viewing and recording, built-in microphone for audio recording and on-board SD memory card slot. The housing meets IP67 standards ensuring excellent performance in extreme outdoor weather conditions. The camera is a great performer indoors due to its small size and flexible mounting options. The camera also features a 90 foot night vision system and PoE (Power over Ethernet; which allows the camera to transmit video and receive power through one network cable).",
+    "logo": "http://localhost:4200/assets/images/logos/backstreet.png",
+    "company": "Backstreet Surveillance",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "www.backstreet-surveillance.com",
+    "support": "support@backstreet-surveillance.com",
+    "tags": [
+        "camera"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 18,
+    "name": "Bank ok America",
+    "excerpt": "Global Transaction Services",
+    "description": "As each day brings unique challenges, we are dedicated to helping you turn technology advances into treasury solutions. Providing strategic guidance to help you stay ahead, and delivering solutions that make business easier and more secure. It’s a smarter, more sophisticated treasury relationship that redefines insights and delivers efficiency.",
+    "logo": "http://localhost:4200/assets/images/logos/bofaml.svg",
+    "company": "Bank ok America",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "www.bofaml.com",
+    "support": "support@bofaml.com",
+    "tags": [
+        "cash_management"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 19,
+    "name": "AT&T",
+    "excerpt": "Communications",
+    "description": "Superfast speeds—for a great price. Enjoy a faster internet experience, unlimited data, and no annual contract.",
+    "logo": "http://localhost:4200/assets/images/logos/att.jpg",
+    "company": "AT&T",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "www.att.com",
+    "support": "support@att.com",
+    "tags": [
+        "communications"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 20,
+    "name": "Call Source",
+    "excerpt": "Communications",
+    "description": "Powerful advertising using your phone number to stand out to your consumers. Search for the perfect vanity phone number for your business and for your campaigns.",
+    "logo": "http://localhost:4200/assets/images/logos/callsource.svg",
+    "company": "Call Source",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "www.callsource.com",
+    "support": "support@callsource.com",
+    "tags": [
+        "caller_id"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 21,
+    "name": "Zafeiri",
+    "excerpt": "Productivity",
+    "description": "Zafeiri delivers solutions from top line to bottom line.",
+    "logo": "http://localhost:4200/assets/images/logos/zafeiri.jpeg",
+    "company": "Zafeiri",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "zafeiricorp.com",
+    "support": "support@zafeiricorp.com",
+    "tags": [
+        "productivity"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 22,
+    "name": "Ardem",
+    "excerpt": "Accounting",
+    "description": "Large Volume Data Entry Services for Established Companies",
+    "logo": "http://localhost:4200/assets/images/logos/ardem.png",
+    "company": "Ardem",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "ardem.com",
+    "support": "support@zafeiricorp.com",
+    "tags": [
+        "accounting"
+    ],
+    "slides": null
+  },
+  {
+    "integrationId": 23,
+    "name": "Slintel",
+    "excerpt": "Report",
+    "description": "The best ZoomInfo alternative",
+    "logo": "http://localhost:4200/assets/images/logos/slintel.svg",
+    "company": "Slintel",
+    "companyLogo": "https://secure.ordyx.com/i/integrationLogos/MAGPIE.jpg",
+    "website": "slintel.com",
+    "support": "support@slintel.com",
+    "tags": [
+        "report"
+    ],
+    "slides": null
+  }
 ]
