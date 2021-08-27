@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarMenuComponent } from './components/navbar-menu/navbar-menu.component';
 import { SearchInputComponent } from './components/navbar-menu/search-input/search-input.component';
@@ -27,6 +28,7 @@ import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.com
 import { SideLinksComponent } from './components/sidenav-menu/side-links/side-links.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FullIntegrationComponent } from './components/full-integration/full-integration.component';
+import { ShortcutComponent } from './components/shortcut/shortcut.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { FullIntegrationComponent } from './components/full-integration/full-int
     SidenavMenuComponent,
     SideLinksComponent,
     BreadcrumbComponent,
-    FullIntegrationComponent
+    FullIntegrationComponent,
+    ShortcutComponent
   ],
   imports: [
     FlexLayoutModule,
@@ -59,6 +62,7 @@ import { FullIntegrationComponent } from './components/full-integration/full-int
     MatChipsModule,
     MatAutocompleteModule,
     MatOptionModule,
+    CarouselModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule

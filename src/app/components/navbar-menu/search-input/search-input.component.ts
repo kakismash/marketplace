@@ -19,6 +19,8 @@ export class SearchInputComponent implements OnInit {
   @Input() menus!:                 Array<Menu>;
   @Output() integrationsEvent:     EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
   @Output() integrationEmptyEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
+  @Output() selectedMenuEvent:     EventEmitter<string>             = new EventEmitter<string>();
+  @Output() notFoundEvent:         EventEmitter<string>             = new EventEmitter<string>();
 
   constructor() {}
 
@@ -76,8 +78,15 @@ export class SearchInputComponent implements OnInit {
         });
       }
     });
+    console.log(this.integrations)
+    if (this.integrations.length === 0) {
+      this.notFoundEvent.emit('notFound');
+    } else {
+      this.notFoundEvent.emit('');
+    }
     this.integrationEmptyEvent.emit(new Integration());
     this.integrationsEvent.emit(this.integrations);
+    this.selectedMenuEvent.emit('all');
   }
 
 }

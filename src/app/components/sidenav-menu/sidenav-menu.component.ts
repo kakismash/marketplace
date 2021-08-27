@@ -12,18 +12,21 @@ import { Router } from '@angular/router';
 })
 export class SidenavMenuComponent implements OnInit, OnChanges {
 
-  mode:                         boolean              = true;
-  integration:                  Integration          = new Integration();
+  mode:                         boolean             = true;
+  navigateMenu!:                string;
+  integration:                  Integration         = new Integration();
   @ViewChild('drawer') drawer!: MatSidenav;
   @Input() toggle!:             boolean;
   @Input() menus!:              Array<Menu>;
   @Input() selectedMenu!:       string;
   @Input() sIntegrations!:      Array<Integration>;
   @Input() eIntegration!:       Integration;
+  @Input() integrations!:       Array<Integration>;
+  @Input() notFound!:           string;
   @Output() menuNameEvent:      EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private media: MediaObserver) {
-    if(this.media.isActive('xs')) {
+    if (this.media.isActive('xs')) {
       this.mode = false;
     }
   }
@@ -58,7 +61,7 @@ export class SidenavMenuComponent implements OnInit, OnChanges {
     this.sIntegrations = event;
   }
 
-  fullIntegration(event: Integration): void {
+  onFullIntegration(event: Integration): void {
     this.integration = new Integration();
     this.integration = event;
   }
@@ -69,6 +72,18 @@ export class SidenavMenuComponent implements OnInit, OnChanges {
 
   onIntegrationEmpty(event: Integration): void {
     this.integration = event;
+  }
+
+  onChangeSelectedMenu(event: string): void {
+    this.selectedMenu = event;
+  }
+
+  onNotFound(event: string): void {
+    this.notFound = event;
+  }
+
+  onNavigateMenu(event: string): void {
+    this.navigateMenu = event;
   }
 
 }

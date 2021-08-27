@@ -19,6 +19,8 @@ export class NavbarMenuComponent implements OnInit {
   @Output() toggleEvent:           EventEmitter<boolean>            = new EventEmitter<boolean>();
   @Output() integrationsEvent:     EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
   @Output() integrationEmptyEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
+  @Output() selectedMenuEvent:     EventEmitter<string>             = new EventEmitter<string>();
+  @Output() notFoundEvent:         EventEmitter<string>             = new EventEmitter<string>();
   isExtraSmall:                    Observable<BreakpointState>      = this.breakpointObserver.observe(
                                                                         Breakpoints.XSmall
                                                                       );
@@ -80,6 +82,14 @@ export class NavbarMenuComponent implements OnInit {
 
   onIntegrationEmpty(event: Integration): void {
     this.integrationEmptyEvent.emit(event);
+  }
+
+  onChangeSelectedMenu(event: string): void {
+    this.selectedMenuEvent.emit(event);
+  }
+
+  onNotFound(event: string): void {
+    this.notFoundEvent.emit(event);
   }
 
 }

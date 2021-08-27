@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   menus:         Array<Menu>        = new Array<Menu>();
   selectedMenu:  string             = 'all';
   eIntegration!: Integration;
+  notFound!:     string;
 
   constructor(private integrationService: IntegrationService) { }
 
@@ -46,6 +47,14 @@ export class AppComponent implements OnInit {
 
   onIntegrationEmpty(event: Integration): void {
     this.eIntegration = event;
+  }
+
+  onChangeSelectedMenu(event: string): void {
+    this.selectedMenu = event;
+  }
+
+  onNotFound(event: string): void {
+    this.notFound = event;
   }
 
 }

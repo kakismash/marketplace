@@ -1,1 +1,14 @@
-<p>breadcrumb works!</p>
+<div class="px-5 pt-1 padding" fxLayout="row" fxLayoutAlign="start center">
+  <div fxFlex="100%" fxLayoutAlign="start center" class="movil-align">
+    <span fxLayoutAlign="start center" *ngIf="sMenu.display">
+      <button mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button">{{ sMenu.display }}</button>
+      <mat-icon *ngIf="sSubMenu.display || integration.name">chevron_right</mat-icon>
+    </span>
+    <span fxLayoutAlign="start center" *ngIf="sSubMenu.display">
+      <button mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button">{{ sSubMenu.display }}</button>
+      <mat-icon *ngIf="integration.name">chevron_right</mat-icon>
+    </span>
+    <button mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button"
+      *ngIf="integration.name">{{ integration.name }}</button>
+  </div>
+</div>

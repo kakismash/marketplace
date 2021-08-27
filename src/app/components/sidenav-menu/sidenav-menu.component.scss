@@ -1,9 +1,25 @@
 .container {
   position: sticky;
-  top: 60px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.sticky {
+  background-color: white !important;
+  position: fixed !important;
+  position: -webkit-sticky !important;
+  /* For macOS/iOS Safari */
+  top: 0;
+  /* Sets the sticky toolbar to be on top */
+  z-index: 998;
+  /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .sidenav {
@@ -29,12 +45,25 @@
 }
 
 :host ::ng-deep .mat-drawer-container {
-  margin-top: 3.5rem !important;
-  height: 100% !important;
+  margin-top: 0 !important;
+  height: 100vh !important;
 }
 
 :host ::ng-deep .mat-drawer-content {
-  height: 100vh !important;
-  max-height: 100% !important;
   background-color: white;
+  padding-bottom: 30px;
+}
+
+.margin-top-content {
+  margin-top: 6%;
+}
+
+.shortcut__margin-top {
+  margin-top: 70px;
+}
+
+@media all and (max-width: 500px) {
+  .margin-top-content {
+    margin-top: 18%;
+  }
 }

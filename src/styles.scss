@@ -1,3 +1,5 @@
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import '~@angular/material/theming';
 @include mat-core();
 
@@ -49,6 +51,10 @@ h6 {
   margin-top: 5%;
 }
 
+.mt-6 {
+  margin-top: 6%;
+}
+
 .mt-10 {
   margin-top: 10%;
 }
@@ -59,6 +65,23 @@ h6 {
 
 .pb-0 {
   padding-bottom: 0px !important;
+}
+
+.px-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pt-1 {
+  padding-top: 1%;
+}
+
+.pt-2 {
+  padding-top: 2%;
 }
 
 .pl-1 {

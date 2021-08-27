@@ -27,6 +27,7 @@ export class IntegrationComponent implements OnInit, OnChanges {
   @Input() menus!:                    Array<Menu>;
   @Input() selectedMenu!:             string;
   @Input() sIntegrations!:            Array<Integration>;
+  @Input() notFound!:                 string;
   @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
 
   constructor() { }
@@ -38,6 +39,7 @@ export class IntegrationComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     this.integrations = new Array<Integration>();
     this.doIntegrationsCard();
+    console.log(this.notFound)
   }
 
   elevate(id: number): void {

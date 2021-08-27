@@ -1,4 +1,4 @@
-<mat-toolbar (scroll)="onScroll($event)" class="sticky" *ngIf="scroll">
+<mat-toolbar class="sticky" (scroll)="onScroll($event)" *ngIf="scroll">
   <mat-toolbar-row fxLayout fxLayoutAlign="space-between center">
     <div fxFlex.sm="50%" fxFlex="100%" fxLayoutAlign="start center">
       <div class="box">
@@ -11,7 +11,7 @@
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
-<section class="content pa-5">
+<section class="content px-5 pt-3">
   <div fxLayout="row wrap" fxLayoutAlign="center start">
     <div fxFlex="100%" fxFlex.md="50%" fxFlex.lg="50%" fxFlex.xl="50%" class="mt-5">
       <div fxLayoutAlign="start end">

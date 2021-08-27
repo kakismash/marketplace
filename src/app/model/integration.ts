@@ -11,4 +11,5 @@ export class Integration {
   support!:       string;
   tags!:          Array<string>;
   slides!:        string;
+  shortcut?:      boolean;
 }

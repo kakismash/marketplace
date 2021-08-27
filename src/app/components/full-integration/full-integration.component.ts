@@ -8,8 +8,8 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 })
 export class FullIntegrationComponent implements OnInit {
 
-  scroll:                 boolean     = false;
-  @Input() integration!:  Integration;
+  scroll: boolean = false;
+  @Input() integration!: Integration;
 
   constructor() { }
 
@@ -19,6 +19,7 @@ export class FullIntegrationComponent implements OnInit {
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(event: any): void {
     const value = event.target.scrollingElement.scrollTop;
+    console.log(value)
     if (value >= 100) {
       this.scroll = true;
     } else {

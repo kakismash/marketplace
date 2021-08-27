@@ -1,15 +1,28 @@
 <mat-drawer-container class="container" [hasBackdrop]="!mode">
-  <mat-drawer #drawer [mode]="mode ? 'side' : 'over'" [opened]="toggle" class="sidenav">
+  <mat-drawer [ngClass]="!mode ? 'sticky' : 'hidden'" #drawer [mode]="mode ? 'side' : 'over'" [opened]="toggle"
+    class="sidenav">
     <side-links [menus]="menus" (menuNameEvent)="onMenuNameChange($event)"
       (integrationsSearchEvent)="onIntegrationsSearchChange($event)"
-      (integrationEmptyEvent)="onIntegrationEmpty($event)"></side-links>
+      (integrationEmptyEvent)="onIntegrationEmpty($event)">
+    </side-links>
   </mat-drawer>
-  <mat-drawer-content>
-    <div class="mt-3 mb-3">
+  <mat-drawer-content fxLayout="flex wrap" fxLayoutAlign="start stretch">
+    <shortcut class="shortcut__margin-top ma-3" fxFlex="100%" [integrations]="integrations"
+      (integrationSelectedEvent)="onFullIntegration($event)" (selectedMenuEvent)="onChangeSelectedMenu($event)">
+    </shortcut>
+    <side-links fxFlex.sm="20%" fxFlex.md="20%" fxFlex.lg="20%" fxFlex.xl="20%" fxFlex="100%"
+      [ngClass]="mode ? '' : 'hidden'" [menus]="menus" (menuNameEvent)="onMenuNameChange($event)"
+      (integrationsSearchEvent)="onIntegrationsSearchChange($event)"
+      (integrationEmptyEvent)="onIntegrationEmpty($event)" (notFoundEvent)="onNotFound($event)"
+      [selectedMenu]="selectedMenu">
+    </side-links>
+    <div fxFlex.sm="80%" fxFlex.md="80%" fxFlex.lg="80%" fxFlex.xl="80%" fxFlex="100%" class="margin-top-content mb-3">
+      <breadcrumb class="mb-3" [integration]="integration" [menus]="menus" [selectedMenu]="selectedMenu">
+      </breadcrumb>
       <full-integration *ngIf="!isIntegrationEmpty(integration)" [integration]="integration">
       </full-integration>
       <integration-card *ngIf="isIntegrationEmpty(integration)" [menus]="menus" [selectedMenu]="selectedMenu"
-        [sIntegrations]="sIntegrations" (integrationSelectedEvent)="fullIntegration($event)">
+        [sIntegrations]="sIntegrations" (integrationSelectedEvent)="onFullIntegration($event)" [notFound]="notFound">
       </integration-card>
     </div>
   </mat-drawer-content>

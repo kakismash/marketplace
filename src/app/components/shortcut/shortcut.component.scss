@@ -6,8 +6,21 @@ a {
   text-decoration: none;
 }
 
-.container {
-  margin: 20px;
+:host ::ng-deep .owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+.carousel-container {
+  width: 97%;
+  margin: auto
+}
+
+.carousel-style {
+  display: flex;
+  margin-top: 230px;
+  align-items: center;
+  align-content: center;
 }
 
 .outlined-card {
@@ -16,6 +29,7 @@ a {
   box-sizing: border-box;
   width: 100%;
   padding: 25px;
+  margin: 5px;
   background: #fff;
   cursor: pointer;
   border-radius: 8px;
@@ -70,55 +84,3 @@ a {
     object-position: center center;
   }
 }
-
-.box_not-found img {
-  @media only screen and (max-width: 480px) {
-    img {
-      width: 100%;
-    }
-  }
-}
-
-
-@media all and (max-width: 500px) {
-  .not-found {
-    width: 100vh;
-    max-width: 100%;
-    border-radius: .5em;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-
-    img {
-      width: 100px;
-    }
-  }
-}
-
-.not-found {
-  width: 100vh;
-  max-width: 100%;
-  border-radius: .5em;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-
-  img {
-    width: 100px;
-  }
-}
-
-
-// .not-found {
-//   background: #00b9f20f;
-//   padding: 10px;
-//   border-radius: .5em;
-//   width: 100vw;
-
-//   p {
-//     font-size: 24px;
-//     color: #222222;
-//     font-family: 'Work Sans', sans-serif !important;
-//     font-weight: 600;
-//   }
-// }
