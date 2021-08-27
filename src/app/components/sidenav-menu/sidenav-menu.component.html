@@ -8,8 +8,7 @@
     </side-links>
   </mat-drawer>
   <mat-drawer-content fxLayout="flex wrap" fxLayoutAlign="start stretch">
-    <shortcut *gnIf="shortcutIntegrations !== undefined && shortcutIntegrations.length > 0"
-      class="shortcut__margin-top ma-3" fxFlex="100%" [integrations]="integrations"
+    <shortcut class="shortcut__margin-top ma-3" fxFlex="100%" [integrations]="integrations"
       (integrationSelectedEvent)="onFullIntegration($event)" (selectedMenuEvent)="onChangeSelectedMenu($event)"
       [shortcutIntegrations]="shortcutIntegrations">
     </shortcut>
