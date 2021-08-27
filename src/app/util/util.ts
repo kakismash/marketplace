@@ -49,6 +49,9 @@ function generateSales(integrations: Array<Integration>): Menu {
       }
     });
   });
+  saleMenu.subMenus.forEach(sm => {
+    saleMenu.integrations.push(...sm.integrations);
+  });
   return saleMenu;
 }
 
@@ -99,7 +102,9 @@ function generateMarketing(integrations: Array<Integration>): Menu {
       }
     });
   });
-
+  marketingMenu.subMenus.forEach(sm => {
+    marketingMenu.integrations.push(...sm.integrations);
+  });
   return marketingMenu;
 }
 
@@ -150,7 +155,9 @@ function generateLabor(integrations: Array<Integration>): Menu {
       }
     });
   });
-
+  laborMenu.subMenus.forEach(sm => {
+    laborMenu.integrations.push(...sm.integrations);
+  });
   return laborMenu;
 }
 
@@ -200,6 +207,9 @@ function generatePayments(integrations: Array<Integration>): Menu {
         paymentsMenu.integrations.push(i);
       }
     });
+  });
+  paymentsMenu.subMenus.forEach(sm => {
+    paymentsMenu.integrations.push(...sm.integrations);
   });
   return paymentsMenu;
 }
@@ -264,6 +274,9 @@ function generateSecurity(integrations: Array<Integration>): Menu {
       }
     });
   });
+  securityMenu.subMenus.forEach(sm => {
+    securityMenu.integrations.push(...sm.integrations);
+  });
   return securityMenu;
 }
 
@@ -314,7 +327,9 @@ function generateCommunications(integrations: Array<Integration>): Menu {
       }
     });
   });
-
+  communicationsMenu.subMenus.forEach(sm => {
+    communicationsMenu.integrations.push(...sm.integrations);
+  });
   return communicationsMenu;
 }
 
