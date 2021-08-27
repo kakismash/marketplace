@@ -3,7 +3,8 @@
     class="sidenav">
     <side-links [menus]="menus" (menuNameEvent)="onMenuNameChange($event)"
       (integrationsSearchEvent)="onIntegrationsSearchChange($event)"
-      (integrationEmptyEvent)="onIntegrationEmpty($event)">
+      (integrationEmptyEvent)="onIntegrationEmpty($event)" (notFoundEvent)="onNotFound($event)"
+      [selectedMenu]="selectedMenu">
     </side-links>
   </mat-drawer>
   <mat-drawer-content fxLayout="flex wrap" fxLayoutAlign="start stretch">
