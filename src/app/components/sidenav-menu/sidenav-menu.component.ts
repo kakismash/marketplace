@@ -12,18 +12,19 @@ import { Router } from '@angular/router';
 })
 export class SidenavMenuComponent implements OnInit, OnChanges {
 
-  mode:                         boolean             = true;
-  navigateMenu!:                string;
-  integration:                  Integration         = new Integration();
-  @ViewChild('drawer') drawer!: MatSidenav;
-  @Input() toggle!:             boolean;
-  @Input() menus!:              Array<Menu>;
-  @Input() selectedMenu!:       string;
-  @Input() sIntegrations!:      Array<Integration>;
-  @Input() eIntegration!:       Integration;
-  @Input() integrations!:       Array<Integration>;
-  @Input() notFound!:           string;
-  @Output() menuNameEvent:      EventEmitter<string> = new EventEmitter<string>();
+  mode:                           boolean             = true;
+  navigateMenu!:                  string;
+  integration:                    Integration         = new Integration();
+  @ViewChild('drawer') drawer!:   MatSidenav;
+  @Input() toggle!:               boolean;
+  @Input() menus!:                Array<Menu>;
+  @Input() selectedMenu!:         string;
+  @Input() sIntegrations!:        Array<Integration>;
+  @Input() eIntegration!:         Integration;
+  @Input() integrations!:         Array<Integration>;
+  @Input() notFound!:             string;
+  @Input() shortcutIntegrations!: Array<Integration>;
+  @Output() menuNameEvent:        EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private media: MediaObserver) {
     if (this.media.isActive('xs')) {

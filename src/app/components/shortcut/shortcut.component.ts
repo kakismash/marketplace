@@ -22,7 +22,7 @@ import { Integration } from 'src/app/model/integration';
 })
 export class ShortcutComponent implements OnInit {
 
-  shortcutIntegrations:               Array<Integration>        = new Array<Integration>();
+  @Input() shortcutIntegrations!:     Array<Integration>;
   @Input() integrations!:             Array<Integration>;
   @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
   @Output() selectedMenuEvent:        EventEmitter<string>      = new EventEmitter<string>();
@@ -55,16 +55,9 @@ export class ShortcutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.loadShortcutIntegrations();
   }
 
-  private loadShortcutIntegrations(): void {
-    this.integrations.forEach(i => {
-      if (i.shortcut) {
-        this.shortcutIntegrations.push(i);
-      }
-    });
-  }
+
 
   fullIntegration(integration: Integration): void {
     this.integrationSelectedEvent.emit(integration);

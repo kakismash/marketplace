@@ -11,13 +11,14 @@ import { mapMenu } from './util/util';
 })
 export class AppComponent implements OnInit {
 
-  toggle!:       boolean;
-  integrations:  Array<Integration> = new Array<Integration>();
-  sIntegrations: Array<Integration> = new Array<Integration>();
-  menus:         Array<Menu>        = new Array<Menu>();
-  selectedMenu:  string             = 'all';
-  eIntegration!: Integration;
-  notFound!:     string;
+  toggle!:              boolean;
+  integrations:         Array<Integration> = new Array<Integration>();
+  shortcutIntegrations: Array<Integration> = new Array<Integration>();
+  sIntegrations:        Array<Integration> = new Array<Integration>();
+  menus:                Array<Menu>        = new Array<Menu>();
+  selectedMenu:         string             = 'all';
+  eIntegration!:        Integration;
+  notFound!:            string;
 
   constructor(private integrationService: IntegrationService) { }
 
@@ -32,9 +33,18 @@ export class AppComponent implements OnInit {
           this.integrations = new Array<Integration>();
           this.integrations = rIntegrations;
           this.menus        = mapMenu(this.integrations);
+          this.loadShortcutIntegrations(this.integrations);
         }, err => {
           console.log(err);
       });
+  }
+
+  private loadShortcutIntegrations(integrations: Array<Integration>): void {
+    integrations.forEach(i => {
+      if (i.shortcut) {
+        this.shortcutIntegrations.push(i);
+      }
+    });
   }
 
   onMenuNameChange(event: string): void {

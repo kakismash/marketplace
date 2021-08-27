@@ -6,7 +6,8 @@
     </navbar>
     <sidenav-menu [toggle]="toggle" *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
       [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)" [sIntegrations]="sIntegrations"
-      [eIntegration]="eIntegration" [integrations]="integrations" [notFound]="notFound">
+      [eIntegration]="eIntegration" [integrations]="integrations" [notFound]="notFound"
+      [shortcutIntegrations]="shortcutIntegrations">
     </sidenav-menu>
   </div>
 </ng-container>
