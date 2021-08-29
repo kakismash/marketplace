@@ -9,25 +9,21 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SideLinksComponent implements OnInit {
 
-  menuName:                          string                           = 'all';
   @Input() menus!:                   Array<Menu>;
   @Input() selectedMenu!:            string;
   @Output() menuNameEvent:           EventEmitter<string>             = new EventEmitter<string>();
   @Output() integrationsSearchEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
   @Output() integrationEmptyEvent:   EventEmitter<Integration>        = new EventEmitter<Integration>();
-  @Output() notFoundEvent:           EventEmitter<string>             = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSelection(event: any): void {
-    this.menuName = event.option.value;
-    this.menuNameEvent.emit(this.menuName);
-    this.integrationsSearchEvent.emit([]);
+  onSelection(menuName: string): void {
+    this.menuNameEvent.emit(menuName);
+    this.integrationsSearchEvent.emit(undefined);
     this.integrationEmptyEvent.emit(new Integration());
-    this.notFoundEvent.emit('');
   }
 
 }

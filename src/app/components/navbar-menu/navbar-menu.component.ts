@@ -12,18 +12,18 @@ import { MediaObserver } from '@angular/flex-layout';
 })
 export class NavbarMenuComponent implements OnInit {
 
-  scroll:                          boolean                          = false;
-  toggle:                          boolean                          = false;
-  buttonMenu!:                     boolean;
-  @Input() menus!:                 Array<Menu>;
-  @Output() toggleEvent:           EventEmitter<boolean>            = new EventEmitter<boolean>();
-  @Output() integrationsEvent:     EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
-  @Output() integrationEmptyEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
-  @Output() selectedMenuEvent:     EventEmitter<string>             = new EventEmitter<string>();
-  @Output() notFoundEvent:         EventEmitter<string>             = new EventEmitter<string>();
-  isExtraSmall:                    Observable<BreakpointState>      = this.breakpointObserver.observe(
-                                                                        Breakpoints.XSmall
-                                                                      );
+  scroll:                            boolean                          = false;
+  toggle:                            boolean                          = false;
+  buttonMenu!:                       boolean;
+  @Input() menus!:                   Array<Menu>;
+  @Output() toggleEvent:             EventEmitter<boolean>            = new EventEmitter<boolean>();
+  @Output() integrationsResultEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
+  @Output() integrationEmptyEvent:   EventEmitter<Integration>        = new EventEmitter<Integration>();
+  @Output() selectedMenuEvent:       EventEmitter<string>             = new EventEmitter<string>();
+  @Output() searchControlEvent:      EventEmitter<string>             = new EventEmitter<string>();
+  isExtraSmall:                      Observable<BreakpointState>      = this.breakpointObserver.observe(
+                                                                          Breakpoints.XSmall
+                                                                        );
 
   constructor(private readonly breakpointObserver: BreakpointObserver,
               private media:                       MediaObserver) {
@@ -76,8 +76,8 @@ export class NavbarMenuComponent implements OnInit {
     });
   }
 
-  onIntegrationsChange(event: Array<Integration>): void {
-    this.integrationsEvent.emit(event);
+  onIntegrationsResultChange(event: Array<Integration>): void {
+    this.integrationsResultEvent.emit(event);
   }
 
   onIntegrationEmpty(event: Integration): void {
@@ -88,8 +88,8 @@ export class NavbarMenuComponent implements OnInit {
     this.selectedMenuEvent.emit(event);
   }
 
-  onNotFound(event: string): void {
-    this.notFoundEvent.emit(event);
+  onSearchControlChange(event: string): void {
+    this.searchControlEvent.emit(event);
   }
 
 }

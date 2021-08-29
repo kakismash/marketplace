@@ -12,13 +12,13 @@ import { mapMenu } from './util/util';
 export class AppComponent implements OnInit {
 
   toggle!:              boolean;
-  integrations:         Array<Integration> = new Array<Integration>();
-  shortcutIntegrations: Array<Integration> = new Array<Integration>();
-  sIntegrations:        Array<Integration> = new Array<Integration>();
-  menus:                Array<Menu>        = new Array<Menu>();
-  selectedMenu:         string             = 'all';
+  integrations:         Array<Integration>              = new Array<Integration>();
+  shortcutIntegrations: Array<Integration>              = new Array<Integration>();
+  sIntegrations!:       Array<Integration> | undefined;
+  menus:                Array<Menu>                     = new Array<Menu>();
+  selectedMenu:         string                          = 'all';
   eIntegration!:        Integration;
-  notFound!:            string;
+  searchControlValue!:  string;
 
   constructor(private integrationService: IntegrationService) { }
 
@@ -51,7 +51,8 @@ export class AppComponent implements OnInit {
     this.selectedMenu = event;
   }
 
-  onIntegrationsChange(event: Array<Integration>): void {
+  onIntegrationsResultChange(event: Array<Integration>): void {
+    this.sIntegrations = new Array<Integration>();
     this.sIntegrations = event;
   }
 
@@ -63,8 +64,8 @@ export class AppComponent implements OnInit {
     this.selectedMenu = event;
   }
 
-  onNotFound(event: string): void {
-    this.notFound = event;
+  onSearchControlChange(event: string): void {
+    this.searchControlValue = event;
   }
 
 }

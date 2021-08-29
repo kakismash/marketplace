@@ -3,29 +3,33 @@
     class="sidenav">
     <side-links [menus]="menus" (menuNameEvent)="onMenuNameChange($event)"
       (integrationsSearchEvent)="onIntegrationsSearchChange($event)"
-      (integrationEmptyEvent)="onIntegrationEmpty($event)" (notFoundEvent)="onNotFound($event)"
-      [selectedMenu]="selectedMenu">
+      (integrationEmptyEvent)="onIntegrationEmpty($event)" [selectedMenu]="selectedMenu">
     </side-links>
   </mat-drawer>
   <mat-drawer-content fxLayout="flex wrap" fxLayoutAlign="start stretch">
     <shortcut class="shortcut__margin-top ma-3" fxFlex="100%" [integrations]="integrations"
       (integrationSelectedEvent)="onFullIntegration($event)" (selectedMenuEvent)="onChangeSelectedMenu($event)"
-      [shortcutIntegrations]="shortcutIntegrations">
+      [shortcutIntegrations]="shortcutIntegrations" (integrationsSearchEvent)="onIntegrationsSearchChange($event)">
     </shortcut>
     <side-links fxFlex.sm="20%" fxFlex.md="20%" fxFlex.lg="20%" fxFlex.xl="20%" fxFlex="100%"
       [ngClass]="mode ? '' : 'hidden'" [menus]="menus" (menuNameEvent)="onMenuNameChange($event)"
       (integrationsSearchEvent)="onIntegrationsSearchChange($event)"
-      (integrationEmptyEvent)="onIntegrationEmpty($event)" (notFoundEvent)="onNotFound($event)"
-      [selectedMenu]="selectedMenu">
+      (integrationEmptyEvent)="onIntegrationEmpty($event)" [selectedMenu]="selectedMenu">
     </side-links>
     <div fxFlex.sm="80%" fxFlex.md="80%" fxFlex.lg="80%" fxFlex.xl="80%" fxFlex="100%" class="margin-top-content mb-3">
-      <breadcrumb class="mb-3" [integration]="integration" [menus]="menus" [selectedMenu]="selectedMenu">
+      <breadcrumb class="mb-3" [integration]="integration" [menus]="menus" [selectedMenu]="selectedMenu"
+        (navigateBreadcrumbEvent)="onNavigateBreadcrumb($event)" (integrationEmptyEvent)="onIntegrationEmpty($event)"
+        [sIntegrations]="sIntegrations" [searchControlValue]="searchControlValue"
+        (activeSearchResultEvent)="onActiveSearchResultChange($event)">
       </breadcrumb>
       <full-integration *ngIf="!isIntegrationEmpty(integration)" [integration]="integration">
       </full-integration>
-      <integration-card *ngIf="isIntegrationEmpty(integration)" [menus]="menus" [selectedMenu]="selectedMenu"
-        [sIntegrations]="sIntegrations" (integrationSelectedEvent)="onFullIntegration($event)" [notFound]="notFound">
+      <integration-card *ngIf="sIntegrations === undefined && isIntegrationEmpty(integration)" [menus]="menus" [selectedMenu]="selectedMenu"
+        (integrationSelectedEvent)="onFullIntegration($event)">
       </integration-card>
+      <search-result *ngIf="sIntegrations !== undefined" [sIntegrations]="sIntegrations"
+        (integrationSelectedEvent)="onFullIntegration($event)">
+      </search-result>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

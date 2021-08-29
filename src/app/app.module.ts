@@ -29,6 +29,7 @@ import { SideLinksComponent } from './components/sidenav-menu/side-links/side-li
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FullIntegrationComponent } from './components/full-integration/full-integration.component';
 import { ShortcutComponent } from './components/shortcut/shortcut.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ShortcutComponent } from './components/shortcut/shortcut.component';
     SideLinksComponent,
     BreadcrumbComponent,
     FullIntegrationComponent,
-    ShortcutComponent
+    ShortcutComponent,
+    SearchResultComponent
   ],
   imports: [
     FlexLayoutModule,

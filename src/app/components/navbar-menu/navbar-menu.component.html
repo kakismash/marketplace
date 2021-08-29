@@ -5,9 +5,10 @@
       *ngIf="buttonMenu">
       <mat-icon>menu</mat-icon>
     </button>
-    <search-input fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xl="70%" fxFlex.xs="100%"
-      fxLayoutAlign="end center" [menus]="menus" (integrationsEvent)="onIntegrationsChange($event)"
+    <search-input fxFlex.lg="100%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex.xl="100%" fxFlex.xs="100%"
+      fxLayoutAlign="end center" [menus]="menus" (integrationsResultEvent)="onIntegrationsResultChange($event)"
       (integrationEmptyEvent)="onIntegrationEmpty($event)" (selectedMenuEvent)="onChangeSelectedMenu($event)"
-      (notFoundEvent)="onNotFound($event)"></search-input>
+      (searchControlEvent)="onSearchControlChange($event)">
+    </search-input>
   </mat-toolbar-row>
 </mat-toolbar>

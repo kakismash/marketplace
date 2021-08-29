@@ -1,4 +1,7 @@
-<div class="carousel-container">
+<div [class]="shortcutIntegrations && shortcutIntegrations.length >= 3 ? 'carousel-container__full'   : 
+              shortcutIntegrations && shortcutIntegrations.length == 2 ? 'carousel-container__middle' : 
+                                                                         'carousel-container__min'"
+>
   <owl-carousel-o [options]="customOptions">
     <ng-container *ngFor="let integration of shortcutIntegrations; let index=index">
       <ng-template carouselSlide>

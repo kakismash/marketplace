@@ -1,14 +1,44 @@
 <div class="px-5 pt-1 padding" fxLayout="row" fxLayoutAlign="start center">
-  <div fxFlex="100%" fxLayoutAlign="start center" class="movil-align">
-    <span fxLayoutAlign="start center" *ngIf="sMenu.display">
-      <button mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button">{{ sMenu.display }}</button>
-      <mat-icon *ngIf="sSubMenu.display || integration.name">chevron_right</mat-icon>
+  <div fxFlex="100%" fxLayoutAlign="start center" class="movil-align"
+    *ngIf="sIntegrations === undefined; else emptySearch">
+    <span fxLayoutAlign="start center" *ngIf="sMenu.name">
+      <button *ngIf="sSubMenu.name || !emptyIntegration()"
+        mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button"
+        (click)="onNavigateBreadcrumb(sMenu.name)">{{ sMenu.display }}
+      </button>
+      <span *ngIf="!sSubMenu.name && emptyIntegration()" class="breadcrump">
+        {{ sMenu.display }}
+      </span>
+      <mat-icon *ngIf="sSubMenu.name || !emptyIntegration()">chevron_right</mat-icon>
     </span>
-    <span fxLayoutAlign="start center" *ngIf="sSubMenu.display">
-      <button mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button">{{ sSubMenu.display }}</button>
-      <mat-icon *ngIf="integration.name">chevron_right</mat-icon>
+    <span fxLayoutAlign="start center" *ngIf="sSubMenu.name">
+      <button *ngIf="!emptyIntegration()"
+        mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button"
+        (click)="onNavigateBreadcrumb(sSubMenu.name)">{{ sSubMenu.display }}
+      </button>
+      <span *ngIf="emptyIntegration()" class="breadcrump">
+        {{ sSubMenu.display }}
+      </span>
+      <mat-icon *ngIf="!emptyIntegration()">chevron_right</mat-icon>
     </span>
-    <button mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button"
-      *ngIf="integration.name">{{ integration.name }}</button>
+    <span class="breadcrump" *ngIf="!emptyIntegration()">
+      {{ integration.name }}
+    </span>
   </div>
+  <ng-template #emptySearch>
+    <div fxFlex="100%" fxLayoutAlign="start center" class="movil-align">
+      <span fxLayoutAlign="start center">
+        <button *ngIf="!emptyIntegration()" mat-ripple [matRippleColor]="'#86bcdb3f'" class="breadcrump-button"
+          (click)="loadActiveSearch()">Search Result
+        </button>
+        <span *ngIf="emptyIntegration()" class="breadcrump">
+          Search Result
+        </span>
+        <mat-icon *ngIf="!emptyIntegration()">chevron_right</mat-icon>
+      </span>
+      <span class="breadcrump" *ngIf="!emptyIntegration()">
+        {{ integration.name }}
+      </span>
+    </div>
+  </ng-template>
 </div>

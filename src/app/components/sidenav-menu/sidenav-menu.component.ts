@@ -3,7 +3,6 @@ import { Integration } from './../../model/integration';
 import { Component, HostListener, Input, OnInit, ViewChild, Output, EventEmitter, OnChanges } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatSidenav } from "@angular/material/sidenav";
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'sidenav-menu',
@@ -12,19 +11,19 @@ import { Router } from '@angular/router';
 })
 export class SidenavMenuComponent implements OnInit, OnChanges {
 
-  mode:                           boolean             = true;
+  mode:                           boolean                         = true;
   navigateMenu!:                  string;
-  integration:                    Integration         = new Integration();
+  integration:                    Integration                     = new Integration();
   @ViewChild('drawer') drawer!:   MatSidenav;
   @Input() toggle!:               boolean;
   @Input() menus!:                Array<Menu>;
   @Input() selectedMenu!:         string;
-  @Input() sIntegrations!:        Array<Integration>;
+  @Input() sIntegrations!:        Array<Integration> | undefined;
   @Input() eIntegration!:         Integration;
   @Input() integrations!:         Array<Integration>;
-  @Input() notFound!:             string;
   @Input() shortcutIntegrations!: Array<Integration>;
-  @Output() menuNameEvent:        EventEmitter<string> = new EventEmitter<string>();
+  @Input() searchControlValue!:   string;
+  @Output() menuNameEvent:        EventEmitter<string>            = new EventEmitter<string>();
 
   constructor(private media: MediaObserver) {
     if (this.media.isActive('xs')) {
@@ -79,12 +78,12 @@ export class SidenavMenuComponent implements OnInit, OnChanges {
     this.selectedMenu = event;
   }
 
-  onNotFound(event: string): void {
-    this.notFound = event;
+  onNavigateBreadcrumb(event: string): void {
+    this.selectedMenu = event;
   }
 
-  onNavigateMenu(event: string): void {
-    this.navigateMenu = event;
+  onActiveSearchResultChange(event: Array<Integration>): void {
+    this.sIntegrations = event;
   }
 
 }

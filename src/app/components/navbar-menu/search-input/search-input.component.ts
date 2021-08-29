@@ -12,15 +12,16 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class SearchInputComponent implements OnInit {
 
-  searchControl:                   FormControl                      = new FormControl();
-  options:                         Array<string>                    = new Array<string>();
-  filteredOptions:                 Observable<Array<string>>        = new Observable<Array<string>>();
-  integrations:                    Array<Integration>               = new Array<Integration>();
-  @Input() menus!:                 Array<Menu>;
-  @Output() integrationsEvent:     EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
-  @Output() integrationEmptyEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
-  @Output() selectedMenuEvent:     EventEmitter<string>             = new EventEmitter<string>();
-  @Output() notFoundEvent:         EventEmitter<string>             = new EventEmitter<string>();
+  searchControl:                     FormControl                      = new FormControl();
+  options:                           Array<string>                    = new Array<string>();
+  filteredOptions:                   Observable<Array<string>>        = new Observable<Array<string>>();
+  integrations:                      Array<Integration>               = new Array<Integration>();
+  @Input() menus!:                   Array<Menu>;
+  @Output() integrationsResultEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
+  @Output() integrationEmptyEvent:   EventEmitter<Integration>        = new EventEmitter<Integration>();
+  @Output() selectedMenuEvent:       EventEmitter<string>             = new EventEmitter<string>();
+  @Output() searchControlEvent:      EventEmitter<string>             = new EventEmitter<string>();
+
 
   constructor() {}
 
@@ -57,36 +58,43 @@ export class SearchInputComponent implements OnInit {
     );
   }
 
+  onSearch(value: string): void {
+    setTimeout(() => {
+      this.searchIntegrations(value);
+    }, 700);
+  }
+
   searchIntegrations(value: string): void {
+    value             = value.toLocaleLowerCase();
     this.integrations = new Array<Integration>();
     this.menus.forEach(m => {
-      if (m.name.includes(value) || m.display.includes(value)) {
+      let menuName = m.name.toLocaleLowerCase();
+      let menuDisp = m.display.toLocaleLowerCase();
+      if (menuName.includes(value) || menuDisp.includes(value)) {
         this.integrations.push(...m.integrations);
       }
       if (m.name === 'all') {
         m.integrations.forEach(i => {
-          if (i.name.includes(value)) {
+          let iName = i.name.toLocaleLowerCase();
+          if (iName.includes(value)) {
             this.integrations.push(i);
           }
         });
       }
       if (m.subMenus !== undefined && m.subMenus.length > 0) {
         m.subMenus.forEach(sm => {
-          if (sm.name.includes(value) || sm.display.includes(value)) {
+          let subMenuName = sm.name.toLocaleLowerCase();
+          let subMenuDisp = sm.display.toLocaleLowerCase();
+          if (subMenuName.includes(value) || subMenuDisp.includes(value)) {
             this.integrations.push(...sm.integrations);
           }
         });
       }
     });
-    console.log(this.integrations)
-    if (this.integrations.length === 0) {
-      this.notFoundEvent.emit('notFound');
-    } else {
-      this.notFoundEvent.emit('');
-    }
     this.integrationEmptyEvent.emit(new Integration());
-    this.integrationsEvent.emit(this.integrations);
-    this.selectedMenuEvent.emit('all');
+    this.integrationsResultEvent.emit(this.integrations);
+    this.selectedMenuEvent.emit('');
+    this.searchControlEvent.emit(value);
   }
 
 }

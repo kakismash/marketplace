@@ -11,10 +11,36 @@ a {
   align-items: stretch;
 }
 
-.carousel-container {
-  width: 97%;
+.carousel-container__full {
+  max-width: 97%;
   margin: auto
 }
+
+.carousel-container__min {
+  max-width: 33.3%;
+  margin: auto
+}
+
+.carousel-container__middle{
+  max-width: 50%;
+  margin: auto
+}
+
+@media all and (max-width: 500px) {
+  
+  .carousel-container__min {
+    max-width: 97%;
+    margin: auto
+  }
+  
+  .carousel-container__middle{
+    max-width: 97%;
+    margin: auto
+  }
+
+}
+
+
 
 .carousel-style {
   display: flex;

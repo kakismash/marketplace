@@ -24,8 +24,9 @@ export class ShortcutComponent implements OnInit {
 
   @Input() shortcutIntegrations!:     Array<Integration>;
   @Input() integrations!:             Array<Integration>;
-  @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
-  @Output() selectedMenuEvent:        EventEmitter<string>      = new EventEmitter<string>();
+  @Output() integrationSelectedEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
+  @Output() selectedMenuEvent:        EventEmitter<string>             = new EventEmitter<string>();
+  @Output() integrationsSearchEvent:  EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
 
   customOptions: OwlOptions = {
     loop: true,
@@ -57,11 +58,10 @@ export class ShortcutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
   fullIntegration(integration: Integration): void {
     this.integrationSelectedEvent.emit(integration);
     this.selectedMenuEvent.emit('all');
+    this.integrationsSearchEvent.emit(undefined);
   }
 
 }

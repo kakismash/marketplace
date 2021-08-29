@@ -1,13 +1,13 @@
 <ng-container fluid>
   <div fxLayout="column">
-    <navbar (toggleEvent)="toggle = $event" *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
-      (integrationsEvent)="onIntegrationsChange($event)" (integrationEmptyEvent)="onIntegrationEmpty($event)"
-      (selectedMenuEvent)="onChangeSelectedMenu($event)" (notFoundEvent)="onNotFound($event)">
+    <navbar *ngIf="menus !== undefined && menus.length > 0" (toggleEvent)="toggle = $event" [menus]="menus"
+      (integrationsResultEvent)="onIntegrationsResultChange($event)" (integrationEmptyEvent)="onIntegrationEmpty($event)"
+      (selectedMenuEvent)="onChangeSelectedMenu($event)" (searchControlEvent)="onSearchControlChange($event)">
     </navbar>
-    <sidenav-menu [toggle]="toggle" *ngIf="menus !== undefined && menus.length > 0" [menus]="menus"
+    <sidenav-menu *ngIf="menus !== undefined && menus.length > 0" [toggle]="toggle" [menus]="menus"
       [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)" [sIntegrations]="sIntegrations"
-      [eIntegration]="eIntegration" [integrations]="integrations" [notFound]="notFound"
-      [shortcutIntegrations]="shortcutIntegrations">
+      [eIntegration]="eIntegration" [integrations]="integrations" [shortcutIntegrations]="shortcutIntegrations"
+      [searchControlValue]="searchControlValue">
     </sidenav-menu>
   </div>
 </ng-container>

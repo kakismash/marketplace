@@ -16,6 +16,17 @@
   }
 }
 
+.breadcrump {
+  background: var(--wsr-color-20, #ffffff);
+  padding: 7px 20px;
+  border-radius: 3em;
+  font-size: 14px;
+  border-color: none;
+  border: none;
+  color: var(--wsr-text-color-primary-light, #333333);
+  font-weight: 400;
+}
+
 @media all and (max-width: 500px) {
   .padding {
     padding-top: 5%;

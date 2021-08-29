@@ -26,9 +26,8 @@ export class IntegrationComponent implements OnInit, OnChanges {
   integrations:                       Array<Integration>        = new Array<Integration>();
   @Input() menus!:                    Array<Menu>;
   @Input() selectedMenu!:             string;
-  @Input() sIntegrations!:            Array<Integration>;
-  @Input() notFound!:                 string;
   @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
+  @Output() searchingEvent:           EventEmitter<boolean>     = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -39,7 +38,6 @@ export class IntegrationComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     this.integrations = new Array<Integration>();
     this.doIntegrationsCard();
-    console.log(this.notFound)
   }
 
   elevate(id: number): void {
@@ -48,7 +46,6 @@ export class IntegrationComponent implements OnInit, OnChanges {
 
   doIntegrationsCard(): void {
     this.integrations = new Array<Integration>();
-    if (this.sIntegrations === undefined || this.sIntegrations.length === 0) {
       this.menus.forEach(m => {
         if (m.name === this.selectedMenu) {
           this.integrations.push(...m.integrations);
@@ -61,9 +58,6 @@ export class IntegrationComponent implements OnInit, OnChanges {
           });
         }
       });
-    } else {
-      this.integrations = this.sIntegrations;
-    }
   }
 
   fullIntegration(integration: Integration): void {

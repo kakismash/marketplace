@@ -8,7 +8,7 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 })
 export class FullIntegrationComponent implements OnInit {
 
-  scroll: boolean = false;
+  scroll:                boolean      = false;
   @Input() integration!: Integration;
 
   constructor() { }
