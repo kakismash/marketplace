@@ -1,16 +1,18 @@
 <div class="form-size">
   <mat-form-field appearance="legacy">
     <input matInput placeholder="Search" [formControl]="searchControl" [matAutocomplete]="auto"
-      (keyup)="onSearch(searchControl.value)" (keypress.enter)="searchIntegrations(searchControl.value)">
+      (keyup)="onSearch(searchControl.value)" (keypress.enter)="searchIntegrations(searchControl.value)"
+      (ngModelChange)="updatedVal($event)">
     <button mat-icon-button matSuffix>
       <mat-icon class="pointer">search</mat-icon>
     </button>
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <div *ngIf="searchControl.value !== null">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
+          [ngClass]="{'hide-autocomplete': !showAutocomplete}">
           <p class="ma-0 pa-0">{{ option }}</p>
         </mat-option>
-      </div>
+
     </mat-autocomplete>
   </mat-form-field>
 </div>

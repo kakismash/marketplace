@@ -16,6 +16,7 @@ export class SearchInputComponent implements OnInit {
   options:                           Array<string>                    = new Array<string>();
   filteredOptions:                   Observable<Array<string>>        = new Observable<Array<string>>();
   integrations:                      Array<Integration>               = new Array<Integration>();
+  showAutocomplete!:                 boolean;
   @Input() menus!:                   Array<Menu>;
   @Output() integrationsResultEvent: EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();
   @Output() integrationEmptyEvent:   EventEmitter<Integration>        = new EventEmitter<Integration>();
@@ -28,6 +29,14 @@ export class SearchInputComponent implements OnInit {
   ngOnInit(): void {
     this.fillOptions();
   }
+
+  updatedVal(e: any): void {
+  if(e && e.length >= 3) {
+    this.showAutocomplete = true;
+  } else {
+    this.showAutocomplete = false;
+  }
+}
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

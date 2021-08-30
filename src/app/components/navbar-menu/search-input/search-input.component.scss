@@ -28,3 +28,7 @@
 ::ng-deep .mat-autocomplete-panel.mat-autocomplete-visible {
   border-radius: 0 0 0.5em 0.5em !important;
 }
+
+.hide-autocomplete {
+  display: none;
+}
