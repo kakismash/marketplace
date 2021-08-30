@@ -30,6 +30,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { FullIntegrationComponent } from './components/full-integration/full-integration.component';
 import { ShortcutComponent } from './components/shortcut/shortcut.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { IntegrationCardComponent } from './components/integration-card/integration-card.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SearchResultComponent } from './components/search-result/search-result.
     BreadcrumbComponent,
     FullIntegrationComponent,
     ShortcutComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    IntegrationCardComponent
   ],
   imports: [
     FlexLayoutModule,

@@ -25,9 +25,9 @@
       </breadcrumb>
       <full-integration *ngIf="!isIntegrationEmpty(integration)" [integration]="integration">
       </full-integration>
-      <integration-card *ngIf="sIntegrations === undefined && isIntegrationEmpty(integration)" [menus]="menus" [selectedMenu]="selectedMenu"
+      <integration *ngIf="sIntegrations === undefined && isIntegrationEmpty(integration)" [menus]="menus" [selectedMenu]="selectedMenu"
         (integrationSelectedEvent)="onFullIntegration($event)" [storeIntegrations]="storeIntegrations">
-      </integration-card>
+      </integration>
       <search-result *ngIf="sIntegrations !== undefined" [sIntegrations]="sIntegrations"
         (integrationSelectedEvent)="onFullIntegration($event)">
       </search-result>

@@ -4,7 +4,7 @@ import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angu
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
-  selector: 'integration-card',
+  selector: 'integration',
   templateUrl: './integration.component.html',
   styleUrls: ['./integration.component.scss'],
   animations: [
@@ -28,7 +28,6 @@ export class IntegrationComponent implements OnInit, OnChanges {
   @Input() selectedMenu!:             string;
   @Input() storeIntegrations!:        Array<Integration>;
   @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
-  @Output() searchingEvent:           EventEmitter<boolean>     = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -61,8 +60,8 @@ export class IntegrationComponent implements OnInit, OnChanges {
       });
   }
 
-  fullIntegration(integration: Integration): void {
-    this.integrationSelectedEvent.emit(integration);
+  onFullIntegration(event: Integration): void {
+    this.integrationSelectedEvent.emit(event);
   }
 
   checkIntegrationInStore(integration: Integration): boolean {
