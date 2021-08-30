@@ -13,7 +13,7 @@ export class StoreService {
 
   constructor(private http: HttpClient) { }
 
-  load(): Observable<Array<Integration>> {
+  load(storeKey: string): Observable<Array<Integration>> {
     return this.http.get<Array<Integration>>(this.path);
   }
 }
