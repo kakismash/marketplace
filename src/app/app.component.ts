@@ -45,6 +45,8 @@ export class AppComponent implements OnInit {
           this.loadShortcutIntegrations(this.integrations);
           if (this.isStoreKey()) {
             this.loadStoreIntegrations()
+          } else {
+            this.storeIntegrations = [];
           }
         }, err => {
           console.log(err);
