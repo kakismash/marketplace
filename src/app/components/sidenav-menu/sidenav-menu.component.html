@@ -1,6 +1,6 @@
 <mat-drawer-container class="container" [hasBackdrop]="!mode">
   <mat-drawer [ngClass]="!mode ? 'sticky' : 'hidden'" #drawer [mode]="mode ? 'side' : 'over'" [opened]="toggle"
-    class="sidenav">
+    class="sidenav" [disableClose]="true">
     <side-links [menus]="menus" (menuNameEvent)="onMenuNameChange($event)"
       (integrationsSearchEvent)="onIntegrationsSearchChange($event)"
       (integrationEmptyEvent)="onIntegrationEmpty($event)" [selectedMenu]="selectedMenu">
