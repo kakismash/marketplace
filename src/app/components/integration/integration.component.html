@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" [fxLayoutAlign]="integrations && integrations.length >= 3 ? 'start stretch' : 'start stretch'" class="container">
   <integration-card [integrations]="integrations" [selectedMenu]="selectedMenu"
-    (integrationSelectedEvent)="onFullIntegration($event)">
+    (integrationSelectedEvent)="onFullIntegration($event)" [storeIntegrations]="storeIntegrations">
   </integration-card>
 </div>

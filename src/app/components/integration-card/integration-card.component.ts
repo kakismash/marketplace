@@ -34,11 +34,7 @@ export class IntegrationCardComponent implements OnInit {
   }
 
   checkIntegrationInStore(integration: Integration): boolean {
-    let toReturn: boolean = false;
-    if (this.storeIntegrations !== undefined && this.storeIntegrations.length > 0) {
-      toReturn = this.storeIntegrations.some(i => i.integrationId === integration.integrationId);
-    }
-    return toReturn;
+    return this.storeIntegrations.some(i => i.integrationId === integration.integrationId);
   }
 
   elevate(id: number): void {
