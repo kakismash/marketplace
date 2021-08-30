@@ -27,20 +27,18 @@ a {
 }
 
 @media all and (max-width: 500px) {
-  
+
   .carousel-container__min {
     max-width: 97%;
     margin: auto
   }
-  
+
   .carousel-container__middle{
     max-width: 97%;
     margin: auto
   }
 
 }
-
-
 
 .carousel-style {
   display: flex;
@@ -109,4 +107,8 @@ a {
     object-fit: contain;
     object-position: center center;
   }
+}
+
+.check {
+  color: rgba(7, 170, 7, 0.884);
 }
