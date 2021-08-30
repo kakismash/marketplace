@@ -26,6 +26,7 @@ export class IntegrationComponent implements OnInit, OnChanges {
   integrations:                       Array<Integration>        = new Array<Integration>();
   @Input() menus!:                    Array<Menu>;
   @Input() selectedMenu!:             string;
+  @Input() storeIntegrations!:        Array<Integration>;
   @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
   @Output() searchingEvent:           EventEmitter<boolean>     = new EventEmitter<boolean>();
 

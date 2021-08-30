@@ -24,6 +24,7 @@ export class ShortcutComponent implements OnInit {
 
   @Input() shortcutIntegrations!:     Array<Integration>;
   @Input() integrations!:             Array<Integration>;
+  @Input() storeIntegrations!:        Array<Integration>;
   @Output() integrationSelectedEvent: EventEmitter<Integration>        = new EventEmitter<Integration>();
   @Output() selectedMenuEvent:        EventEmitter<string>             = new EventEmitter<string>();
   @Output() integrationsSearchEvent:  EventEmitter<Array<Integration>> = new EventEmitter<Array<Integration>>();

@@ -7,7 +7,7 @@
     <sidenav-menu *ngIf="menus !== undefined && menus.length > 0" [toggle]="toggle" [menus]="menus"
       [selectedMenu]="selectedMenu" (menuNameEvent)="onMenuNameChange($event)" [sIntegrations]="sIntegrations"
       [eIntegration]="eIntegration" [integrations]="integrations" [shortcutIntegrations]="shortcutIntegrations"
-      [searchControlValue]="searchControlValue">
+      [searchControlValue]="searchControlValue" [storeIntegrations]="storeIntegrations">
     </sidenav-menu>
   </div>
 </ng-container>

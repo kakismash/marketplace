@@ -9,7 +9,8 @@
   <mat-drawer-content fxLayout="flex wrap" fxLayoutAlign="start stretch">
     <shortcut class="shortcut__margin-top ma-3" fxFlex="100%" [integrations]="integrations"
       (integrationSelectedEvent)="onFullIntegration($event)" (selectedMenuEvent)="onChangeSelectedMenu($event)"
-      [shortcutIntegrations]="shortcutIntegrations" (integrationsSearchEvent)="onIntegrationsSearchChange($event)">
+      [shortcutIntegrations]="shortcutIntegrations" (integrationsSearchEvent)="onIntegrationsSearchChange($event)"
+      [storeIntegrations]="storeIntegrations">
     </shortcut>
     <side-links fxFlex.sm="20%" fxFlex.md="20%" fxFlex.lg="20%" fxFlex.xl="20%" fxFlex="100%"
       [ngClass]="mode ? '' : 'hidden'" [menus]="menus" (menuNameEvent)="onMenuNameChange($event)"
@@ -25,7 +26,7 @@
       <full-integration *ngIf="!isIntegrationEmpty(integration)" [integration]="integration">
       </full-integration>
       <integration-card *ngIf="sIntegrations === undefined && isIntegrationEmpty(integration)" [menus]="menus" [selectedMenu]="selectedMenu"
-        (integrationSelectedEvent)="onFullIntegration($event)">
+        (integrationSelectedEvent)="onFullIntegration($event)" [storeIntegrations]="storeIntegrations">
       </integration-card>
       <search-result *ngIf="sIntegrations !== undefined" [sIntegrations]="sIntegrations"
         (integrationSelectedEvent)="onFullIntegration($event)">

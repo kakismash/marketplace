@@ -23,6 +23,7 @@ export class SidenavMenuComponent implements OnInit, OnChanges {
   @Input() integrations!:         Array<Integration>;
   @Input() shortcutIntegrations!: Array<Integration>;
   @Input() searchControlValue!:   string;
+  @Input() storeIntegrations!:    Array<Integration>;
   @Output() menuNameEvent:        EventEmitter<string>            = new EventEmitter<string>();
 
   constructor(private media: MediaObserver) {
