@@ -66,10 +66,6 @@ export class AppComponent implements OnInit {
     return this.storeKey ? true : false;
   }
 
-  loadIntegrationsByStore(storeKey: string): void {
-
-  }
-
   private loadShortcutIntegrations(integrations: Array<Integration>): void {
     integrations.forEach(i => {
       if (i.shortcut) {
