@@ -39,7 +39,8 @@ export class AppComponent implements OnInit {
         .load()
         .subscribe(rIntegrations => {
           this.integrations = new Array<Integration>();
-          this.integrations = rIntegrations;
+          this.menus        = new Array<Menu>();
+          Object.assign(this.integrations, rIntegrations);
           this.menus        = mapMenu(this.integrations);
           this.loadShortcutIntegrations(this.integrations);
           if (this.ifStoreKey()) {
@@ -55,7 +56,7 @@ export class AppComponent implements OnInit {
         .load()
         .subscribe(rIntegrations => {
           this.storeIntegrations = new Array<Integration>();
-          this.storeIntegrations = rIntegrations;
+          Object.assign(this.storeIntegrations, rIntegrations);
         }, err => {
           console.log(err);
       });
