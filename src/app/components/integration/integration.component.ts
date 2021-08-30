@@ -66,7 +66,7 @@ export class IntegrationComponent implements OnInit, OnChanges {
   }
 
   checkIntegrationInStore(integration: Integration): boolean {
-    return true;
+    return this.storeIntegrations.some(i => i.integrationId === integration.integrationId);
   }
 
 }
