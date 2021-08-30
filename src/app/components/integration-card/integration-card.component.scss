@@ -1,23 +1,6 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-a {
-  color: #222222 !important;
-  text-decoration: none;
-}
-
-.container {
-  margin: 20px;
-  gap: 35px;
-  padding-left: 24px;
-}
-
-@media all and (max-width: 500px) {
-  .container {
-    padding-left: 0;
-  }
-}
-
 .outlined-card {
   margin-right: 0 !important;
   display: flex;

@@ -1,28 +1,15 @@
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+
 
 @Component({
   selector: 'integration',
   templateUrl: './integration.component.html',
   styleUrls: ['./integration.component.scss'],
-  animations: [
-    trigger('elevateCard', [
-      state('true', style({
-        transform: 'translateY(-3%)'
-      })),
-      state('false', style({
-        transform: 'translateY(0%)'
-      })),
-      transition('true => false', animate('100ms ease-out')),
-      transition('false => true', animate('100ms ease-in'))
-    ])
-  ]
 })
 export class IntegrationComponent implements OnInit, OnChanges {
 
-  elevateCard:                        Array<boolean>            = new Array<boolean>();
   integrations:                       Array<Integration>        = new Array<Integration>();
   @Input() menus!:                    Array<Menu>;
   @Input() selectedMenu!:             string;
@@ -38,10 +25,6 @@ export class IntegrationComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     this.integrations = new Array<Integration>();
     this.doIntegrationsCard();
-  }
-
-  elevate(id: number): void {
-    this.elevateCard[id] = !this.elevateCard[id];
   }
 
   doIntegrationsCard(): void {
@@ -63,9 +46,4 @@ export class IntegrationComponent implements OnInit, OnChanges {
   onFullIntegration(event: Integration): void {
     this.integrationSelectedEvent.emit(event);
   }
-
-  checkIntegrationInStore(integration: Integration): boolean {
-    return this.storeIntegrations.some(i => i.integrationId === integration.integrationId);
-  }
-
 }

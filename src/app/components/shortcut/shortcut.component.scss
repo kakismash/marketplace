@@ -1,11 +1,6 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-a {
-  color: #222222 !important;
-  text-decoration: none;
-}
-
 :host ::ng-deep .owl-stage {
   display: flex;
   align-items: stretch;
@@ -13,7 +8,7 @@ a {
 
 .carousel-container__full {
   max-width: 97%;
-  margin: auto
+  margin: auto;
 }
 
 .carousel-container__min {
@@ -47,68 +42,34 @@ a {
   align-content: center;
 }
 
-.outlined-card {
+:host ::ng-deep .owl-item {
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 25px;
-  margin: 5px;
-  background: #fff;
-  cursor: pointer;
-  border-radius: 8px;
-  border: 1px solid #dfe5eb;
-  cursor: pointer;
-  @include mat-elevation-transition;
-  @include mat-elevation(0, #acacac, 0);
+  justify-content: center;
+}
 
-  &:hover {
-    @include mat-elevation(6, #acacac, 0.9);
+.carousel-item__style {
+  width: 350px;
+  margin-top: 20px;
+  max-width: auto;
+}
+
+@media all and (max-width: 1440px) {
+  .carousel-item__style {
+    width: 330px;
   }
-}
-
-.card-header {
-  display: flex;
-  flex-direction: column;
-  background: none !important;
-  border: hidden;
-}
-
-:host ::ng-deep .mat-card-title {
-  font-size: 20px !important;
-}
-
-.text-footer {
-  font-size: 14px;
-  padding: 2%;
-  align-items: center;
-}
-
-.star-size {
-  font-size: 20px;
-  color: rgb(255, 211, 13);
-}
-
-.box {
-  width: 70px;
-  height: 70px;
-  background: none;
-  overflow: hidden;
-}
-
-.box img {
-  width: 100%;
-  height: auto;
-}
-
-@supports(object-fit: contain) {
-  .box img {
-    height: 100%;
-    object-fit: contain;
-    object-position: center center;
+  @media all and (max-width: 1280px) {
+    .carousel-item__style {
+      width: 310px;
+    }
   }
-}
-
-.check {
-  color: rgba(7, 170, 7, 0.884);
+  @media all and (max-width: 1024px) {
+    .carousel-item__style {
+      width: 290px;
+    }
+  }
+  @media all and (max-width: 780px) {
+    .carousel-item__style {
+      width: 270px;
+    }
+  }
 }

@@ -60,6 +60,8 @@
 
 .shortcut__margin-top {
   margin-top: 70px;
+  max-width: auto;
+  overflow-x: hidden;
 }
 
 @media all and (max-width: 500px) {

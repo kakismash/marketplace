@@ -1,4 +1,3 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Integration } from 'src/app/model/integration';
@@ -6,19 +5,7 @@ import { Integration } from 'src/app/model/integration';
 @Component({
   selector: 'shortcut',
   templateUrl: './shortcut.component.html',
-  styleUrls: ['./shortcut.component.scss'],
-  animations: [
-    trigger('elevateCard', [
-      state('true', style({
-        transform: 'translateY(-3%)'
-      })),
-      state('false', style({
-        transform: 'translateY(0%)'
-      })),
-      transition('true => false', animate('100ms ease-out')),
-      transition('false => true', animate('100ms ease-in'))
-    ])
-  ]
+  styleUrls: ['./shortcut.component.scss']
 })
 export class ShortcutComponent implements OnInit {
 
@@ -41,13 +28,13 @@ export class ShortcutComponent implements OnInit {
       0: {
         items: 1
       },
-      400: {
+      768: {
         items: 2
       },
-      740: {
+      1024: {
         items: 3
       },
-      940: {
+      1360: {
         items: 4
       }
     },
@@ -59,8 +46,8 @@ export class ShortcutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  fullIntegration(integration: Integration): void {
-    this.integrationSelectedEvent.emit(integration);
+  onFullIntegration(event: Integration): void {
+    this.integrationSelectedEvent.emit(event);
     this.selectedMenuEvent.emit('all');
     this.integrationsSearchEvent.emit(undefined);
   }

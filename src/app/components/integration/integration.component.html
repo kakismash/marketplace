@@ -1,5 +1,5 @@
-<div fxLayout="row wrap" [fxLayoutAlign]="integrations && integrations.length >= 3 ? 'start stretch' : 'start stretch'" class="container">
-  <integration-card [integrations]="integrations" [selectedMenu]="selectedMenu"
-    (integrationSelectedEvent)="onFullIntegration($event)" [storeIntegrations]="storeIntegrations">
+<div class="grid">
+  <integration-card *ngFor="let integration of integrations; let index=index"  [integration]="integration" [storeIntegrations]="storeIntegrations"
+    (click)="onFullIntegration(integration)">
   </integration-card>
 </div>

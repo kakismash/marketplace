@@ -1,26 +1,24 @@
-<div fxLayout="row wrap" [fxLayoutAlign]="integrations && integrations.length >= 3 ? 'start stretch' : 'start stretch'" class="container">
-    <mat-card fxFlexAlign="space-between" fxFlex.lg="30%" fxFlex.sm="45%" fxFlex.md="30%" fxFlex.xl="30%" mat-ripple [matRippleColor]="'#f0f0f06b'" *ngFor="let integration of integrations; let index=index" (mouseover)="elevateCard[index]=true" (mouseout)="elevateCard[index]=false"
-        class="outlined-card pa-5 ma-5 mb-3 pb-0" [@elevateCard]="elevateCard[index]" (click)="onFullIntegration(integration)">
-        <div>
-            <!-- Fix margin botton for mat-ripple -->
-            <mat-card-header class="card-header">
-                <div class="box">
-                    <img [src]="integration.logo" [alt]="integration.name" />
-                </div>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-card-title>{{ integration.name }}</mat-card-title>
-                <mat-card-subtitle>{{ integration.excerpt }}</mat-card-subtitle>
-                <p>
-                    {{ integration.description | truncate : 50 }}
-                </p>
-            </mat-card-content>
-            <mat-card-actions class="mt-20">
-                <div class="d-flex justify-space-between align-content-center align-items-end">
-                    <p class="text-footer pa-0 ma-0">{{ integration.website }}</p>
-                    <mat-icon *ngIf="checkIntegrationInStore(integration)" class="check">check_circle</mat-icon>
-                </div>
-            </mat-card-actions>
-        </div>
-    </mat-card>
-</div>
+<mat-card mat-ripple [matRippleColor]="'#f0f0f06b'"
+          (mouseover)="elevateCard[integration.integrationId]=true" (mouseout)="elevateCard[integration.integrationId]=false"
+          class="outlined-card pa-5 ma-5 mb-3" [@elevateCard]="elevateCard[integration.integrationId]"
+>
+    <mat-card-header class="card-header">
+      <div class="box">
+        <img [src]="integration.logo" [alt]="integration.name" />
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card-title>{{ integration.name }}</mat-card-title>
+      <mat-card-subtitle>{{ integration.excerpt }}</mat-card-subtitle>
+      <p>
+        {{ integration.description | truncate : 60 }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="mt-20">
+      <div class="d-flex justify-space-between align-content-center align-items-end">
+        <p class="text-footer pa-0 ma-0">{{ integration.website }}</p>
+        <mat-icon *ngIf="checkIntegrationInStore(integration)" class="check">check_circle</mat-icon>
+      </div>
+    </mat-card-actions>
+</mat-card>
+

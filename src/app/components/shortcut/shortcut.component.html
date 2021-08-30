@@ -3,32 +3,12 @@
                                                                          'carousel-container__min'"
 >
   <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let integration of shortcutIntegrations; let index=index">
+    <ng-container *ngFor="let integration of integrations">
       <ng-template carouselSlide>
-        <mat-card fxFlexAlign="space-between" fxFlex="100%" mat-ripple [matRippleColor]="'#f0f0f06b'"
-          class="outlined-card pa-5 ma-5 mb-3 pb-0" (click)="fullIntegration(integration)">
-          <div>
-            <!-- Fix margin botton for mat-ripple -->
-            <mat-card-header class="card-header">
-              <div class="box">
-                <img [src]="integration.logo" [alt]="integration.name" />
-              </div>
-            </mat-card-header>
-            <mat-card-content>
-              <mat-card-title>{{ integration.name }}</mat-card-title>
-              <mat-card-subtitle>{{ integration.excerpt }}</mat-card-subtitle>
-              <p>
-                {{ integration.description | truncate : 50  }}
-              </p>
-            </mat-card-content>
-            <mat-card-actions class="mt-20">
-              <div class="d-flex justify-space-between align-content-center align-items-end">
-                <p class="text-footer pa-0 ma-0">{{ integration.website }}</p>
-                <mat-icon class="check">check_circle</mat-icon>
-              </div>
-            </mat-card-actions>
-          </div>
-        </mat-card>
+        <div class="carousel-item__style" >
+          <integration-card [integration]="integration" [storeIntegrations]="storeIntegrations">
+          </integration-card>
+        </div>
       </ng-template>
     </ng-container>
   </owl-carousel-o>

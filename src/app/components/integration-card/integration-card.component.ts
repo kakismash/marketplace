@@ -1,6 +1,5 @@
-import { Menu } from './../../model/menu';
 import { Integration } from 'src/app/model/integration';
-import { Component, Input, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -21,28 +20,20 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class IntegrationCardComponent implements OnInit {
-
   elevateCard:                        Array<boolean>            = new Array<boolean>();
-  @Input() integrations!:             Array<Integration>;
+  @Input() integration!:              Integration;
   @Input() storeIntegrations!:        Array<Integration>;
-  @Input() selectedMenu!:             string;
-  @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  checkIntegrationInStore(integration: Integration): boolean {
-    return this.storeIntegrations.some(i => i.integrationId === integration.integrationId);
-  }
-
   elevate(id: number): void {
     this.elevateCard[id] = !this.elevateCard[id];
   }
-
-  onFullIntegration(integration: Integration): void {
-    this.integrationSelectedEvent.emit(integration);
+  checkIntegrationInStore(integration: Integration): boolean {
+    return this.storeIntegrations.some(i => i.integrationId === integration.integrationId);
   }
 
 }
