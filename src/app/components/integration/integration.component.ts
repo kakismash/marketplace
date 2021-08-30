@@ -64,4 +64,8 @@ export class IntegrationComponent implements OnInit, OnChanges {
     this.integrationSelectedEvent.emit(integration);
   }
 
+  checkIntegrationInStore(integration: Integration): boolean {
+    return true;
+  }
+
 }

@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
           this.menus        = mapMenu(this.integrations);
           this.loadShortcutIntegrations(this.integrations);
           if (this.isStoreKey()) {
-            this.loadStoreIntegrations()
+            this.loadStoreIntegrations();
           } else {
             this.storeIntegrations = [];
           }
