@@ -1,6 +1,9 @@
+import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
+import { MatPaginator } from '@angular/material/paginator';
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
-import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter, ViewChild, ChangeDetectorRef, OnDestroy } from '@angular/core';
 
 
 @Component({
@@ -8,15 +11,18 @@ import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angu
   templateUrl: './integration.component.html',
   styleUrls: ['./integration.component.scss'],
 })
-export class IntegrationComponent implements OnInit, OnChanges {
+export class IntegrationComponent implements OnInit, OnChanges, OnDestroy {
 
-  integrations:                       Array<Integration>        = new Array<Integration>();
-  @Input() menus!:                    Array<Menu>;
-  @Input() selectedMenu!:             string;
-  @Input() storeIntegrations!:        Array<Integration>;
-  @Output() integrationSelectedEvent: EventEmitter<Integration> = new EventEmitter<Integration>();
+  integrations:                        Array<Integration>              = new Array<Integration>();
+  obs!:                                Observable<any>;
+  dataSource!:                         MatTableDataSource<Integration>;
+  @Input() menus!:                     Array<Menu>;
+  @Input() selectedMenu!:              string;
+  @Input() storeIntegrations!:         Array<Integration>;
+  @Output() integrationSelectedEvent:  EventEmitter<Integration>       = new EventEmitter<Integration>();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor() { }
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.doIntegrationsCard();
@@ -25,6 +31,12 @@ export class IntegrationComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     this.integrations = new Array<Integration>();
     this.doIntegrationsCard();
+  }
+
+  ngOnDestroy() {
+    if (this.dataSource) {
+      this.dataSource.disconnect();
+    }
   }
 
   doIntegrationsCard(): void {
@@ -41,6 +53,10 @@ export class IntegrationComponent implements OnInit, OnChanges {
           });
         }
       });
+    this.dataSource           = new MatTableDataSource<Integration>(this.integrations)
+    this.changeDetectorRef.detectChanges();
+    this.dataSource.paginator = this.paginator;
+    this.obs                  = this.dataSource.connect();
   }
 
   onFullIntegration(event: Integration): void {

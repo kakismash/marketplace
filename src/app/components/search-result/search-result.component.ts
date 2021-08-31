@@ -1,41 +1,47 @@
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
 import { Integration } from './../../model/integration';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ChangeDetectorRef, ViewChild, OnChanges, OnDestroy } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'search-result',
   templateUrl: './search-result.component.html',
-  styleUrls: ['./search-result.component.scss'],
-  animations: [
-    trigger('elevateCard', [
-      state('true', style({
-        transform: 'translateY(-3%)'
-      })),
-      state('false', style({
-        transform: 'translateY(0%)'
-      })),
-      transition('true => false', animate('100ms ease-out')),
-      transition('false => true', animate('100ms ease-in'))
-    ])
-  ]
+  styleUrls: ['./search-result.component.scss']
 })
-export class SearchResultComponent implements OnInit {
+export class SearchResultComponent implements OnInit, OnChanges, OnDestroy {
 
-  elevateCard:                        Array<boolean>                  = new Array<boolean>();
-  @Input() sIntegrations!:            Array<Integration> | undefined;
-  @Output() integrationSelectedEvent: EventEmitter<Integration>       = new EventEmitter<Integration>();
+  obs!:                                Observable<any>;
+  dataSource!:                         MatTableDataSource<Integration>;
+  @Input() sIntegrations!:             Array<Integration> | undefined;
+  @Input() storeIntegrations!:         Array<Integration>;
+  @Output() integrationSelectedEvent:  EventEmitter<Integration>        = new EventEmitter<Integration>();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-
-  constructor() { }
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.dataSource           = new MatTableDataSource<Integration>(this.sIntegrations)
+    this.changeDetectorRef.detectChanges();
+    this.dataSource.paginator = this.paginator;
+    this.obs                  = this.dataSource.connect();
   }
 
-  elevate(id: number): void {
-    this.elevateCard[id] = !this.elevateCard[id];
+  ngOnChanges(): void {
+    this.dataSource           = new MatTableDataSource<Integration>(this.sIntegrations)
+    this.changeDetectorRef.detectChanges();
+    this.dataSource.paginator = this.paginator;
+    this.obs                  = this.dataSource.connect();
   }
 
-  fullIntegration(integration: Integration): void {
+  ngOnDestroy() {
+    if (this.dataSource) {
+      this.dataSource.disconnect();
+    }
+  }
+
+  onFullIntegration(integration: Integration): void {
     this.integrationSelectedEvent.emit(integration);
   }
 

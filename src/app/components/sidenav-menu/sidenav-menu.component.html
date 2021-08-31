@@ -29,7 +29,7 @@
         (integrationSelectedEvent)="onFullIntegration($event)" [storeIntegrations]="storeIntegrations">
       </integration>
       <search-result *ngIf="sIntegrations !== undefined" [sIntegrations]="sIntegrations"
-        (integrationSelectedEvent)="onFullIntegration($event)">
+        (integrationSelectedEvent)="onFullIntegration($event)" [storeIntegrations]="storeIntegrations">
       </search-result>
     </div>
   </mat-drawer-content>

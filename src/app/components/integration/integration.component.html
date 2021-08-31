@@ -1,5 +1,11 @@
 <div class="grid">
-  <integration-card *ngFor="let integration of integrations; let index=index"  [integration]="integration" [storeIntegrations]="storeIntegrations"
+  <integration-card *ngFor="let integration of obs | async"  [integration]="integration" [storeIntegrations]="storeIntegrations"
     (click)="onFullIntegration(integration)">
   </integration-card>
+  <mat-paginator #paginator
+    [length]="integrations.length"
+    [pageSize]="6"
+    [pageSizeOptions]="[6, 12, 24, 100]"
+    [showFirstLastButtons]="true">
+  </mat-paginator>
 </div>
