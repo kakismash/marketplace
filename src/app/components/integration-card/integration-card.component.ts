@@ -1,5 +1,5 @@
 import { Integration } from 'src/app/model/integration';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -20,9 +20,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class IntegrationCardComponent implements OnInit {
-  elevateCard:                        Array<boolean>            = new Array<boolean>();
-  @Input() integration!:              Integration;
-  @Input() storeIntegrations!:        Array<Integration>;
+  elevateCard:                 Array<boolean>      = new Array<boolean>();
+  @Input() integration!:       Integration;
+  @Input() storeIntegrations!: Array<Integration>;
 
   constructor() { }
 
