@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarMenuComponent } from './components/navbar-menu/navbar-menu.component';
@@ -66,6 +67,7 @@ import { IntegrationCardComponent } from './components/integration-card/integrat
     MatChipsModule,
     MatAutocompleteModule,
     MatOptionModule,
+    MatPaginatorModule,
     CarouselModule,
     FormsModule,
     ReactiveFormsModule,
