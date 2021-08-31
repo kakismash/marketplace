@@ -2,6 +2,8 @@
   <integration-card *ngFor="let integration of obs | async"  [integration]="integration" [storeIntegrations]="storeIntegrations"
     (click)="onFullIntegration(integration)">
   </integration-card>
+</div>
+<div class="d-flex align-center justify-end padding">
   <mat-paginator #paginator
     [length]="integrations.length"
     [pageSize]="6"
