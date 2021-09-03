@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -33,6 +33,7 @@ import { FullIntegrationComponent } from './components/full-integration/full-int
 import { ShortcutComponent } from './components/shortcut/shortcut.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { IntegrationCardComponent } from './components/integration-card/integration-card.component';
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,14 @@ import { IntegrationCardComponent } from './components/integration-card/integrat
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private injector: Injector) {
+    const customComponent = createCustomElement(AppComponent, {injector});
+    customElements.define('app-root', customComponent);
+  }
+
+  ngDoBootstrap() {}
+}

@@ -6,7 +6,8 @@
     <ng-container *ngFor="let integration of shortcutIntegrations">
       <ng-template carouselSlide>
         <div class="carousel-item__style" >
-          <integration-card [integration]="integration" [storeIntegrations]="storeIntegrations">
+          <integration-card [integration]="integration" [storeIntegrations]="storeIntegrations"
+            (click)="onFullIntegration(integration)">
           </integration-card>
         </div>
       </ng-template>
