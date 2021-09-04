@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  bOUrl: 'https://github.com/jantvb/json/blob/main/market-place/'
+  bOUrl: 'https://raw.githubusercontent.com/jantvb/json/main/market-place/'
 };
 
 /*
