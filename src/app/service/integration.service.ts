@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 })
 export class IntegrationService {
 
-  path: string = environment.bOUrl + 'market-place.json';
+  path: string = environment.bOUrl + 'integrations.json';
 
   constructor(private http: HttpClient) { }
 

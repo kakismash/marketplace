@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  bOUrl: 'http://localhost:4200/assets/'
+  bOUrl: 'https://github.com/jantvb/json/blob/main/market-place/'
 };
