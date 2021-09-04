@@ -32,6 +32,7 @@ export class IntegrationCardComponent implements OnInit {
   elevate(id: number): void {
     this.elevateCard[id] = !this.elevateCard[id];
   }
+
   checkIntegrationInStore(integration: Integration): boolean {
     return this.storeIntegrations.some(i => i.integrationId === integration.integrationId);
   }

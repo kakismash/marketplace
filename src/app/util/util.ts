@@ -84,7 +84,6 @@ function subMenuSales(integrations: Array<Integration>): Array<SubMenu> {
     });
   });
   sm.push(smDelivery);
-
   return sm;
 }
 
@@ -137,7 +136,6 @@ function subMenuMarketing(integrations: Array<Integration>): Array<SubMenu> {
     });
   });
   sm.push(smLoyalty);
-
   return sm;
 }
 
@@ -190,7 +188,6 @@ function subMenuLabor(integrations: Array<Integration>): Array<SubMenu> {
     });
   });
   sm.push(smAttendance);
-
   return sm;
 }
 
@@ -256,7 +253,6 @@ function subMenuPayments(integrations: Array<Integration>): Array<SubMenu> {
     });
   });
   sm.push(smSwipeCC);
-
   return sm;
 }
 
@@ -309,7 +305,6 @@ function subMenuSecurity(integrations: Array<Integration>): Array<SubMenu> {
     });
   });
   sm.push(smCashManagement);
-
   return sm;
 }
 
@@ -349,7 +344,6 @@ function subMenuCommunications(integrations: Array<Integration>): Array<SubMenu>
     });
   });
   sm.push(smCallerID);
-
   return sm;
 }
 
@@ -368,7 +362,6 @@ function generateProductivity(integrations: Array<Integration>): Menu {
       }
     });
   });
-
   return productivityMenu;
 }
 
@@ -387,7 +380,6 @@ function generateHotel(integrations: Array<Integration>): Menu {
       }
     });
   });
-
   return hotelMenu;
 }
 
@@ -406,7 +398,6 @@ function generateEnterprise(integrations: Array<Integration>): Menu {
       }
     });
   });
-
   return enterpriseMenu;
 }
 
@@ -425,7 +416,6 @@ function generateAccounting(integrations: Array<Integration>): Menu {
       }
     });
   });
-
   return accountingMenu;
 }
 
@@ -444,6 +434,5 @@ function generateReport(integrations: Array<Integration>): Menu {
       }
     });
   });
-
   return reportMenu;
 }

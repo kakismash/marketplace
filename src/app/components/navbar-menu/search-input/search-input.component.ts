@@ -31,12 +31,12 @@ export class SearchInputComponent implements OnInit {
   }
 
   updatedVal(e: any): void {
-  if(e && e.length >= 3) {
-    this.showAutocomplete = true;
-  } else {
-    this.showAutocomplete = false;
+    if(e && e.length >= 3) {
+      this.showAutocomplete = true;
+    } else {
+      this.showAutocomplete = false;
+    }
   }
-}
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

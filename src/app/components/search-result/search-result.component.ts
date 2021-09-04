@@ -3,7 +3,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { Integration } from './../../model/integration';
 import { Component, Input, OnInit, Output, EventEmitter, ChangeDetectorRef, ViewChild, OnChanges, OnDestroy } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'search-result',
