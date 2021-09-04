@@ -1,4 +1,4 @@
-import { Integration } from 'src/app/model/integration';
+import { Integration } from './../../model/integration';
 import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 

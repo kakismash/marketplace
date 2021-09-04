@@ -77,24 +77,19 @@ export class SearchInputComponent implements OnInit {
     value             = value.toLocaleLowerCase();
     this.integrations = new Array<Integration>();
     this.menus.forEach(m => {
-      let menuName = m.name.toLocaleLowerCase();
-      let menuDisp = m.display.toLocaleLowerCase();
-      if (menuName.includes(value) || menuDisp.includes(value)) {
+      if (m.name.toLocaleLowerCase().includes(value) || m.display.toLocaleLowerCase().includes(value)) {
         this.integrations.push(...m.integrations);
       }
       if (m.name === 'all') {
         m.integrations.forEach(i => {
-          let iName = i.name.toLocaleLowerCase();
-          if (iName.includes(value)) {
+          if (i.name.toLocaleLowerCase().includes(value)) {
             this.integrations.push(i);
           }
         });
       }
       if (m.subMenus !== undefined && m.subMenus.length > 0) {
         m.subMenus.forEach(sm => {
-          let subMenuName = sm.name.toLocaleLowerCase();
-          let subMenuDisp = sm.display.toLocaleLowerCase();
-          if (subMenuName.includes(value) || subMenuDisp.includes(value)) {
+          if (sm.name.toLocaleLowerCase().includes(value) || sm.display.toLocaleLowerCase().includes(value)) {
             this.integrations.push(...sm.integrations);
           }
         });

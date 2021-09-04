@@ -1,6 +1,6 @@
+import { Integration } from './../../model/integration';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Integration } from 'src/app/model/integration';
 
 @Component({
   selector: 'shortcut',

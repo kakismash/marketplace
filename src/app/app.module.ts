@@ -83,7 +83,7 @@ export class AppModule {
 
   constructor(private injector: Injector) {
     const customComponent = createCustomElement(AppComponent, {injector});
-    customElements.define('app-root', customComponent);
+    customElements.define('market-place', customComponent);
   }
 
   ngDoBootstrap() {}

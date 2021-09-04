@@ -1,7 +1,7 @@
 import { SubMenu } from './../../model/sub-menu';
 import { Menu } from './../../model/menu';
 import { Integration } from './../../model/integration';
-import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'breadcrumb',
@@ -63,24 +63,19 @@ export class BreadcrumbComponent implements OnInit, OnChanges {
   loadActiveSearch(): void {
     const activeSearchResult: Array<Integration> = new Array<Integration>();
     this.menus.forEach(m => {
-      let menuName = m.name.toLocaleLowerCase();
-      let menuDisp = m.display.toLocaleLowerCase();
-      if (menuName.includes(this.searchControlValue) || menuDisp.includes(this.searchControlValue)) {
+      if (m.name.toLocaleLowerCase().includes(this.searchControlValue) || m.display.toLocaleLowerCase().includes(this.searchControlValue)) {
         activeSearchResult.push(...m.integrations);
       }
       if (m.name === 'all') {
         m.integrations.forEach(i => {
-          let iName = i.name.toLocaleLowerCase();
-          if (iName.includes(this.searchControlValue)) {
+          if (i.name.toLocaleLowerCase().includes(this.searchControlValue)) {
             activeSearchResult.push(i);
           }
         });
       }
       if (m.subMenus !== undefined && m.subMenus.length > 0) {
         m.subMenus.forEach(sm => {
-          let subMenuName = sm.name.toLocaleLowerCase();
-          let subMenuDisp = sm.display.toLocaleLowerCase();
-          if (subMenuName.includes(this.searchControlValue) || subMenuDisp.includes(this.searchControlValue)) {
+          if (sm.name.toLocaleLowerCase().includes(this.searchControlValue) || sm.display.toLocaleLowerCase().includes(this.searchControlValue)) {
             activeSearchResult.push(...sm.integrations);
           }
         });

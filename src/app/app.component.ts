@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { mapMenu } from './util/util';
 
 @Component({
-  selector: 'app-root',
+  selector: 'market-place',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
