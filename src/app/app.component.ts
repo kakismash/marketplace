@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
               private storeService:       StoreService) {
     // Only for debug purpose
     // TODO Please remove
-    this.storeKey = '5hk';
+    //this.storeKey = '5hk';
   }
 
   ngOnInit(): void {
