@@ -37,8 +37,8 @@ Edit the html file to obtain the content generated in market-place. It should lo
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="market-place/styles.780eb3c8e721d7a9c07d.css"/>
     <script type="text/javascript" src="./market-place/runtime.025432d3dde7178b179a.js"></script>
     <script type="text/javascript" src="./market-place/polyfills.9a90a2c6082fe03321d2.js"></script>
@@ -50,6 +50,12 @@ Edit the html file to obtain the content generated in market-place. It should lo
   </body>
 </html>
 ```
+
+For the content generated in the market-place to be available on your page you only need to use the `<market-place> </market-place>` selector.
+You also have to include the **main**, **polyfills**, **runtime**, **scripts** and **css** files.
+In order for the Material styles and icons to be displayed, it is also necessary to include them as shown in the previous code.
+
+## Page Preview
 
 
 
