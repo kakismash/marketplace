@@ -15,7 +15,7 @@ You will have the following distribution of folders and files within **dist**:
 
 ![Run Build Success](https://github.com/jantvb/json/blob/main/market-place/dist-folder-tree.jpg)
 
-Note: The names of the main, polyfills, runtime, scripts and css files may change, since when doing build it will always generate new names
+**Note:** The names of the **main**, **polyfills**, **runtime**, **scripts** and **css** files may change, since when doing build it will always generate new names
 
 ## Step 2:
 
