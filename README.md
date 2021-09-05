@@ -1,10 +1,16 @@
-# MarketPlace
+# Marketplace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+Marketplace embedded system with the ability to integrate with any platform.
 
-## Development server
+## How to use it
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Step 1:
+In your main folder of this angular project run `ng build market-place`.
+This command will generate a folder named **dist** and if everything worked correctly this message will appear in the console:
+![Run Build Success](https://github.com/jantvb/json/blob/main/market-place/run-build-done.jpg)
+
+You will have the following distribution of folders and files within **dist**:
+![Run Build Success](https://github.com/jantvb/json/blob/main/market-place/dist-folder-tree.jpg)
 
 ## Code scaffolding
 
