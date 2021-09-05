@@ -4,7 +4,7 @@ Marketplace embedded system with the ability to integrate with any platform.
 
 # First Steps
 
-First clone the project found on github and install all dependencies using `npm install`. Then start the project run `ng serve`. If everything works correctly, then we will proceed to implement it as JavaScript/HTML plain.
+First clone the project found on GitHub and install all dependencies using `npm install`. Then start the project run `ng serve`. If everything works correctly, then we will proceed to implement it as JavaScript/HTML plain.
 
 ## How to implement as JavaScript/HTML plain
 
