@@ -73,9 +73,7 @@ export class AppComponent implements OnInit {
     integratedMenu.icon         = 'check_circle';
     integratedMenu.subMenus     = [];
     integratedMenu.integrations = new Array<Integration>();
-    if (this.storeIntegrations !== undefined && this.storeIntegrations.length > 0) {
-      integratedMenu.integrations.push(...this.storeIntegrations);
-    }
+    integratedMenu.integrations.push(...this.storeIntegrations);
     return integratedMenu;
   }
 
