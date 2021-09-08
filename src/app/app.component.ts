@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
               private storeService:       StoreService) {
     // Only for debug purpose
     // TODO Please remove
-    //this.storeKey = '5hk';
+    this.storeKey = '5hk';
   }
 
   ngOnInit(): void {
@@ -45,8 +45,6 @@ export class AppComponent implements OnInit {
           this.loadShortcutIntegrations(this.integrations);
           if (this.isStoreKey()) {
             this.loadStoreIntegrations();
-          } else {
-            this.storeIntegrations = [];
           }
         }, err => {
           console.log(err);
@@ -59,9 +57,30 @@ export class AppComponent implements OnInit {
         .subscribe(rIntegrations => {
           this.storeIntegrations = new Array<Integration>();
           Object.assign(this.storeIntegrations, rIntegrations);
+          if (this.storeIntegrations !== undefined && this.storeIntegrations.length > 0) {
+            this.menus.splice(1,0,this.generateIntegrated());
+          }
         }, err => {
           console.log(err);
       });
+  }
+
+  // INTEGRATED
+  generateIntegrated(): Menu {
+    const integratedMenu: Menu  = new Menu();
+    integratedMenu.name         = 'integrated';
+    integratedMenu.display      = 'Integrated';
+    integratedMenu.icon         = 'check_circle';
+    integratedMenu.subMenus     = [];
+    integratedMenu.integrations = new Array<Integration>();
+      this.integrations.forEach(i => {
+        this.storeIntegrations.forEach(sI => {
+          if (i.integrationId === sI.integrationId) {
+            integratedMenu.integrations.push(sI);
+          }
+        });
+      })
+    return integratedMenu;
   }
 
   private isStoreKey(): boolean {
