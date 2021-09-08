@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
               private storeService:       StoreService) {
     // Only for debug purpose
     // TODO Please remove
-    this.storeKey = '5hk';
+    //this.storeKey = '5hk';
   }
 
   ngOnInit(): void {
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
       });
   }
 
-  // INTEGRATED
+  // INTEGRATED MENU
   generateIntegrated(): Menu {
     const integratedMenu: Menu  = new Menu();
     integratedMenu.name         = 'integrated';
@@ -73,6 +73,13 @@ export class AppComponent implements OnInit {
     integratedMenu.icon         = 'check_circle';
     integratedMenu.subMenus     = [];
     integratedMenu.integrations = new Array<Integration>();
+    this.integrations.forEach(i => {
+      this.storeIntegrations.forEach(sI => {
+        if (i.integrationId === sI.integrationId) {
+          integratedMenu.integrations.push(i);
+        }
+      });
+    });
     integratedMenu.integrations.push(...this.storeIntegrations);
     return integratedMenu;
   }
